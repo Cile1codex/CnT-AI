@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/Button';
+import { Logo } from './Logo';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,11 +56,7 @@ export const Navbar: React.FC = () => {
             className="flex items-center cursor-pointer group"
             onClick={() => scrollToSection('home')}
           >
-            <img 
-              src="/CnT.jpg" 
-              alt="CnT AI Logo" 
-              className="h-10 w-10 mr-3 group-hover:scale-110 transition-transform duration-300 rounded-lg"
-            />
+            <Logo size="md" className="mr-3 group-hover:scale-110 transition-transform duration-300" />
             <span className="text-xl font-bold bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">
               CnT AI
             </span>
