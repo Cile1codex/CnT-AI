@@ -34,7 +34,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-blue-50">
+    <div className="min-h-screen bg-blue-50 w-full overflow-x-hidden">
       <Navbar />
       <Hero />
       <WhyChooseUs />
@@ -63,7 +63,7 @@ function App() {
       </button>
 
       {/* Footer */}
-      <footer className="bg-slate-900 border-t border-slate-800 py-8">
+      <footer className="bg-slate-900 border-t border-slate-800 py-8 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex items-center justify-center mb-4">
