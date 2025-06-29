@@ -9,6 +9,7 @@ import { About } from './components/About';
 import { Testimonials } from './components/Testimonials';
 import { Contact } from './components/Contact';
 import { Logo } from './components/Logo';
+import { StarBackground } from './components/StarBackground';
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -34,7 +35,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-blue-50">
+    <div className="min-h-screen bg-blue-50 relative">
+      {/* Ambient Star Background */}
+      <StarBackground />
+      
       <Navbar />
       <Hero />
       <WhyChooseUs />
@@ -63,7 +67,7 @@ function App() {
       </button>
 
       {/* Footer */}
-      <footer className="bg-slate-900 border-t border-slate-800 py-8">
+      <footer className="bg-slate-900 border-t border-slate-800 py-8 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex items-center justify-center mb-4">
