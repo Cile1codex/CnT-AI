@@ -66,9 +66,11 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex items-center justify-center mb-4">
-              <div className="bg-gradient-to-r from-sky-500 to-emerald-400 p-2 rounded-lg mr-3">
-                <span className="text-white font-bold text-lg">⚡</span>
-              </div>
+              <img 
+                src="/CnT.jpg" 
+                alt="CnT AI Logo" 
+                className="h-8 w-8 mr-3 rounded-lg"
+              />
               <span className="text-xl font-bold bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">
                 CnT AI
               </span>

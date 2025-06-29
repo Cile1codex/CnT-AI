@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from './ui/Button';
 
 export const Navbar: React.FC = () => {
@@ -55,9 +55,11 @@ export const Navbar: React.FC = () => {
             className="flex items-center cursor-pointer group"
             onClick={() => scrollToSection('home')}
           >
-            <div className="bg-gradient-to-r from-sky-500 to-emerald-400 p-2 rounded-lg mr-3 group-hover:scale-110 transition-transform duration-300">
-              <Zap className="h-6 w-6 text-white" />
-            </div>
+            <img 
+              src="/CnT.jpg" 
+              alt="CnT AI Logo" 
+              className="h-10 w-10 mr-3 group-hover:scale-110 transition-transform duration-300 rounded-lg"
+            />
             <span className="text-xl font-bold bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">
               CnT AI
             </span>
