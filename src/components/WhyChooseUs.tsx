@@ -31,7 +31,7 @@ export const WhyChooseUs: React.FC = () => {
     {
       icon: Clock,
       title: '24/7 Systems',
-      description: 'From chatbots to backend processes, your ops never sleep.',
+      description: 'From chatbots to backend processes, your systems never sleep.',
       color: 'text-emerald-400',
       bgColor: 'bg-emerald-500/10',
     },
