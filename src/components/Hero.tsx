@@ -68,7 +68,7 @@ export const Hero: React.FC = () => {
             <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:scale-105">
               <Zap className="h-12 w-12 text-emerald-400 mb-4 mx-auto" />
               <h3 className="text-white font-semibold text-lg mb-2">24/7 Systems</h3>
-              <p className="text-gray-400 text-sm">From chatbots to backend processes, your ops never sleep</p>
+              <p className="text-gray-400 text-sm">From chatbots to backend processes, your systems never sleep</p>
             </div>
             
             <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105">
