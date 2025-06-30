@@ -17,3 +17,22 @@ html, body {
 * {
   scroll-behavior: smooth;
 }
+
+/* Ensure smooth page transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Additional scroll behavior for better UX */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+  }
+}
