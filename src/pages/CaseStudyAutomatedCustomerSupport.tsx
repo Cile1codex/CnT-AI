@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, Quote } from 'lucide-react';
+import { ArrowLeft, CheckCircle } from 'lucide-react';
 import { Logo } from '../components/Logo';
 
 export const CaseStudyAutomatedCustomerSupport: React.FC = () => {
@@ -117,22 +117,6 @@ export const CaseStudyAutomatedCustomerSupport: React.FC = () => {
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 flex-shrink-0" />
                     <span className="text-slate-800 font-medium">Saved over 30 hours of manual labor per week</span>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Testimonial */}
-            <section className="mb-12">
-              <div className="bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-200 rounded-2xl p-8">
-                <Quote className="h-10 w-10 text-sky-600 mb-4" />
-                <blockquote className="text-slate-700 italic text-xl leading-relaxed mb-6">
-                  "This bot doesn't sleep. It solved our support bottleneck without hiring. Customers get answers in seconds, and we focus on growth."
-                </blockquote>
-                <div className="flex items-center">
-                  <div>
-                    <div className="text-slate-800 font-semibold text-lg">Maria J.</div>
-                    <div className="text-slate-600">Customer Experience Manager</div>
                   </div>
                 </div>
               </div>

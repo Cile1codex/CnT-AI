@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, Quote } from 'lucide-react';
+import { ArrowLeft, CheckCircle } from 'lucide-react';
 import { Logo } from '../components/Logo';
 
 export const CaseStudyUserActivationFlows: React.FC = () => {
@@ -117,22 +117,6 @@ export const CaseStudyUserActivationFlows: React.FC = () => {
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-orange-600 mr-3 flex-shrink-0" />
                     <span className="text-slate-800 font-medium">Scalable onboarding without increasing support tickets</span>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Testimonial */}
-            <section className="mb-12">
-              <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-2xl p-8">
-                <Quote className="h-10 w-10 text-orange-600 mb-4" />
-                <blockquote className="text-slate-700 italic text-xl leading-relaxed mb-6">
-                  "We went from users ghosting to users converting. The system shows them exactly what to do next — and when."
-                </blockquote>
-                <div className="flex items-center">
-                  <div>
-                    <div className="text-slate-800 font-semibold text-lg">Andre V.</div>
-                    <div className="text-slate-600">Product Lead</div>
                   </div>
                 </div>
               </div>

@@ -132,6 +132,7 @@ export const UseCases: React.FC = () => {
                 <Link 
                   to={useCase.caseStudyPath}
                   className="text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-200 hover:translate-x-2 transition-transform inline-block"
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   See Full Case Study →
                 </Link>
