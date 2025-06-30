@@ -5,7 +5,6 @@ import { Hero } from '../components/Hero';
 import { WhyChooseUs } from '../components/WhyChooseUs';
 import { Services } from '../components/Services';
 import { UseCases } from '../components/UseCases';
-import { CaseStudies } from '../components/CaseStudies';
 import { About } from '../components/About';
 import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
@@ -40,7 +39,6 @@ export const HomePage: React.FC = () => {
       <WhyChooseUs />
       <Services />
       <UseCases />
-      <CaseStudies />
       <About />
       <Contact />
 
