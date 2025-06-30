@@ -51,6 +51,12 @@ export const Contact: React.FC = () => {
     const initRecaptcha = () => {
       if (window.grecaptcha && !recaptchaWidgetId) {
         try {
+          // Clear any existing content in the container before rendering
+          const container = document.getElementById('recaptcha-container');
+          if (container) {
+            container.innerHTML = '';
+          }
+          
           const widgetId = window.grecaptcha.render('recaptcha-container', {
             sitekey: '6Lc0_3IrAAAAAAQdJ98YcfxXp4Ebve7HWsysMNCu',
             theme: 'light',
@@ -87,8 +93,30 @@ export const Contact: React.FC = () => {
         }
       }, 100);
 
-      return () => clearInterval(checkRecaptcha);
+      // Cleanup function
+      return () => {
+        clearInterval(checkRecaptcha);
+        // Reset reCAPTCHA widget when component unmounts
+        if (window.grecaptcha && recaptchaWidgetId !== null) {
+          try {
+            window.grecaptcha.reset(recaptchaWidgetId);
+          } catch (error) {
+            console.error('Error resetting reCAPTCHA:', error);
+          }
+        }
+      };
     }
+
+    // Cleanup function for when reCAPTCHA is already loaded
+    return () => {
+      if (window.grecaptcha && recaptchaWidgetId !== null) {
+        try {
+          window.grecaptcha.reset(recaptchaWidgetId);
+        } catch (error) {
+          console.error('Error resetting reCAPTCHA:', error);
+        }
+      }
+    };
   }, [recaptchaWidgetId]);
 
   const handleSubmit = (e: React.FormEvent) => {
