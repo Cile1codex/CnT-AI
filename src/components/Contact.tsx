@@ -9,7 +9,6 @@ export const Contact: React.FC = () => {
     email: '',
     company: '',
     message: '',
-    timeFrame: '',
   });
 
   useEffect(() => {
@@ -112,25 +111,6 @@ export const Contact: React.FC = () => {
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200"
                     placeholder="Your company"
                   />
-                </div>
-
-                <div>
-                  <label htmlFor="timeFrame" className="block text-sm font-medium text-slate-700 mb-2">
-                    Timeline for Implementation
-                  </label>
-                  <select
-                    id="timeFrame"
-                    name="timeFrame"
-                    value={formData.timeFrame}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200"
-                  >
-                    <option value="">Select timeline</option>
-                    <option value="immediate">Immediate (within 2 weeks)</option>
-                    <option value="month">Within a month</option>
-                    <option value="quarter">Within 3 months</option>
-                    <option value="exploring">Just exploring options</option>
-                  </select>
                 </div>
 
                 <div>
