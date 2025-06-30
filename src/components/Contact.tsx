@@ -19,7 +19,6 @@ declare global {
 export const Contact: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const recaptchaWidgetIdRef = useRef<number | null>(null);
-  const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -52,9 +51,9 @@ export const Contact: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // Initialize reCAPTCHA when component mounts and script is loaded
+    // Initialize reCAPTCHA when the API is fully loaded
     const initRecaptcha = () => {
-      if (window.grecaptcha && recaptchaWidgetIdRef.current === null) {
+      if (window.grecaptcha && window.grecaptcha.render && recaptchaWidgetIdRef.current === null) {
         try {
           // Clear any existing content in the container before rendering
           const container = document.getElementById('recaptcha-container');
@@ -86,29 +85,22 @@ export const Contact: React.FC = () => {
       }
     };
 
-    // Check if reCAPTCHA script is already loaded
-    if (window.grecaptcha) {
+    // Listen for the custom recaptchaLoaded event
+    const handleRecaptchaLoad = () => {
+      initRecaptcha();
+    };
+
+    // Check if reCAPTCHA is already loaded
+    if (window.grecaptcha && window.grecaptcha.render) {
       initRecaptcha();
     } else {
-      // Wait for reCAPTCHA script to load
-      intervalIdRef.current = setInterval(() => {
-        if (window.grecaptcha) {
-          if (intervalIdRef.current) {
-            clearInterval(intervalIdRef.current);
-            intervalIdRef.current = null;
-          }
-          initRecaptcha();
-        }
-      }, 100);
+      // Listen for the recaptchaLoaded event
+      window.addEventListener('recaptchaLoaded', handleRecaptchaLoad);
     }
 
     // Cleanup function
     return () => {
-      // Clear interval if it exists
-      if (intervalIdRef.current) {
-        clearInterval(intervalIdRef.current);
-        intervalIdRef.current = null;
-      }
+      window.removeEventListener('recaptchaLoaded', handleRecaptchaLoad);
       
       // Reset reCAPTCHA widget when component unmounts
       if (window.grecaptcha && recaptchaWidgetIdRef.current !== null) {

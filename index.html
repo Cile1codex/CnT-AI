@@ -39,8 +39,14 @@
     <meta name="msapplication-TileColor" content="#0ea5e9" />
     <meta name="msapplication-TileImage" content="/image.png" />
     
-    <!-- Google reCAPTCHA v2 -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Google reCAPTCHA v2 with explicit render and onload callback -->
+    <script>
+      function onRecaptchaLoad() {
+        // Dispatch custom event when reCAPTCHA is fully loaded
+        window.dispatchEvent(new CustomEvent('recaptchaLoaded'));
+      }
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
     
     <style>
       /* Prevent flash of unstyled content */
