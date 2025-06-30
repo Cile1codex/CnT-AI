@@ -1,9 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
 import { Logo } from '../components/Logo';
 
 export const CaseStudyAutomatedCustomerSupport: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleBookConsultation = () => {
+    navigate('/#contact');
+    // Small delay to ensure navigation completes before scrolling
+    setTimeout(() => {
+      const element = document.getElementById('contact');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50">
       {/* Header */}
@@ -129,12 +142,12 @@ export const CaseStudyAutomatedCustomerSupport: React.FC = () => {
                 <p className="text-sky-100 mb-6 max-w-2xl mx-auto">
                   Let's build a custom AI solution that handles your customer inquiries 24/7 while maintaining the personal touch your customers expect.
                 </p>
-                <Link
-                  to="/#contact"
+                <button
+                  onClick={handleBookConsultation}
                   className="inline-flex items-center bg-white text-sky-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105"
                 >
                   Book Your Free Consultation
-                </Link>
+                </button>
               </div>
             </section>
           </div>
