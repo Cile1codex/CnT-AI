@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Send, Phone, Mail, MapPin, Calendar } from 'lucide-react';
 import { Button } from './ui/Button';
 
@@ -168,14 +169,12 @@ export const Contact: React.FC = () => {
                     />
                     <label htmlFor="privacyAccepted" className="ml-3 text-sm text-slate-700 leading-relaxed">
                       I have read and agree to the{' '}
-                      <a
-                        href="https://cnt-ai.com/privacy-policy"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Link
+                        to="/privacy-policy"
                         className="text-slate-600 hover:text-sky-400 transition-colors duration-200"
                       >
                         Privacy Policy
-                      </a>
+                      </Link>
                     </label>
                   </div>
                   {errors.privacyAccepted && (
