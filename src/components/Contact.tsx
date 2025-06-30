@@ -3,8 +3,21 @@ import { Link } from 'react-router-dom';
 import { Send, Phone, Mail, MapPin, Calendar } from 'lucide-react';
 import { Button } from './ui/Button';
 
+// Declare global grecaptcha
+declare global {
+  interface Window {
+    grecaptcha: {
+      render: (container: string | Element, parameters: any) => number;
+      getResponse: (widgetId?: number) => string;
+      reset: (widgetId?: number) => void;
+      execute: (widgetId?: number) => void;
+    };
+  }
+}
+
 export const Contact: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [recaptchaWidgetId, setRecaptchaWidgetId] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +27,7 @@ export const Contact: React.FC = () => {
   });
   const [errors, setErrors] = useState({
     privacyAccepted: '',
+    recaptcha: '',
   });
 
   useEffect(() => {
@@ -32,21 +46,94 @@ export const Contact: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    // Initialize reCAPTCHA when component mounts and script is loaded
+    const initRecaptcha = () => {
+      if (window.grecaptcha && !recaptchaWidgetId) {
+        try {
+          const widgetId = window.grecaptcha.render('recaptcha-container', {
+            sitekey: '6Lc0_3IrAAAAAAQdJ98YcfxXp4Ebve7HWsysMNCu',
+            theme: 'light',
+            size: 'normal',
+            callback: () => {
+              // Clear reCAPTCHA error when user completes it
+              setErrors(prev => ({ ...prev, recaptcha: '' }));
+            },
+            'expired-callback': () => {
+              // Handle expired reCAPTCHA
+              setErrors(prev => ({ ...prev, recaptcha: 'reCAPTCHA has expired. Please verify again.' }));
+            },
+            'error-callback': () => {
+              // Handle reCAPTCHA error
+              setErrors(prev => ({ ...prev, recaptcha: 'reCAPTCHA error. Please try again.' }));
+            }
+          });
+          setRecaptchaWidgetId(widgetId);
+        } catch (error) {
+          console.error('Error initializing reCAPTCHA:', error);
+        }
+      }
+    };
+
+    // Check if reCAPTCHA script is already loaded
+    if (window.grecaptcha) {
+      initRecaptcha();
+    } else {
+      // Wait for reCAPTCHA script to load
+      const checkRecaptcha = setInterval(() => {
+        if (window.grecaptcha) {
+          clearInterval(checkRecaptcha);
+          initRecaptcha();
+        }
+      }, 100);
+
+      return () => clearInterval(checkRecaptcha);
+    }
+  }, [recaptchaWidgetId]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
     // Clear previous errors
-    setErrors({ privacyAccepted: '' });
+    setErrors({ privacyAccepted: '', recaptcha: '' });
+    
+    let hasErrors = false;
+    const newErrors = { privacyAccepted: '', recaptcha: '' };
     
     // Validate privacy policy checkbox
     if (!formData.privacyAccepted) {
-      setErrors({ privacyAccepted: 'You must agree to the Privacy Policy to continue.' });
+      newErrors.privacyAccepted = 'You must agree to the Privacy Policy to continue.';
+      hasErrors = true;
+    }
+    
+    // Validate reCAPTCHA
+    const recaptchaResponse = window.grecaptcha?.getResponse(recaptchaWidgetId || undefined);
+    if (!recaptchaResponse) {
+      newErrors.recaptcha = 'Please complete the reCAPTCHA verification.';
+      hasErrors = true;
+    }
+    
+    if (hasErrors) {
+      setErrors(newErrors);
       return;
     }
     
-    console.log('Form submitted:', formData);
+    console.log('Form submitted:', { ...formData, recaptchaResponse });
     // Handle form submission here
     alert('Thank you for your interest! We\'ll be in touch within 24 hours.');
+    
+    // Reset form and reCAPTCHA
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      message: '',
+      privacyAccepted: false,
+    });
+    
+    if (window.grecaptcha && recaptchaWidgetId !== null) {
+      window.grecaptcha.reset(recaptchaWidgetId);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -60,7 +147,7 @@ export const Contact: React.FC = () => {
 
     // Clear error when user checks the checkbox
     if (name === 'privacyAccepted' && checked) {
-      setErrors({ privacyAccepted: '' });
+      setErrors(prev => ({ ...prev, privacyAccepted: '' }));
     }
   };
 
@@ -184,9 +271,45 @@ export const Contact: React.FC = () => {
                   )}
                 </div>
 
+                {/* reCAPTCHA */}
+                <div className="space-y-2">
+                  <div 
+                    id="recaptcha-container" 
+                    className={`flex justify-center ${errors.recaptcha ? 'border-2 border-red-500 rounded-lg p-2' : ''}`}
+                  ></div>
+                  {errors.recaptcha && (
+                    <p className="text-red-600 text-sm font-medium text-center" role="alert">
+                      {errors.recaptcha}
+                    </p>
+                  )}
+                </div>
+
                 <Button type="submit" size="lg" className="w-full" icon={Send}>
                   Book Your Free Consultation
                 </Button>
+
+                {/* reCAPTCHA Notice */}
+                <p className="text-xs text-slate-500 text-center leading-relaxed">
+                  This site is protected by reCAPTCHA and the Google{' '}
+                  <a 
+                    href="https://policies.google.com/privacy" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-slate-600 hover:text-sky-400 transition-colors duration-200"
+                  >
+                    Privacy Policy
+                  </a>{' '}
+                  and{' '}
+                  <a 
+                    href="https://policies.google.com/terms" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-slate-600 hover:text-sky-400 transition-colors duration-200"
+                  >
+                    Terms of Service
+                  </a>{' '}
+                  apply.
+                </p>
               </form>
             </div>
           </div>
