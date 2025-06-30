@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Send, Phone, Mail, MapPin, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from './ui/Button';
 
 export const Contact: React.FC = () => {
@@ -9,6 +10,10 @@ export const Contact: React.FC = () => {
     email: '',
     company: '',
     message: '',
+    privacyAccepted: false,
+  });
+  const [errors, setErrors] = useState({
+    privacyAccepted: '',
   });
 
   useEffect(() => {
@@ -29,16 +34,34 @@ export const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Clear previous errors
+    setErrors({ privacyAccepted: '' });
+    
+    // Validate privacy policy checkbox
+    if (!formData.privacyAccepted) {
+      setErrors({ privacyAccepted: 'You must agree to the Privacy Policy to continue.' });
+      return;
+    }
+    
     console.log('Form submitted:', formData);
     // Handle form submission here
     alert('Thank you for your interest! We\'ll be in touch within 24 hours.');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    const checked = type === 'checkbox' ? (e.target as HTMLInputElement).checked : undefined;
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: type === 'checkbox' ? checked : value,
     });
+
+    // Clear error when user checks the checkbox
+    if (name === 'privacyAccepted' && checked) {
+      setErrors({ privacyAccepted: '' });
+    }
   };
 
   return (
@@ -127,6 +150,40 @@ export const Contact: React.FC = () => {
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 resize-none"
                     placeholder="Describe the manual processes that are wasting your time..."
                   />
+                </div>
+
+                {/* Privacy Policy Checkbox */}
+                <div className="space-y-2">
+                  <div className="flex items-start">
+                    <input
+                      type="checkbox"
+                      id="privacyAccepted"
+                      name="privacyAccepted"
+                      checked={formData.privacyAccepted}
+                      onChange={handleChange}
+                      required
+                      aria-describedby="privacy-error"
+                      className={`mt-1 h-4 w-4 text-sky-600 border-2 rounded focus:ring-sky-500 focus:ring-2 transition-colors duration-200 ${
+                        errors.privacyAccepted ? 'border-red-500' : 'border-slate-300'
+                      }`}
+                    />
+                    <label htmlFor="privacyAccepted" className="ml-3 text-sm text-slate-700 leading-relaxed">
+                      I have read and agree to the{' '}
+                      <Link
+                        to="/privacy-policy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sky-600 hover:text-sky-700 underline font-medium transition-colors duration-200"
+                      >
+                        Privacy Policy
+                      </Link>
+                    </label>
+                  </div>
+                  {errors.privacyAccepted && (
+                    <p id="privacy-error" className="text-red-600 text-sm font-medium" role="alert">
+                      {errors.privacyAccepted}
+                    </p>
+                  )}
                 </div>
 
                 <Button type="submit" size="lg" className="w-full" icon={Send}>
