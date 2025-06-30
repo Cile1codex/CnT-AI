@@ -3,21 +3,8 @@ import { Link } from 'react-router-dom';
 import { Send, Phone, Mail, MapPin, Calendar } from 'lucide-react';
 import { Button } from './ui/Button';
 
-// Declare global grecaptcha object
-declare global {
-  interface Window {
-    grecaptcha: {
-      render: (container: string | Element, parameters: any) => number;
-      getResponse: (widgetId?: number) => string;
-      reset: (widgetId?: number) => void;
-      execute: (widgetId?: number) => void;
-    };
-  }
-}
-
 export const Contact: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [recaptchaWidgetId, setRecaptchaWidgetId] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,7 +14,6 @@ export const Contact: React.FC = () => {
   });
   const [errors, setErrors] = useState({
     privacyAccepted: '',
-    recaptcha: '',
   });
 
   useEffect(() => {
@@ -46,77 +32,21 @@ export const Contact: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    // Initialize reCAPTCHA when component mounts and script is loaded
-    const initRecaptcha = () => {
-      if (window.grecaptcha && !recaptchaWidgetId) {
-        const widgetId = window.grecaptcha.render('recaptcha-container', {
-          sitekey: 'SITE_KEY_HERE', // Replace with your actual site key
-          theme: 'light',
-          size: 'normal',
-        });
-        setRecaptchaWidgetId(widgetId);
-      }
-    };
-
-    // Check if reCAPTCHA is already loaded
-    if (window.grecaptcha) {
-      initRecaptcha();
-    } else {
-      // Wait for reCAPTCHA to load
-      const checkRecaptcha = setInterval(() => {
-        if (window.grecaptcha) {
-          initRecaptcha();
-          clearInterval(checkRecaptcha);
-        }
-      }, 100);
-
-      return () => clearInterval(checkRecaptcha);
-    }
-  }, [recaptchaWidgetId]);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
     // Clear previous errors
-    setErrors({ privacyAccepted: '', recaptcha: '' });
-    
-    let hasErrors = false;
-    const newErrors = { privacyAccepted: '', recaptcha: '' };
+    setErrors({ privacyAccepted: '' });
     
     // Validate privacy policy checkbox
     if (!formData.privacyAccepted) {
-      newErrors.privacyAccepted = 'You must agree to the Privacy Policy to continue.';
-      hasErrors = true;
-    }
-    
-    // Validate reCAPTCHA
-    const recaptchaResponse = window.grecaptcha?.getResponse(recaptchaWidgetId || undefined);
-    if (!recaptchaResponse) {
-      newErrors.recaptcha = 'Please complete the reCAPTCHA verification.';
-      hasErrors = true;
-    }
-    
-    if (hasErrors) {
-      setErrors(newErrors);
+      setErrors({ privacyAccepted: 'You must agree to the Privacy Policy to continue.' });
       return;
     }
     
-    console.log('Form submitted:', { ...formData, recaptchaResponse });
+    console.log('Form submitted:', formData);
     // Handle form submission here
     alert('Thank you for your interest! We\'ll be in touch within 24 hours.');
-    
-    // Reset form and reCAPTCHA
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      message: '',
-      privacyAccepted: false,
-    });
-    if (window.grecaptcha && recaptchaWidgetId !== null) {
-      window.grecaptcha.reset(recaptchaWidgetId);
-    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -130,7 +60,7 @@ export const Contact: React.FC = () => {
 
     // Clear error when user checks the checkbox
     if (name === 'privacyAccepted' && checked) {
-      setErrors(prev => ({ ...prev, privacyAccepted: '' }));
+      setErrors({ privacyAccepted: '' });
     }
   };
 
@@ -254,42 +184,9 @@ export const Contact: React.FC = () => {
                   )}
                 </div>
 
-                {/* reCAPTCHA */}
-                <div className="space-y-2">
-                  <div id="recaptcha-container" className="flex justify-center"></div>
-                  {errors.recaptcha && (
-                    <p className="text-red-600 text-sm font-medium text-center" role="alert">
-                      {errors.recaptcha}
-                    </p>
-                  )}
-                </div>
-
                 <Button type="submit" size="lg" className="w-full" icon={Send}>
                   Book Your Free Consultation
                 </Button>
-
-                {/* reCAPTCHA Notice */}
-                <p className="text-xs text-slate-500 text-center leading-relaxed">
-                  This site is protected by reCAPTCHA and the Google{' '}
-                  <a 
-                    href="https://policies.google.com/privacy" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-slate-600 hover:text-sky-400 transition-colors duration-200"
-                  >
-                    Privacy Policy
-                  </a>{' '}
-                  and{' '}
-                  <a 
-                    href="https://policies.google.com/terms" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-slate-600 hover:text-sky-400 transition-colors duration-200"
-                  >
-                    Terms of Service
-                  </a>{' '}
-                  apply.
-                </p>
               </form>
             </div>
           </div>
