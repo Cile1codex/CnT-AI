@@ -6,7 +6,6 @@ import { WhyChooseUs } from '../components/WhyChooseUs';
 import { Services } from '../components/Services';
 import { UseCases } from '../components/UseCases';
 import { About } from '../components/About';
-import { Testimonials } from '../components/Testimonials';
 import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
 
@@ -41,7 +40,6 @@ export const HomePage: React.FC = () => {
       <Services />
       <UseCases />
       <About />
-      <Testimonials />
       <Contact />
 
       {/* Floating CTA Button for Mobile */}
