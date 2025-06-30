@@ -20,6 +20,13 @@ export const UseCases: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const useCases = [
     {
       icon: Store,
@@ -133,7 +140,10 @@ export const UseCases: React.FC = () => {
             <p className="text-sky-100 mb-6 max-w-2xl mx-auto">
               Every business has unique challenges. Let us show you how AI automation can solve yours with a personalized demo.
             </p>
-            <button className="bg-white text-sky-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105">
+            <button 
+              onClick={scrollToContact}
+              className="bg-white text-sky-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+            >
               Schedule Strategy Call
             </button>
           </div>
