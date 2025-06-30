@@ -172,7 +172,7 @@ export const Contact: React.FC = () => {
                         href="https://cnt-ai.com/privacy-policy"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sky-600 hover:text-sky-700 underline font-medium transition-colors duration-200"
+                        className="text-slate-600 hover:text-sky-600 transition-colors duration-200"
                       >
                         Privacy Policy
                       </a>
