@@ -27,6 +27,13 @@ export const UseCases: React.FC = () => {
     }
   };
 
+  const scrollToCaseStudy = (caseStudyId: string) => {
+    const element = document.getElementById(caseStudyId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const useCases = [
     {
       icon: Store,
@@ -36,6 +43,7 @@ export const UseCases: React.FC = () => {
       solution: 'AI chatbots handling 80% of customer questions automatically',
       results: ['24/7 customer support', '70% reduction in support costs', '95% customer satisfaction'],
       color: 'from-sky-500 to-blue-600',
+      caseStudyId: 'ecommerce-case-study',
     },
     {
       icon: Truck,
@@ -45,6 +53,7 @@ export const UseCases: React.FC = () => {
       solution: 'Automated lead capture with smart qualification and booking flows',
       results: ['50% more qualified leads', '90% faster response time', 'Zero missed opportunities'],
       color: 'from-emerald-500 to-teal-600',
+      caseStudyId: 'services-case-study',
     },
     {
       icon: Users,
@@ -54,6 +63,7 @@ export const UseCases: React.FC = () => {
       solution: 'Automated workflows for contracts, payments, and project kickoffs',
       results: ['5x faster onboarding', 'Consistent client experience', 'More time for strategy'],
       color: 'from-purple-500 to-indigo-600',
+      caseStudyId: 'agency-case-study',
     },
     {
       icon: Laptop,
@@ -63,6 +73,7 @@ export const UseCases: React.FC = () => {
       solution: 'Intelligent onboarding sequences with personalized guidance',
       results: ['60% higher activation', '40% churn reduction', 'Scalable growth'],
       color: 'from-orange-500 to-red-600',
+      caseStudyId: 'saas-case-study',
     },
   ];
 
@@ -124,7 +135,10 @@ export const UseCases: React.FC = () => {
               </div>
 
               <div className="mt-8 pt-6 border-t border-slate-700">
-                <button className="text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-200">
+                <button 
+                  onClick={() => scrollToCaseStudy(useCase.caseStudyId)}
+                  className="text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-200 hover:translate-x-2 transition-transform"
+                >
                   See Full Case Study →
                 </button>
               </div>
