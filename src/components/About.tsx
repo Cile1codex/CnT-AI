@@ -20,6 +20,13 @@ export const About: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-blue-50 to-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +55,10 @@ export const About: React.FC = () => {
             <p className="text-sky-100 mb-6 max-w-2xl mx-auto">
               Let's build a system that saves you time, reduces stress, and keeps working while you sleep.
             </p>
-            <button className="bg-white text-sky-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105">
+            <button 
+              onClick={scrollToContact}
+              className="bg-white text-sky-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+            >
               Book Your Free Consultation
             </button>
           </div>
