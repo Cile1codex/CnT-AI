@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Send, Phone, Mail, MapPin, Calendar } from 'lucide-react';
 import { Button } from './ui/Button';
@@ -17,7 +17,8 @@ declare global {
 
 export const Contact: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [recaptchaWidgetId, setRecaptchaWidgetId] = useState<number | null>(null);
+  const recaptchaWidgetIdRef = useRef<number | null>(null);
+  const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -49,7 +50,7 @@ export const Contact: React.FC = () => {
   useEffect(() => {
     // Initialize reCAPTCHA when component mounts and script is loaded
     const initRecaptcha = () => {
-      if (window.grecaptcha && !recaptchaWidgetId) {
+      if (window.grecaptcha && recaptchaWidgetIdRef.current === null) {
         try {
           // Clear any existing content in the container before rendering
           const container = document.getElementById('recaptcha-container');
@@ -74,7 +75,7 @@ export const Contact: React.FC = () => {
               setErrors(prev => ({ ...prev, recaptcha: 'reCAPTCHA error. Please try again.' }));
             }
           });
-          setRecaptchaWidgetId(widgetId);
+          recaptchaWidgetIdRef.current = widgetId;
         } catch (error) {
           console.error('Error initializing reCAPTCHA:', error);
         }
@@ -86,38 +87,35 @@ export const Contact: React.FC = () => {
       initRecaptcha();
     } else {
       // Wait for reCAPTCHA script to load
-      const checkRecaptcha = setInterval(() => {
+      intervalIdRef.current = setInterval(() => {
         if (window.grecaptcha) {
-          clearInterval(checkRecaptcha);
+          if (intervalIdRef.current) {
+            clearInterval(intervalIdRef.current);
+            intervalIdRef.current = null;
+          }
           initRecaptcha();
         }
       }, 100);
-
-      // Cleanup function
-      return () => {
-        clearInterval(checkRecaptcha);
-        // Reset reCAPTCHA widget when component unmounts
-        if (window.grecaptcha && recaptchaWidgetId !== null) {
-          try {
-            window.grecaptcha.reset(recaptchaWidgetId);
-          } catch (error) {
-            console.error('Error resetting reCAPTCHA:', error);
-          }
-        }
-      };
     }
 
-    // Cleanup function for when reCAPTCHA is already loaded
+    // Cleanup function
     return () => {
-      if (window.grecaptcha && recaptchaWidgetId !== null) {
+      // Clear interval if it exists
+      if (intervalIdRef.current) {
+        clearInterval(intervalIdRef.current);
+        intervalIdRef.current = null;
+      }
+      
+      // Reset reCAPTCHA widget when component unmounts
+      if (window.grecaptcha && recaptchaWidgetIdRef.current !== null) {
         try {
-          window.grecaptcha.reset(recaptchaWidgetId);
+          window.grecaptcha.reset(recaptchaWidgetIdRef.current);
         } catch (error) {
           console.error('Error resetting reCAPTCHA:', error);
         }
       }
     };
-  }, [recaptchaWidgetId]);
+  }, []); // Empty dependency array ensures this runs only once
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -135,7 +133,7 @@ export const Contact: React.FC = () => {
     }
     
     // Validate reCAPTCHA
-    const recaptchaResponse = window.grecaptcha?.getResponse(recaptchaWidgetId || undefined);
+    const recaptchaResponse = window.grecaptcha?.getResponse(recaptchaWidgetIdRef.current || undefined);
     if (!recaptchaResponse) {
       newErrors.recaptcha = 'Please complete the reCAPTCHA verification.';
       hasErrors = true;
@@ -159,8 +157,8 @@ export const Contact: React.FC = () => {
       privacyAccepted: false,
     });
     
-    if (window.grecaptcha && recaptchaWidgetId !== null) {
-      window.grecaptcha.reset(recaptchaWidgetId);
+    if (window.grecaptcha && recaptchaWidgetIdRef.current !== null) {
+      window.grecaptcha.reset(recaptchaWidgetIdRef.current);
     }
   };
 
