@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Clock, DollarSign, Settings, Zap } from 'lucide-react';
+import { Clock, DollarSign, Settings, Zap, Target } from 'lucide-react';
 
 export const WhyChooseUs: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,31 +23,38 @@ export const WhyChooseUs: React.FC = () => {
   const features = [
     {
       icon: Zap,
-      title: 'Lightning Speed',
-      description: 'Deploy AI automation solutions in days, not months. Get immediate results with our proven frameworks.',
+      title: 'Real AI. Real Results.',
+      description: 'Our solutions integrate directly with your workflows and tools.',
       color: 'text-sky-400',
       bgColor: 'bg-sky-500/10',
     },
     {
-      icon: Settings,
-      title: 'Full Customization',
-      description: 'Tailored solutions that fit your exact business needs. No cookie-cutter approaches.',
+      icon: Clock,
+      title: '24/7 Systems',
+      description: 'From chatbots to backend processes, your ops never sleep.',
       color: 'text-emerald-400',
       bgColor: 'bg-emerald-500/10',
     },
     {
-      icon: Clock,
-      title: 'Save 10+ Hours Weekly',
-      description: 'Eliminate repetitive tasks and free up your team to focus on high-value activities.',
+      icon: Settings,
+      title: 'Custom-Built Logic',
+      description: 'No templates. Every automation is designed for your business.',
       color: 'text-purple-400',
       bgColor: 'bg-purple-500/10',
     },
     {
-      icon: DollarSign,
-      title: 'Guaranteed ROI',
-      description: 'See measurable cost savings within the first month or we work until you do.',
+      icon: Target,
+      title: 'Fewer Tasks. More Growth.',
+      description: 'Free up your team and scale faster with automation.',
       color: 'text-orange-400',
       bgColor: 'bg-orange-500/10',
+    },
+    {
+      icon: DollarSign,
+      title: 'Quick Deployment. Fast ROI.',
+      description: 'Our clients start seeing results within days.',
+      color: 'text-cyan-400',
+      bgColor: 'bg-cyan-500/10',
     },
   ];
 
@@ -58,14 +65,11 @@ export const WhyChooseUs: React.FC = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
-            Why Choose <span className="bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent">CnT AI</span>?
+            Why Leading Teams Choose <span className="bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent">CnT AI</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            We don't just build automation – we deliver transformation. Here's what sets us apart from the competition.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={feature.title}
@@ -87,28 +91,6 @@ export const WhyChooseUs: React.FC = () => {
               </p>
             </div>
           ))}
-        </div>
-
-        <div className={`mt-16 text-center transition-all duration-1000 delay-500 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <div className="bg-gradient-to-r from-sky-500 to-emerald-500 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Business?</h3>
-            <p className="text-sky-100 mb-6 max-w-2xl mx-auto">
-              Join hundreds of companies who've already eliminated hours of manual work with our AI automation solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <span className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3 font-semibold">
-                ⚡ 48-hour implementation
-              </span>
-              <span className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3 font-semibold">
-                💰 Average 40% cost reduction
-              </span>
-              <span className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3 font-semibold">
-                🎯 100% custom solutions
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

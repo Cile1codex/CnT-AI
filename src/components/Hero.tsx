@@ -35,23 +35,22 @@ export const Hero: React.FC = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              Stop Wasting Time on
+              AI-Powered Automation
               <span className="block bg-gradient-to-r from-sky-400 via-emerald-400 to-sky-300 bg-clip-text text-transparent">
-                Backend Chaos
+                for Modern Business
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-              CnT AI automates your time-consuming backend processes with intelligent solutions. 
-              Focus on growth while we handle the repetitive work that's holding you back.
+              We build smart systems that automate your backend, customer support, websites, and lead flows — so your business works around the clock.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button size="lg" onClick={() => scrollToSection('contact')} icon={ArrowRight}>
-                Book Free Demo
+                Book a Free Consultation
               </Button>
               <Button variant="outline" size="lg" onClick={() => scrollToSection('services')}>
-                Explore Solutions
+                See What We Automate
               </Button>
             </div>
           </div>
@@ -62,20 +61,20 @@ export const Hero: React.FC = () => {
           }`}>
             <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-sky-500/50 transition-all duration-300 hover:transform hover:scale-105">
               <Bot className="h-12 w-12 text-sky-400 mb-4 mx-auto" />
-              <h3 className="text-white font-semibold text-lg mb-2">AI-Powered Automation</h3>
-              <p className="text-gray-400 text-sm">Intelligent systems that learn and adapt to your business needs</p>
+              <h3 className="text-white font-semibold text-lg mb-2">Real AI. Real Results.</h3>
+              <p className="text-gray-400 text-sm">Our solutions integrate directly with your workflows and tools</p>
             </div>
             
             <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:scale-105">
               <Zap className="h-12 w-12 text-emerald-400 mb-4 mx-auto" />
-              <h3 className="text-white font-semibold text-lg mb-2">Lightning Fast Setup</h3>
-              <p className="text-gray-400 text-sm">Get automated workflows running in days, not months</p>
+              <h3 className="text-white font-semibold text-lg mb-2">24/7 Systems</h3>
+              <p className="text-gray-400 text-sm">From chatbots to backend processes, your ops never sleep</p>
             </div>
             
             <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105">
               <TrendingUp className="h-12 w-12 text-purple-400 mb-4 mx-auto" />
-              <h3 className="text-white font-semibold text-lg mb-2">Measurable ROI</h3>
-              <p className="text-gray-400 text-sm">Track efficiency gains and cost savings in real-time</p>
+              <h3 className="text-white font-semibold text-lg mb-2">Quick Deployment. Fast ROI.</h3>
+              <p className="text-gray-400 text-sm">Our clients start seeing results within days</p>
             </div>
           </div>
         </div>
