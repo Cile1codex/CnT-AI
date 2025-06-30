@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Send, Phone, Mail, MapPin, Calendar } from 'lucide-react';
 import { Button } from './ui/Button';
+import { supabase, type ConsultationRequest } from '../lib/supabase';
 
 // Declare global grecaptcha
 declare global {
@@ -29,7 +30,10 @@ export const Contact: React.FC = () => {
   const [errors, setErrors] = useState({
     privacyAccepted: '',
     recaptcha: '',
+    submission: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -117,14 +121,28 @@ export const Contact: React.FC = () => {
     };
   }, []); // Empty dependency array ensures this runs only once
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Clear previous errors
-    setErrors({ privacyAccepted: '', recaptcha: '' });
+    setErrors({ privacyAccepted: '', recaptcha: '', submission: '' });
+    setSubmitSuccess(false);
     
     let hasErrors = false;
-    const newErrors = { privacyAccepted: '', recaptcha: '' };
+    const newErrors = { privacyAccepted: '', recaptcha: '', submission: '' };
+    
+    // Validate required fields
+    if (!formData.name.trim()) {
+      hasErrors = true;
+    }
+    
+    if (!formData.email.trim()) {
+      hasErrors = true;
+    }
+    
+    if (!formData.message.trim()) {
+      hasErrors = true;
+    }
     
     // Validate privacy policy checkbox
     if (!formData.privacyAccepted) {
@@ -144,21 +162,50 @@ export const Contact: React.FC = () => {
       return;
     }
     
-    console.log('Form submitted:', { ...formData, recaptchaResponse });
-    // Handle form submission here
-    alert('Thank you for your interest! We\'ll be in touch within 24 hours.');
+    setIsSubmitting(true);
     
-    // Reset form and reCAPTCHA
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      message: '',
-      privacyAccepted: false,
-    });
-    
-    if (window.grecaptcha && recaptchaWidgetIdRef.current !== null) {
-      window.grecaptcha.reset(recaptchaWidgetIdRef.current);
+    try {
+      // Prepare data for Supabase
+      const consultationData: Omit<ConsultationRequest, 'id' | 'submitted_at'> = {
+        full_name: formData.name.trim(),
+        email: formData.email.trim(),
+        company_name: formData.company.trim() || null,
+        automation_needs: formData.message.trim(),
+        policy_accepted: formData.privacyAccepted,
+      };
+      
+      // Insert into Supabase
+      const { error } = await supabase
+        .from('consultations')
+        .insert([consultationData]);
+      
+      if (error) {
+        throw error;
+      }
+      
+      // Success! Show success message and reset form
+      setSubmitSuccess(true);
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        message: '',
+        privacyAccepted: false,
+      });
+      
+      // Reset reCAPTCHA
+      if (window.grecaptcha && recaptchaWidgetIdRef.current !== null) {
+        window.grecaptcha.reset(recaptchaWidgetIdRef.current);
+      }
+      
+    } catch (error) {
+      console.error('Error submitting consultation request:', error);
+      setErrors(prev => ({ 
+        ...prev, 
+        submission: 'There was an error submitting your request. Please try again.' 
+      }));
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -174,6 +221,11 @@ export const Contact: React.FC = () => {
     // Clear error when user checks the checkbox
     if (name === 'privacyAccepted' && checked) {
       setErrors(prev => ({ ...prev, privacyAccepted: '' }));
+    }
+    
+    // Clear submission error when user starts typing
+    if (errors.submission) {
+      setErrors(prev => ({ ...prev, submission: '' }));
     }
   };
 
@@ -199,6 +251,24 @@ export const Contact: React.FC = () => {
             <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-lg">
               <h3 className="text-2xl font-bold text-slate-800 mb-6">Book Your Free Consultation</h3>
               
+              {/* Success Message */}
+              {submitSuccess && (
+                <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-lg">
+                  <p className="text-emerald-800 font-medium">
+                    ✅ Thank you! We'll be in touch within 24 hours.
+                  </p>
+                </div>
+              )}
+              
+              {/* Submission Error */}
+              {errors.submission && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-800 font-medium">
+                    {errors.submission}
+                  </p>
+                </div>
+              )}
+              
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
@@ -212,7 +282,8 @@ export const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50"
                       placeholder="Your name"
                     />
                   </div>
@@ -228,7 +299,8 @@ export const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -244,7 +316,8 @@ export const Contact: React.FC = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50"
                     placeholder="Your company"
                   />
                 </div>
@@ -259,8 +332,9 @@ export const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     rows={4}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 resize-none"
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 resize-none disabled:opacity-50"
                     placeholder="Describe the manual processes that are wasting your time..."
                   />
                 </div>
@@ -275,8 +349,9 @@ export const Contact: React.FC = () => {
                       checked={formData.privacyAccepted}
                       onChange={handleChange}
                       required
+                      disabled={isSubmitting}
                       aria-describedby="privacy-error"
-                      className={`mt-1 h-4 w-4 text-sky-600 border-2 rounded focus:ring-sky-500 focus:ring-2 transition-colors duration-200 ${
+                      className={`mt-1 h-4 w-4 text-sky-600 border-2 rounded focus:ring-sky-500 focus:ring-2 transition-colors duration-200 disabled:opacity-50 ${
                         errors.privacyAccepted ? 'border-red-500' : 'border-slate-300'
                       }`}
                     />
@@ -310,8 +385,14 @@ export const Contact: React.FC = () => {
                   )}
                 </div>
 
-                <Button type="submit" size="lg" className="w-full" icon={Send}>
-                  Book Your Free Consultation
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className={`w-full ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} 
+                  icon={Send}
+                  onClick={undefined}
+                >
+                  {isSubmitting ? 'Submitting...' : 'Book Your Free Consultation'}
                 </Button>
 
                 {/* reCAPTCHA Notice */}
