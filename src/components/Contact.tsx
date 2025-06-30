@@ -379,8 +379,8 @@ export const Contact: React.FC = () => {
                     <MapPin className="h-6 w-6 text-purple-600" />
                   </div>
                   <div>
-                    <div className="text-slate-800 font-semibold">Visit Us</div>
-                    <div className="text-slate-600">San Francisco, CA</div>
+                    <div className="text-slate-800 font-semibold">Based in</div>
+                    <div className="text-slate-600">Skopje, North Macedonia</div>
                   </div>
                 </div>
 
