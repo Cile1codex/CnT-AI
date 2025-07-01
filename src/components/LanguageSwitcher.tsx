@@ -86,6 +86,10 @@ export const LanguageSwitcher: React.FC = () => {
           src={currentLanguage.flag}
           alt={currentLanguage.name}
           className="w-5 h-5 rounded-full object-cover"
+          onError={(e) => {
+            // Fallback if flag image fails to load
+            e.currentTarget.style.display = 'none';
+          }}
         />
         <span className="text-sm font-medium text-gray-300 hidden sm:inline">
           {currentLanguage.code.toUpperCase()}
@@ -112,6 +116,10 @@ export const LanguageSwitcher: React.FC = () => {
                   src={language.flag}
                   alt={language.name}
                   className="w-5 h-5 rounded-full object-cover"
+                  onError={(e) => {
+                    // Fallback if flag image fails to load
+                    e.currentTarget.style.display = 'none';
+                  }}
                 />
                 <span className="text-sm font-medium">{language.name}</span>
                 {currentLang === language.code && (
