@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Button } from './ui/Button';
-import { Logo } from './Logo';
-import { LanguageSwitcher } from './LanguageSwitcher';
+import { Button } from '../ui/Button';
+import { Logo } from '../Logo';
+import { LanguageSwitcher } from '../LanguageSwitcher';
+import { useTranslation } from '../../translations';
 
-export const Navbar: React.FC = () => {
+export const NavbarMK: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
+  const t = useTranslation('mk');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,12 +41,12 @@ export const Navbar: React.FC = () => {
   };
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'why-choose-us', label: 'Why Us' },
-    { id: 'services', label: 'Services' },
-    { id: 'use-cases', label: 'Use Cases' },
-    { id: 'about', label: 'About' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'home', label: t.nav.home },
+    { id: 'why-choose-us', label: t.nav.whyUs },
+    { id: 'services', label: t.nav.services },
+    { id: 'use-cases', label: t.nav.useCases },
+    { id: 'about', label: t.nav.about },
+    { id: 'contact', label: t.nav.contact },
   ];
 
   return (
@@ -78,7 +80,7 @@ export const Navbar: React.FC = () => {
             ))}
             <LanguageSwitcher />
             <Button size="sm" onClick={() => scrollToSection('contact')}>
-              Book Demo
+              {t.nav.bookDemo}
             </Button>
           </div>
 
@@ -112,7 +114,7 @@ export const Navbar: React.FC = () => {
             ))}
             <div className="px-3 py-2">
               <Button size="sm" onClick={() => scrollToSection('contact')} className="w-full">
-                Book Demo
+                {t.nav.bookDemo}
               </Button>
             </div>
           </div>
