@@ -63,5 +63,28 @@
         document.body.classList.add('loaded');
       });
     </script>
+
+    <!-- Google Translate Integration -->
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'en,mk',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+
+      function changeLanguage(langCode) {
+        const cookieValue = `/auto/${langCode}`;
+        document.cookie = `googtrans=${cookieValue};path=/`;
+        document.cookie = `googtrans=${cookieValue};domain=.${window.location.hostname};path=/`;
+        location.reload();
+      }
+    </script>
+
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </body>
 </html>
