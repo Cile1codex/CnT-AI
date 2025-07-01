@@ -246,7 +246,7 @@ export const EmailAutomation: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              ✉️ Ready to Automate Your Email Marketing?
+              Ready to Automate Your Email Marketing?
             </h2>
             <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
               Let's build email sequences that nurture leads, onboard customers, and drive sales automatically — so you can focus on growing your business.
@@ -256,7 +256,7 @@ export const EmailAutomation: React.FC = () => {
               onClick={handleBookDemo}
               className="bg-white text-orange-600 hover:bg-gray-100"
             >
-              Book Demo
+              ✉️ Launch your automated email strategy today
             </Button>
             <p className="text-orange-200 mt-4 text-sm">
               Free strategy session • Custom email audit • Implementation plan included

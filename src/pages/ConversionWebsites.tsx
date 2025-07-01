@@ -262,7 +262,7 @@ export const ConversionWebsites: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              🚀 Ready to Launch Your High-Converting Website?
+              Ready to Launch Your High-Converting Website?
             </h2>
             <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
               Let's build a website that doesn't just look amazing — it converts visitors into customers and grows your business automatically.
@@ -272,7 +272,7 @@ export const ConversionWebsites: React.FC = () => {
               onClick={handleBookDemo}
               className="bg-white text-emerald-600 hover:bg-gray-100"
             >
-              Book Demo
+              🚀 Start building your high-converting website today
             </Button>
             <p className="text-emerald-200 mt-4 text-sm">
               Free consultation • Custom proposal • No upfront costs

@@ -233,7 +233,7 @@ export const LeadFunnelAutomation: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              🎯 Ready to Fill Your Pipeline with Qualified Leads?
+              Ready to Fill Your Pipeline with Qualified Leads?
             </h2>
             <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
               Let's build an intelligent lead funnel that automatically captures, qualifies, and routes your best prospects while you focus on closing deals.
@@ -243,7 +243,7 @@ export const LeadFunnelAutomation: React.FC = () => {
               onClick={handleBookDemo}
               className="bg-white text-purple-600 hover:bg-gray-100"
             >
-              Book Demo
+              🎯 Let's automate your lead funnel → Book a free audit
             </Button>
             <p className="text-purple-200 mt-4 text-sm">
               Free audit • Custom strategy • Implementation roadmap included
