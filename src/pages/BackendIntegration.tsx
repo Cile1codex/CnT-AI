@@ -253,17 +253,18 @@ export const BackendIntegration: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Connect Your Entire Tech Stack?
+              🔧 Ready to Connect Your Entire Tech Stack?
             </h2>
             <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
               Let's build the backend infrastructure that makes your business run like clockwork — with all your tools working together seamlessly.
             </p>
-            <button 
+            <Button 
+              size="lg" 
               onClick={scrollToContact}
-              className="inline-flex items-center bg-white text-cyan-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 text-lg"
+              className="bg-white text-cyan-600 hover:bg-gray-100"
             >
-              🔧 Request a backend automation setup now
-            </button>
+              Request Backend Automation Setup Now
+            </Button>
             <p className="text-cyan-200 mt-4 text-sm">
               Free consultation • Custom integration plan • Implementation roadmap
             </p>
