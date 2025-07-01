@@ -36,8 +36,3 @@ html {
     scroll-behavior: auto;
   }
 }
-
-/* Language transition styles */
-body {
-  transition: opacity 300ms ease-in-out;
-}
