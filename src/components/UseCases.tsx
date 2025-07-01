@@ -153,7 +153,7 @@ export const UseCases: React.FC = () => {
               onClick={scrollToContact}
               className="bg-white text-sky-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105"
             >
-              Schedule Strategy Call
+              Book Demo
             </button>
           </div>
         </div>

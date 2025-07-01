@@ -60,7 +60,7 @@ export const AIChatbots: React.FC = () => {
           </p>
           
           <Button size="lg" onClick={scrollToContact} icon={ArrowRight}>
-            Book Your Custom Chatbot Demo
+            Book Demo
           </Button>
         </div>
       </section>
@@ -234,7 +234,7 @@ export const AIChatbots: React.FC = () => {
               onClick={scrollToContact}
               className="bg-white text-sky-600 hover:bg-gray-100"
             >
-              Book Your Custom Chatbot Demo Today
+              Book Demo
             </Button>
             <p className="text-sky-200 mt-4 text-sm">
               Free consultation • Custom demo • No commitment required

@@ -37,6 +37,14 @@ export const Navbar: React.FC = () => {
     setIsOpen(false);
   };
 
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
+
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'why-choose-us', label: 'Why Us' },
@@ -75,7 +83,7 @@ export const Navbar: React.FC = () => {
                 {item.label}
               </button>
             ))}
-            <Button size="sm" onClick={() => scrollToSection('contact')}>
+            <Button size="sm" onClick={scrollToContact}>
               Book Demo
             </Button>
           </div>
@@ -108,7 +116,7 @@ export const Navbar: React.FC = () => {
               </button>
             ))}
             <div className="px-3 py-2">
-              <Button size="sm" onClick={() => scrollToSection('contact')} className="w-full">
+              <Button size="sm" onClick={scrollToContact} className="w-full">
                 Book Demo
               </Button>
             </div>

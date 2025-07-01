@@ -60,7 +60,7 @@ export const BackendIntegration: React.FC = () => {
           </p>
           
           <Button size="lg" onClick={scrollToContact} icon={ArrowRight}>
-            Request Backend Automation Setup
+            Book Demo
           </Button>
         </div>
       </section>
@@ -263,7 +263,7 @@ export const BackendIntegration: React.FC = () => {
               onClick={scrollToContact}
               className="bg-white text-cyan-600 hover:bg-gray-100"
             >
-              Request Backend Automation Setup Now
+              Book Demo
             </Button>
             <p className="text-cyan-200 mt-4 text-sm">
               Free consultation • Custom integration plan • Implementation roadmap

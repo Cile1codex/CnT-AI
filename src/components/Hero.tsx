@@ -9,8 +9,15 @@ export const Hero: React.FC = () => {
     setIsVisible(true);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToServices = () => {
+    const element = document.getElementById('services');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -46,10 +53,10 @@ export const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button size="lg" onClick={() => scrollToSection('contact')} icon={ArrowRight}>
-                Book a Free Consultation
+              <Button size="lg" onClick={scrollToContact} icon={ArrowRight}>
+                Book Demo
               </Button>
-              <Button variant="outline" size="lg" onClick={() => scrollToSection('services')}>
+              <Button variant="outline" size="lg" onClick={scrollToServices}>
                 See What We Automate
               </Button>
             </div>

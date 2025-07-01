@@ -60,7 +60,7 @@ export const LeadFunnelAutomation: React.FC = () => {
           </p>
           
           <Button size="lg" onClick={scrollToContact} icon={ArrowRight}>
-            Let's Automate Your Lead Funnel
+            Book Demo
           </Button>
         </div>
       </section>
@@ -234,7 +234,7 @@ export const LeadFunnelAutomation: React.FC = () => {
               onClick={scrollToContact}
               className="bg-white text-purple-600 hover:bg-gray-100"
             >
-              Book a Free Lead Funnel Audit
+              Book Demo
             </Button>
             <p className="text-purple-200 mt-4 text-sm">
               Free audit • Custom strategy • Implementation roadmap included

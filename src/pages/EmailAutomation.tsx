@@ -60,7 +60,7 @@ export const EmailAutomation: React.FC = () => {
           </p>
           
           <Button size="lg" onClick={scrollToContact} icon={ArrowRight}>
-            Launch Your Automated Email Strategy
+            Book Demo
           </Button>
         </div>
       </section>
@@ -247,7 +247,7 @@ export const EmailAutomation: React.FC = () => {
               onClick={scrollToContact}
               className="bg-white text-orange-600 hover:bg-gray-100"
             >
-              Launch Your Email Strategy Today
+              Book Demo
             </Button>
             <p className="text-orange-200 mt-4 text-sm">
               Free strategy session • Custom email audit • Implementation plan included

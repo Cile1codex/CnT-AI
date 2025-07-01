@@ -146,7 +146,7 @@ export const CaseStudyAutomatedCustomerSupport: React.FC = () => {
                   onClick={handleBookConsultation}
                   className="inline-flex items-center bg-white text-sky-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105"
                 >
-                  Book Your Free Consultation
+                  Book Demo
                 </button>
               </div>
             </section>
