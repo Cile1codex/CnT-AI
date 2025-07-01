@@ -63,46 +63,5 @@
         document.body.classList.add('loaded');
       });
     </script>
-
-    <!-- Google Translate Integration (Hidden but Initialized) -->
-    <div id="google_translate_element" style="position:absolute; top:-1000px; left:-1000px;"></div>
-
-    <script>
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-          pageLanguage: 'en',
-          includedLanguages: 'en,mk',
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false
-        }, 'google_translate_element');
-      }
-    </script>
-
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <!-- Language Switching Logic -->
-    <script>
-      function changeLanguage(lang) {
-        const cookieValue = `/auto/${lang}`;
-        document.cookie = `googtrans=${cookieValue}; path=/; domain=${window.location.hostname}`;
-        document.cookie = `googtrans=${cookieValue}; path=/`;
-        sessionStorage.setItem('selectedLanguage', lang);
-        location.reload();
-      }
-
-      window.addEventListener('load', function () {
-        const savedLang = sessionStorage.getItem('selectedLanguage');
-        if (savedLang && savedLang !== 'en') {
-          const interval = setInterval(function () {
-            const select = document.querySelector('.goog-te-combo');
-            if (select) {
-              select.value = savedLang;
-              select.dispatchEvent(new Event('change'));
-              clearInterval(interval);
-            }
-          }, 500);
-        }
-      });
-    </script>
   </body>
 </html>
