@@ -48,39 +48,10 @@
     </script>
     <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
     
-    <!-- Google Translate Widget -->
-    <div id="google_translate_element" style="display:none;"></div>
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-          pageLanguage: 'en',
-          includedLanguages: 'en,mk',
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false
-        }, 'google_translate_element');
-      }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    
     <style>
       /* Prevent flash of unstyled content */
       body { visibility: hidden; }
       body.loaded { visibility: visible; }
-      
-      /* Hide Google Translate branding and default elements */
-      .goog-te-banner-frame.skiptranslate { display: none !important; }
-      .goog-te-gadget { display: none !important; }
-      .goog-te-combo { display: none !important; }
-      body { top: 0px !important; }
-      
-      /* Custom styles for language switcher flags */
-      .flag-icon {
-        width: 24px;
-        height: 18px;
-        border-radius: 2px;
-        object-fit: cover;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      }
     </style>
   </head>
   <body>
