@@ -68,44 +68,25 @@ export const LanguageSwitcher: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Check current language on component mount
-  useEffect(() => {
-    const checkCurrentLanguage = () => {
-      if (typeof window !== 'undefined' && window.getCurrentLanguage) {
-        const currentLang = window.getCurrentLanguage();
-        const language = languages.find(lang => lang.code === currentLang) || languages[0];
-        setCurrentLanguage(language);
-      }
-    };
-
-    // Check immediately
-    checkCurrentLanguage();
-
-    // Check after a short delay to ensure Google Translate is loaded
-    const timer = setTimeout(checkCurrentLanguage, 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
   // Function to trigger Google Translate
   const changeLanguage = (language: Language) => {
     setCurrentLanguage(language);
     setIsOpen(false);
 
-    // Use the global changeLanguage function from the HTML script
-    if (typeof window !== 'undefined' && window.changeLanguage) {
-      window.changeLanguage(language.code);
+    // Trigger Google Translate
+    const googleTranslateCombo = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+    if (googleTranslateCombo) {
+      googleTranslateCombo.value = language.code;
+      googleTranslateCombo.dispatchEvent(new Event('change'));
     } else {
       // Fallback: try to find and trigger the translate element
-      const googleTranslateCombo = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-      if (googleTranslateCombo) {
-        googleTranslateCombo.value = language.code;
-        googleTranslateCombo.dispatchEvent(new Event('change'));
-      } else {
-        // Alternative fallback using cookie method
-        const cookieLang = language.code === 'mk' ? '/en/mk' : '/en/en';
-        document.cookie = `googtrans=${cookieLang};path=/;domain=${window.location.hostname}`;
-        window.location.reload();
-      }
+      setTimeout(() => {
+        const translateElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+        if (translateElement) {
+          translateElement.value = language.code;
+          translateElement.dispatchEvent(new Event('change'));
+        }
+      }, 1000);
     }
   };
 
@@ -165,11 +146,3 @@ export const LanguageSwitcher: React.FC = () => {
     </div>
   );
 };
-
-// Extend Window interface to include our global functions
-declare global {
-  interface Window {
-    changeLanguage: (lang: string) => void;
-    getCurrentLanguage: () => string;
-  }
-}
