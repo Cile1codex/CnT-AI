@@ -1,25 +1,16 @@
 import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, MessageSquare, Zap, Globe, Users, Settings, Clock } from 'lucide-react';
 import { Logo } from '../components/Logo';
 import { Button } from '../components/ui/Button';
 
 export const AIChatbots: React.FC = () => {
-  const navigate = useNavigate();
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  const handleBookDemo = () => {
-    navigate('/#contact');
-    // Small delay to ensure navigation completes before scrolling
-    setTimeout(() => {
-      const element = document.getElementById('contact');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+  const scrollToContact = () => {
+    window.location.href = '/#contact';
   };
 
   return (
@@ -68,8 +59,8 @@ export const AIChatbots: React.FC = () => {
             Deploy fully customized chatbots trained on your business logic to automate conversations, guide users, and capture leads 24/7.
           </p>
           
-          <Button size="lg" onClick={handleBookDemo} icon={ArrowRight}>
-            Book Demo
+          <Button size="lg" onClick={scrollToContact} icon={ArrowRight}>
+            Book Your Custom Chatbot Demo
           </Button>
         </div>
       </section>
@@ -233,17 +224,17 @@ export const AIChatbots: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Deploy Your Smart Chatbot?
+              💬 Ready to Deploy Your Smart Chatbot?
             </h2>
             <p className="text-xl text-sky-100 mb-8 max-w-2xl mx-auto">
               Let's build a custom AI chatbot that handles your customer conversations 24/7 while maintaining your brand voice and expertise.
             </p>
             <Button 
               size="lg" 
-              onClick={handleBookDemo}
+              onClick={scrollToContact}
               className="bg-white text-sky-600 hover:bg-gray-100"
             >
-              💬 Book your custom chatbot demo today
+              Book Your Custom Chatbot Demo Today
             </Button>
             <p className="text-sky-200 mt-4 text-sm">
               Free consultation • Custom demo • No commitment required

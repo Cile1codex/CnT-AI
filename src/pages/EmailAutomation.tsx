@@ -1,25 +1,16 @@
 import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Mail, Zap, Target, TrendingUp, Users, BarChart3 } from 'lucide-react';
 import { Logo } from '../components/Logo';
 import { Button } from '../components/ui/Button';
 
 export const EmailAutomation: React.FC = () => {
-  const navigate = useNavigate();
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  const handleBookDemo = () => {
-    navigate('/#contact');
-    // Small delay to ensure navigation completes before scrolling
-    setTimeout(() => {
-      const element = document.getElementById('contact');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+  const scrollToContact = () => {
+    window.location.href = '/#contact';
   };
 
   return (
@@ -68,8 +59,8 @@ export const EmailAutomation: React.FC = () => {
             Build powerful, automated campaigns that onboard users, recover carts, and upsell services — no manual work required.
           </p>
           
-          <Button size="lg" onClick={handleBookDemo} icon={ArrowRight}>
-            Book Demo
+          <Button size="lg" onClick={scrollToContact} icon={ArrowRight}>
+            Launch Your Automated Email Strategy
           </Button>
         </div>
       </section>
@@ -246,17 +237,17 @@ export const EmailAutomation: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Automate Your Email Marketing?
+              ✉️ Ready to Automate Your Email Marketing?
             </h2>
             <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
               Let's build email sequences that nurture leads, onboard customers, and drive sales automatically — so you can focus on growing your business.
             </p>
             <Button 
               size="lg" 
-              onClick={handleBookDemo}
+              onClick={scrollToContact}
               className="bg-white text-orange-600 hover:bg-gray-100"
             >
-              ✉️ Launch your automated email strategy today
+              Launch Your Email Strategy Today
             </Button>
             <p className="text-orange-200 mt-4 text-sm">
               Free strategy session • Custom email audit • Implementation plan included

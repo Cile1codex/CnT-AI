@@ -116,7 +116,7 @@ export const About: React.FC = () => {
               onClick={scrollToContact}
               className="bg-white text-sky-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 inline-flex items-center"
             >
-              Book Demo
+              Book a Free Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
           </div>

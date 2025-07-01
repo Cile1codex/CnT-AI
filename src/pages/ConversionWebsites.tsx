@@ -1,25 +1,16 @@
 import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Globe, Zap, Target, TrendingUp, Smartphone, Search } from 'lucide-react';
 import { Logo } from '../components/Logo';
 import { Button } from '../components/ui/Button';
 
 export const ConversionWebsites: React.FC = () => {
-  const navigate = useNavigate();
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  const handleBookDemo = () => {
-    navigate('/#contact');
-    // Small delay to ensure navigation completes before scrolling
-    setTimeout(() => {
-      const element = document.getElementById('contact');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+  const scrollToContact = () => {
+    window.location.href = '/#contact';
   };
 
   return (
@@ -68,8 +59,8 @@ export const ConversionWebsites: React.FC = () => {
             We build performance-driven websites that turn visitors into leads — designed from the ground up to scale with automation.
           </p>
           
-          <Button size="lg" onClick={handleBookDemo} icon={ArrowRight}>
-            Book Demo
+          <Button size="lg" onClick={scrollToContact} icon={ArrowRight}>
+            Start Building Your High-Converting Website
           </Button>
         </div>
       </section>
@@ -262,17 +253,17 @@ export const ConversionWebsites: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Launch Your High-Converting Website?
+              🚀 Ready to Launch Your High-Converting Website?
             </h2>
             <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
               Let's build a website that doesn't just look amazing — it converts visitors into customers and grows your business automatically.
             </p>
             <Button 
               size="lg" 
-              onClick={handleBookDemo}
+              onClick={scrollToContact}
               className="bg-white text-emerald-600 hover:bg-gray-100"
             >
-              🚀 Start building your high-converting website today
+              Start Building Your Website Today
             </Button>
             <p className="text-emerald-200 mt-4 text-sm">
               Free consultation • Custom proposal • No upfront costs

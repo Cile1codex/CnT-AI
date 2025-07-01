@@ -1,25 +1,16 @@
 import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Database, Zap, Settings, Globe, Calendar, BarChart3 } from 'lucide-react';
 import { Logo } from '../components/Logo';
 import { Button } from '../components/ui/Button';
 
 export const BackendIntegration: React.FC = () => {
-  const navigate = useNavigate();
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  const handleBookDemo = () => {
-    navigate('/#contact');
-    // Small delay to ensure navigation completes before scrolling
-    setTimeout(() => {
-      const element = document.getElementById('contact');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+  const scrollToContact = () => {
+    window.location.href = '/#contact';
   };
 
   return (
@@ -68,8 +59,8 @@ export const BackendIntegration: React.FC = () => {
             We connect your tools — CRMs, databases, analytics, and more — to keep your backend in perfect sync.
           </p>
           
-          <Button size="lg" onClick={handleBookDemo} icon={ArrowRight}>
-            Book Demo
+          <Button size="lg" onClick={scrollToContact} icon={ArrowRight}>
+            Request Backend Automation Setup
           </Button>
         </div>
       </section>
@@ -262,17 +253,17 @@ export const BackendIntegration: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Connect Your Entire Tech Stack?
+              🔧 Ready to Connect Your Entire Tech Stack?
             </h2>
             <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
               Let's build the backend infrastructure that makes your business run like clockwork — with all your tools working together seamlessly.
             </p>
             <Button 
               size="lg" 
-              onClick={handleBookDemo}
+              onClick={scrollToContact}
               className="bg-white text-cyan-600 hover:bg-gray-100"
             >
-              🔧 Request a backend automation setup now
+              Request Backend Automation Setup Now
             </Button>
             <p className="text-cyan-200 mt-4 text-sm">
               Free consultation • Custom integration plan • Implementation roadmap

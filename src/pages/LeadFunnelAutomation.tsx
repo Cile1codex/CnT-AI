@@ -1,25 +1,16 @@
 import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Users, Target, Zap, TrendingUp, Filter, BarChart3 } from 'lucide-react';
 import { Logo } from '../components/Logo';
 import { Button } from '../components/ui/Button';
 
 export const LeadFunnelAutomation: React.FC = () => {
-  const navigate = useNavigate();
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  const handleBookDemo = () => {
-    navigate('/#contact');
-    // Small delay to ensure navigation completes before scrolling
-    setTimeout(() => {
-      const element = document.getElementById('contact');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+  const scrollToContact = () => {
+    window.location.href = '/#contact';
   };
 
   return (
@@ -68,8 +59,8 @@ export const LeadFunnelAutomation: React.FC = () => {
             From smart forms to intelligent chat flows, we automate the entire lead capture and qualification process.
           </p>
           
-          <Button size="lg" onClick={handleBookDemo} icon={ArrowRight}>
-            Book Demo
+          <Button size="lg" onClick={scrollToContact} icon={ArrowRight}>
+            Let's Automate Your Lead Funnel
           </Button>
         </div>
       </section>
@@ -233,17 +224,17 @@ export const LeadFunnelAutomation: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Fill Your Pipeline with Qualified Leads?
+              🎯 Ready to Fill Your Pipeline with Qualified Leads?
             </h2>
             <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
               Let's build an intelligent lead funnel that automatically captures, qualifies, and routes your best prospects while you focus on closing deals.
             </p>
             <Button 
               size="lg" 
-              onClick={handleBookDemo}
+              onClick={scrollToContact}
               className="bg-white text-purple-600 hover:bg-gray-100"
             >
-              🎯 Let's automate your lead funnel → Book a free audit
+              Book a Free Lead Funnel Audit
             </Button>
             <p className="text-purple-200 mt-4 text-sm">
               Free audit • Custom strategy • Implementation roadmap included
