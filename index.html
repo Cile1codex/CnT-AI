@@ -67,7 +67,7 @@
     <!-- Google Translate Integration -->
     <div id="google_translate_element" style="display:none;"></div>
 
-    <script>
+    <script type="text/javascript">
       function googleTranslateElementInit() {
         new google.translate.TranslateElement({
           pageLanguage: 'en',
@@ -76,27 +76,33 @@
           autoDisplay: false
         }, 'google_translate_element');
       }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+    <script>
       function changeLanguage(lang) {
-        const currentDomain = window.location.hostname;
         const cookieValue = `/auto/${lang}`;
-        document.cookie = `googtrans=${cookieValue};path=/;domain=${currentDomain}`;
+        document.cookie = `googtrans=${cookieValue};path=/;domain=${window.location.hostname}`;
         document.cookie = `googtrans=${cookieValue};path=/`;
         sessionStorage.setItem('selectedLanguage', lang);
-        window.location.reload();
+        location.reload();
       }
 
-      // On load, apply saved language if needed
-      document.addEventListener('DOMContentLoaded', () => {
-        const lang = sessionStorage.getItem('selectedLanguage');
-        if (lang && lang !== 'en') {
-          const cookieValue = `/auto/${lang}`;
-          document.cookie = `googtrans=${cookieValue};path=/`;
-          document.cookie = `googtrans=${cookieValue};path=/;domain=${window.location.hostname}`;
+      // Trigger translate if language is stored
+      window.addEventListener('load', function () {
+        const savedLang = sessionStorage.getItem('selectedLanguage');
+        if (savedLang && savedLang !== 'en') {
+          const interval = setInterval(function () {
+            const iframe = document.querySelector('iframe.goog-te-banner-frame');
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+              select.value = savedLang;
+              select.dispatchEvent(new Event('change'));
+              clearInterval(interval);
+            }
+          }, 500);
         }
       });
     </script>
-
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </body>
 </html>
