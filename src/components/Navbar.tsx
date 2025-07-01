@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/Button';
 import { Logo } from './Logo';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -78,10 +79,12 @@ export const Navbar: React.FC = () => {
             <Button size="sm" onClick={() => scrollToSection('contact')}>
               Book Demo
             </Button>
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-3">
+            <LanguageSwitcher />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-300 hover:text-white transition-colors duration-200"
