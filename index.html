@@ -77,12 +77,24 @@
         }, 'google_translate_element');
       }
 
-      function changeLanguage(langCode) {
-        const cookieValue = `/auto/${langCode}`;
+      function changeLanguage(lang) {
+        const currentDomain = window.location.hostname;
+        const cookieValue = `/auto/${lang}`;
+        document.cookie = `googtrans=${cookieValue};path=/;domain=${currentDomain}`;
         document.cookie = `googtrans=${cookieValue};path=/`;
-        document.cookie = `googtrans=${cookieValue};domain=.${window.location.hostname};path=/`;
-        location.reload();
+        sessionStorage.setItem('selectedLanguage', lang);
+        window.location.reload();
       }
+
+      // On load, apply saved language if needed
+      document.addEventListener('DOMContentLoaded', () => {
+        const lang = sessionStorage.getItem('selectedLanguage');
+        if (lang && lang !== 'en') {
+          const cookieValue = `/auto/${lang}`;
+          document.cookie = `googtrans=${cookieValue};path=/`;
+          document.cookie = `googtrans=${cookieValue};path=/;domain=${window.location.hostname}`;
+        }
+      });
     </script>
 
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

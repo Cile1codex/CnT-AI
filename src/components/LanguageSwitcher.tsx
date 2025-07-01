@@ -12,20 +12,38 @@ const languages: Language[] = [
   { code: 'mk', name: 'Македонски', flag: '/flags/mk.svg' },
 ];
 
+// Declare the global changeLanguage function
+declare global {
+  interface Window {
+    changeLanguage: (lang: string) => void;
+  }
+}
+
 export const LanguageSwitcher: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState('en');
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Check sessionStorage first
+    const savedLang = sessionStorage.getItem('selectedLanguage');
+    if (savedLang && languages.find(lang => lang.code === savedLang)) {
+      setCurrentLang(savedLang);
+      return;
+    }
+
     // Check if Google Translate has set a language cookie
     const cookies = document.cookie.split(';');
     const googtransCookie = cookies.find(cookie => cookie.trim().startsWith('googtrans='));
     
     if (googtransCookie) {
-      const langCode = googtransCookie.split('/')[2];
-      if (langCode && languages.find(lang => lang.code === langCode)) {
-        setCurrentLang(langCode);
+      const parts = googtransCookie.split('/');
+      if (parts.length >= 3) {
+        const langCode = parts[2];
+        if (langCode && languages.find(lang => lang.code === langCode)) {
+          setCurrentLang(langCode);
+          sessionStorage.setItem('selectedLanguage', langCode);
+        }
       }
     }
 
@@ -40,22 +58,19 @@ export const LanguageSwitcher: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const changeLanguage = (langCode: string) => {
+  const handleLanguageChange = (langCode: string) => {
     if (langCode === currentLang) {
       setIsOpen(false);
       return;
     }
 
-    // Set Google Translate cookies
-    const cookieValue = `/auto/${langCode}`;
-    document.cookie = `googtrans=${cookieValue};path=/`;
-    document.cookie = `googtrans=${cookieValue};domain=.${window.location.hostname};path=/`;
-    
     setCurrentLang(langCode);
     setIsOpen(false);
     
-    // Reload page to apply translation
-    window.location.reload();
+    // Use the global changeLanguage function
+    if (window.changeLanguage) {
+      window.changeLanguage(langCode);
+    }
   };
 
   const currentLanguage = languages.find(lang => lang.code === currentLang) || languages[0];
@@ -88,7 +103,7 @@ export const LanguageSwitcher: React.FC = () => {
             {languages.map((language) => (
               <button
                 key={language.code}
-                onClick={() => changeLanguage(language.code)}
+                onClick={() => handleLanguageChange(language.code)}
                 className={`w-full flex items-center space-x-3 px-4 py-2 text-left hover:bg-slate-700 transition-colors duration-200 ${
                   currentLang === language.code ? 'bg-slate-700 text-sky-400' : 'text-gray-300'
                 }`}
