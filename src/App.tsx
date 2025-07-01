@@ -8,7 +8,7 @@ import { PrivacyPolicyMK } from './pages/mk/PrivacyPolicyMK';
 import { TermsOfService } from './pages/TermsOfService';
 import { TermsOfServiceMK } from './pages/mk/TermsOfServiceMK';
 import { CaseStudyAutomatedCustomerSupport } from './pages/CaseStudyAutomatedCustomerSupport';
-import { CaseStudyAutomatedCustomerSupportMK } from './pages/mk/CaseStudyAutomatedCustomerSupportMK.tsx';
+import { CaseStudyAutomatedCustomerSupportMK } from './pages/mk/CaseStudyAutomatedCustomerSupportMK';
 import { CaseStudyLeadQualificationBooking } from './pages/CaseStudyLeadQualificationBooking';
 import { CaseStudyLeadQualificationBookingMK } from './pages/mk/CaseStudyLeadQualificationBookingMK';
 import { CaseStudyClientOnboardingAutomation } from './pages/CaseStudyClientOnboardingAutomation';
