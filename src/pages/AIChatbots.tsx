@@ -224,18 +224,17 @@ export const AIChatbots: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              💬 Ready to Deploy Your Smart Chatbot?
+              Ready to Deploy Your Smart Chatbot?
             </h2>
             <p className="text-xl text-sky-100 mb-8 max-w-2xl mx-auto">
               Let's build a custom AI chatbot that handles your customer conversations 24/7 while maintaining your brand voice and expertise.
             </p>
-            <Button 
-              size="lg" 
+            <button 
               onClick={scrollToContact}
-              className="bg-white text-sky-600 hover:bg-gray-100"
+              className="inline-flex items-center bg-white text-sky-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 text-lg"
             >
-              Book Your Custom Chatbot Demo Today
-            </Button>
+              💬 Book your custom chatbot demo today
+            </button>
             <p className="text-sky-200 mt-4 text-sm">
               Free consultation • Custom demo • No commitment required
             </p>
