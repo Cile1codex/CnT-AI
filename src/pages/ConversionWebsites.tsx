@@ -1,16 +1,25 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Globe, Zap, Target, TrendingUp, Smartphone, Search } from 'lucide-react';
 import { Logo } from '../components/Logo';
 import { Button } from '../components/ui/Button';
 
 export const ConversionWebsites: React.FC = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  const scrollToContact = () => {
-    window.location.href = '/#contact';
+  const handleBookDemo = () => {
+    navigate('/#contact');
+    // Small delay to ensure navigation completes before scrolling
+    setTimeout(() => {
+      const element = document.getElementById('contact');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   return (
@@ -59,7 +68,7 @@ export const ConversionWebsites: React.FC = () => {
             We build performance-driven websites that turn visitors into leads — designed from the ground up to scale with automation.
           </p>
           
-          <Button size="lg" onClick={scrollToContact} icon={ArrowRight}>
+          <Button size="lg" onClick={handleBookDemo} icon={ArrowRight}>
             Book Demo
           </Button>
         </div>
@@ -260,7 +269,7 @@ export const ConversionWebsites: React.FC = () => {
             </p>
             <Button 
               size="lg" 
-              onClick={scrollToContact}
+              onClick={handleBookDemo}
               className="bg-white text-emerald-600 hover:bg-gray-100"
             >
               Book Demo
