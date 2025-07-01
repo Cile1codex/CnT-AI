@@ -1,16 +1,25 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Globe, Zap, Target, TrendingUp, Smartphone, Search } from 'lucide-react';
 import { Logo } from '../components/Logo';
 import { Button } from '../components/ui/Button';
 
 export const ConversionWebsites: React.FC = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   const scrollToContact = () => {
-    window.location.href = '/#contact';
+    navigate('/#contact');
+    // Small delay to ensure navigation completes before scrolling
+    setTimeout(() => {
+      const element = document.getElementById('contact');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   return (
