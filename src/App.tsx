@@ -7,6 +7,11 @@ import { CaseStudyAutomatedCustomerSupport } from './pages/CaseStudyAutomatedCus
 import { CaseStudyLeadQualificationBooking } from './pages/CaseStudyLeadQualificationBooking';
 import { CaseStudyClientOnboardingAutomation } from './pages/CaseStudyClientOnboardingAutomation';
 import { CaseStudyUserActivationFlows } from './pages/CaseStudyUserActivationFlows';
+import { AIChatbots } from './pages/AIChatbots';
+import { ConversionWebsites } from './pages/ConversionWebsites';
+import { LeadFunnelAutomation } from './pages/LeadFunnelAutomation';
+import { EmailAutomation } from './pages/EmailAutomation';
+import { BackendIntegration } from './pages/BackendIntegration';
 
 function App() {
   return (
@@ -19,6 +24,11 @@ function App() {
         <Route path="/case-study-lead-qualification-booking" element={<CaseStudyLeadQualificationBooking />} />
         <Route path="/case-study-client-onboarding-automation" element={<CaseStudyClientOnboardingAutomation />} />
         <Route path="/case-study-user-activation-flows" element={<CaseStudyUserActivationFlows />} />
+        <Route path="/ai-chatbots" element={<AIChatbots />} />
+        <Route path="/conversion-websites" element={<ConversionWebsites />} />
+        <Route path="/lead-funnel-automation" element={<LeadFunnelAutomation />} />
+        <Route path="/email-automation" element={<EmailAutomation />} />
+        <Route path="/backend-integration" element={<BackendIntegration />} />
       </Routes>
     </div>
   );

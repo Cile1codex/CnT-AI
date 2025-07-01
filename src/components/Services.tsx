@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { MessageSquare, Globe, Users, Mail, Database, Bot } from 'lucide-react';
 
 export const Services: React.FC = () => {
@@ -26,30 +27,35 @@ export const Services: React.FC = () => {
       title: '24/7 AI Chatbot Systems',
       description: 'Custom-trained chatbots that handle customer support, FAQs, lead capture, and product guidance — available at all hours.',
       color: 'from-sky-500 to-blue-600',
+      link: '/ai-chatbots',
     },
     {
       icon: Globe,
       title: 'Conversion-Optimized Websites',
       description: 'Fully custom websites built from scratch to convert traffic into clients. Designed with automation and scalability in mind.',
       color: 'from-emerald-500 to-teal-600',
+      link: '/conversion-websites',
     },
     {
       icon: Users,
       title: 'Lead Capture & Funnel Automation',
       description: 'We build smart forms and chat flows that collect and qualify leads — automatically sent to your CRM or email list.',
       color: 'from-purple-500 to-indigo-600',
+      link: '/lead-funnel-automation',
     },
     {
       icon: Mail,
       title: 'Automated Email Campaigns & Newsletters',
       description: 'Trigger-based email flows for onboarding, sales, retention, and announcements — sent without you lifting a finger.',
       color: 'from-orange-500 to-red-600',
+      link: '/email-automation',
     },
     {
       icon: Database,
       title: 'Backend API & CRM Integration',
       description: 'We connect all your tools: CRMs, forms, databases, booking systems, analytics platforms — synced in real-time.',
       color: 'from-cyan-500 to-blue-600',
+      link: '/backend-integration',
     },
   ];
 
@@ -86,9 +92,13 @@ export const Services: React.FC = () => {
               </p>
 
               <div className="mt-6 pt-6 border-t border-slate-700">
-                <button className="text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-200 group-hover:translate-x-2 transition-transform">
+                <Link
+                  to={service.link}
+                  className="text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-200 group-hover:translate-x-2 transition-transform inline-block"
+                  onClick={() => window.scrollTo(0, 0)}
+                >
                   Learn More →
-                </button>
+                </Link>
               </div>
             </div>
           ))}
