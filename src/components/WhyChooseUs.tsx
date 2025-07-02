@@ -74,8 +74,13 @@ export const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <section id="why-choose-us" className="py-20 bg-gradient-to-b from-blue-50 to-indigo-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="why-choose-us" className="py-20 bg-gradient-to-b from-blue-50 to-indigo-50 relative overflow-hidden">
+      {/* Floating Particles */}
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Agitation Section */}
         <div className={`text-center mb-20 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -87,7 +92,7 @@ export const WhyChooseUs: React.FC = () => {
           <div className="max-w-3xl mx-auto mb-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
               {agitationPoints.map((point, index) => (
-                <div key={index} className="flex items-center">
+                <div key={index} className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform">
                   <CheckCircle className="h-5 w-5 text-red-500 mr-3 flex-shrink-0" />
                   <span className="text-slate-700" style={{ fontSize: '16px' }}>{point}</span>
                 </div>
@@ -113,7 +118,7 @@ export const WhyChooseUs: React.FC = () => {
           <div className="max-w-4xl mx-auto mb-8">
             <div className="space-y-4 text-left">
               {transformationPoints.map((point, index) => (
-                <div key={index} className="flex items-start">
+                <div key={index} className="flex items-start premium-card rounded-lg p-4 hover-scale will-change-transform">
                   <span className="text-emerald-500 text-xl mr-4 mt-1 flex-shrink-0">→</span>
                   <span className="text-slate-700" style={{ fontSize: '16px' }}>{point}</span>
                 </div>
@@ -132,7 +137,7 @@ export const WhyChooseUs: React.FC = () => {
           
           <button 
             onClick={scrollToContact}
-            className="bg-gradient-to-r from-sky-500 to-emerald-500 text-white font-medium px-8 py-4 rounded-lg hover:from-sky-600 hover:to-emerald-600 transition-all duration-300 hover:scale-105"
+            className="premium-button text-white font-medium px-8 py-4 rounded-lg transition-all duration-300"
             style={{ fontSize: '18px' }}
           >
             Book Your Free Strategy Call
@@ -160,7 +165,7 @@ export const WhyChooseUs: React.FC = () => {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 border border-slate-200/50 ${
+              className={`premium-card rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover-scale border border-slate-200/50 will-change-transform ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 100 + 600}ms` }}
@@ -185,7 +190,7 @@ export const WhyChooseUs: React.FC = () => {
         }`}>
           <button 
             onClick={scrollToContact}
-            className="bg-gradient-to-r from-sky-500 to-emerald-500 text-white font-medium px-8 py-4 rounded-lg hover:from-sky-600 hover:to-emerald-600 transition-all duration-300 hover:scale-105"
+            className="premium-button text-white font-medium px-8 py-4 rounded-lg transition-all duration-300"
             style={{ fontSize: '18px' }}
           >
             Start With a Free Strategy Call

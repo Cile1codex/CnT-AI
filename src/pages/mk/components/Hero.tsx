@@ -17,7 +17,15 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800 relative overflow-hidden">
+    <section id="home" className="min-h-screen animated-gradient relative overflow-hidden">
+      {/* Floating Particles */}
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -29,27 +37,27 @@ export const Hero: React.FC = () => {
         <div className="max-w-7xl mx-auto text-center">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="flex justify-center mb-8">
-              <div className="bg-gradient-to-r from-sky-500/20 to-emerald-500/20 backdrop-blur-sm border border-sky-500/30 rounded-full px-6 py-3">
+              <div className="premium-card-dark rounded-full px-6 py-3 animate-fade-in-scale">
                 <span className="text-sky-300 text-sm font-medium">Еден стратешки повик. Една прилагодена автоматизација. Во живо за 72 часа.</span>
               </div>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight" style={{ fontSize: '48px' }}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-in-up text-glow" style={{ fontSize: '48px' }}>
               Ви Губите Време.
-              <span className="block bg-gradient-to-r from-sky-400 via-emerald-400 to-sky-300 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-sky-400 via-emerald-400 to-sky-300 bg-clip-text text-transparent text-glow-emerald">
                 Ние Сме Тука Да Го Завршиме Тоа.
               </span>
             </h1>
             
-            <p className="text-xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed" style={{ fontSize: '20px' }}>
+            <p className="text-xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed animate-slide-in-up" style={{ fontSize: '20px', animationDelay: '0.2s' }}>
               Градиме интелигентни АИ системи што ги водат вашите потенцијални клиенти, корисничка поддршка и backend—за да престанете да го чувате вашиот бизнис и да почнете да го скалирате.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button size="lg" onClick={() => scrollToSection('contact')} icon={ArrowRight}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-in-up" style={{ animationDelay: '0.4s' }}>
+              <Button size="lg" onClick={() => scrollToSection('contact')} icon={ArrowRight} className="premium-button">
                 Резервирајте Ја Вашата Бесплатна Консултација
               </Button>
-              <Button variant="outline" size="lg" onClick={() => scrollToSection('services')}>
+              <Button variant="outline" size="lg" onClick={() => scrollToSection('services')} className="hover-glow">
                 Видете Што Автоматизираме
               </Button>
             </div>
@@ -59,19 +67,19 @@ export const Hero: React.FC = () => {
           <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 transition-all duration-1000 delay-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-sky-500/50 transition-all duration-300 hover:transform hover:scale-105">
+            <div className="premium-card-dark rounded-2xl p-6 hover:border-sky-500/50 transition-all duration-300 hover-scale will-change-transform">
               <Bot className="h-12 w-12 text-sky-400 mb-4 mx-auto" />
               <h3 className="text-white font-semibold text-lg mb-2">Вистинска АИ. Вистински Резултати.</h3>
               <p className="text-gray-400 text-sm">Нашите решенија се интегрираат директно со вашите работни процеси и алатки</p>
             </div>
             
-            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:scale-105">
+            <div className="premium-card-dark rounded-2xl p-6 hover:border-emerald-500/50 transition-all duration-300 hover-scale will-change-transform">
               <Zap className="h-12 w-12 text-emerald-400 mb-4 mx-auto" />
               <h3 className="text-white font-semibold text-lg mb-2">24/7 Системи</h3>
               <p className="text-gray-400 text-sm">Од чатботови до backend процеси, вашите системи никогаш не спијат</p>
             </div>
             
-            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105">
+            <div className="premium-card-dark rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover-scale will-change-transform">
               <TrendingUp className="h-12 w-12 text-purple-400 mb-4 mx-auto" />
               <h3 className="text-white font-semibold text-lg mb-2">Брза Имплементација. Брз ROI.</h3>
               <p className="text-gray-400 text-sm">Нашите клиенти почнуваат да гледаат резултати во рок од денови</p>

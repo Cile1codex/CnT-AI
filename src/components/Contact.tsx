@@ -222,8 +222,12 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-slate-100 to-blue-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 bg-gradient-to-b from-slate-100 to-blue-50 relative overflow-hidden">
+      {/* Floating Particles */}
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
@@ -240,12 +244,12 @@ export const Contact: React.FC = () => {
           <div className={`transition-all duration-1000 delay-200 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
           }`}>
-            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-lg">
+            <div className="premium-card rounded-2xl p-8 border border-slate-200 shadow-lg">
               <h3 className="text-2xl font-bold text-slate-800 mb-6">Book Your Free Consultation</h3>
               
               {/* Success Message */}
               {submitSuccess && (
-                <div className="mb-6 p-6 bg-emerald-50 border border-emerald-200 rounded-lg">
+                <div className="mb-6 p-6 premium-card border border-emerald-200 rounded-lg">
                   <h4 className="text-emerald-800 font-bold text-lg mb-3">What Happens After You Submit the Form?</h4>
                   <div className="space-y-2 text-emerald-700">
                     <div className="flex items-center">
@@ -276,7 +280,7 @@ export const Contact: React.FC = () => {
                   <div className="mt-4 text-center">
                     <button 
                       onClick={() => setSubmitSuccess(false)}
-                      className="bg-emerald-600 text-white font-medium px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors duration-200"
+                      className="premium-button text-white font-medium px-6 py-2 rounded-lg transition-all duration-300"
                       style={{ fontSize: '18px' }}
                     >
                       Let's Talk – Book Your Free Call Now
@@ -308,7 +312,7 @@ export const Contact: React.FC = () => {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 hover-glow"
                       placeholder="Your name"
                       style={{ fontSize: '16px' }}
                     />
@@ -326,7 +330,7 @@ export const Contact: React.FC = () => {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 hover-glow"
                       placeholder="your@email.com"
                       style={{ fontSize: '16px' }}
                     />
@@ -344,7 +348,7 @@ export const Contact: React.FC = () => {
                     value={formData.company}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50"
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 hover-glow"
                     placeholder="Your company"
                     style={{ fontSize: '16px' }}
                   />
@@ -362,7 +366,7 @@ export const Contact: React.FC = () => {
                     required
                     disabled={isSubmitting}
                     rows={4}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 resize-none disabled:opacity-50"
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 resize-none disabled:opacity-50 hover-glow"
                     placeholder="Describe the manual processes that are wasting your time..."
                     style={{ fontSize: '16px' }}
                   />
@@ -417,7 +421,7 @@ export const Contact: React.FC = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className={`w-full ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} 
+                  className={`w-full premium-button ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} 
                   icon={Send}
                   onClick={undefined}
                 >
@@ -463,7 +467,7 @@ export const Contact: React.FC = () => {
               </div>
 
               <div className="space-y-6">
-                <div className="flex items-center">
+                <div className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform">
                   <div className="bg-sky-500/20 p-3 rounded-lg mr-4">
                     <Phone className="h-6 w-6 text-sky-600" />
                   </div>
@@ -474,7 +478,7 @@ export const Contact: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center">
+                <div className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform">
                   <div className="bg-emerald-500/20 p-3 rounded-lg mr-4">
                     <Mail className="h-6 w-6 text-emerald-600" />
                   </div>
@@ -501,7 +505,7 @@ export const Contact: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center">
+                <div className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform">
                   <div className="bg-purple-500/20 p-3 rounded-lg mr-4">
                     <MapPin className="h-6 w-6 text-purple-600" />
                   </div>
@@ -511,7 +515,7 @@ export const Contact: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center">
+                <div className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform">
                   <div className="bg-orange-500/20 p-3 rounded-lg mr-4">
                     <Calendar className="h-6 w-6 text-orange-600" />
                   </div>
@@ -522,7 +526,7 @@ export const Contact: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-sky-500 to-emerald-500 rounded-2xl p-6 text-white">
+              <div className="premium-card rounded-2xl p-6 bg-gradient-to-r from-sky-500 to-emerald-500 text-white">
                 <h4 className="text-white font-bold mb-3">What Happens Next?</h4>
                 <div className="space-y-2 text-sky-100 text-sm">
                   <div className="flex items-center">

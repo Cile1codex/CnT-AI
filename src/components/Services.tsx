@@ -67,13 +67,18 @@ export const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-20 animated-gradient relative overflow-hidden">
+      {/* Floating Particles */}
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-4xl font-bold text-white mb-6 tracking-tight">
-            What We <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">Automate</span>
+          <h2 className="text-4xl font-bold text-white mb-6 tracking-tight text-glow">
+            What We <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent text-glow-emerald">Automate</span>
           </h2>
         </div>
 
@@ -81,7 +86,7 @@ export const Services: React.FC = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:border-sky-500/50 transition-all duration-500 hover:transform hover:scale-105 group ${
+              className={`premium-card-dark rounded-2xl p-8 border border-slate-700 hover:border-sky-500/50 transition-all duration-500 hover-scale group will-change-transform ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
@@ -116,7 +121,7 @@ export const Services: React.FC = () => {
         }`}>
           <button 
             onClick={scrollToContact}
-            className="bg-gradient-to-r from-sky-500 to-emerald-500 text-white font-medium px-8 py-4 rounded-lg hover:from-sky-600 hover:to-emerald-600 transition-all duration-300 hover:scale-105"
+            className="premium-button text-white font-medium px-8 py-4 rounded-lg transition-all duration-300"
             style={{ fontSize: '18px' }}
           >
             Book Your Free Automation Audit

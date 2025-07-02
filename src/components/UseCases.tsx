@@ -72,13 +72,18 @@ export const UseCases: React.FC = () => {
   ];
 
   return (
-    <section id="use-cases" className="py-20 bg-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="use-cases" className="py-20 animated-gradient relative overflow-hidden">
+      {/* Floating Particles */}
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-4xl font-bold text-white mb-6 tracking-tight">
-            Real-World <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">Success Stories</span>
+          <h2 className="text-4xl font-bold text-white mb-6 tracking-tight text-glow">
+            Real-World <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent text-glow-emerald">Success Stories</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto" style={{ fontSize: '20px' }}>
             See how businesses across different industries are saving time and money with our AI automation solutions.
@@ -89,7 +94,7 @@ export const UseCases: React.FC = () => {
           {useCases.map((useCase, index) => (
             <div
               key={useCase.industry}
-              className={`bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-700 hover:border-sky-500/50 hover:transform hover:scale-105 ${
+              className={`premium-card-dark rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-700 hover:border-sky-500/50 hover-scale will-change-transform ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
@@ -132,14 +137,14 @@ export const UseCases: React.FC = () => {
         <div className={`mt-16 text-center transition-all duration-1000 delay-800 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="bg-gradient-to-r from-sky-500 to-emerald-500 rounded-2xl p-8 text-white">
+          <div className="premium-card rounded-2xl p-8 text-slate-800 border border-sky-200">
             <h3 className="text-2xl font-bold mb-4">Your Industry Next?</h3>
-            <p className="text-sky-100 mb-6 max-w-2xl mx-auto" style={{ fontSize: '16px' }}>
+            <p className="text-slate-600 mb-6 max-w-2xl mx-auto" style={{ fontSize: '16px' }}>
               Every business has unique challenges. Let us show you how AI automation can solve yours with a personalized demo.
             </p>
             <button 
               onClick={scrollToContact}
-              className="bg-white text-sky-600 font-medium px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+              className="premium-button text-white font-medium px-8 py-3 rounded-lg transition-all duration-300"
               style={{ fontSize: '18px' }}
             >
               Let's Build Your Use Case Next
