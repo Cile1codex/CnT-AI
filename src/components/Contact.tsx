@@ -242,7 +242,7 @@ export const Contact: React.FC = () => {
           <h2 className="text-4xl font-bold text-slate-800 mb-6 tracking-tight">
             Have Questions or <span className="bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent">Business Inquiries</span>?
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto" style={{ fontSize: '20px' }}>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed" style={{ fontSize: '20px', lineHeight: '1.6' }}>
             If you have additional questions or want to reach us directly, feel free to get in touch:
           </p>
         </div>
@@ -469,7 +469,7 @@ export const Contact: React.FC = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-slate-800 mb-6">Get In Touch</h3>
-                <p className="text-slate-600 text-lg leading-relaxed" style={{ fontSize: '16px' }}>
+                <p className="text-slate-600 text-lg leading-relaxed" style={{ fontSize: '18px', lineHeight: '1.6' }}>
                   We'll map your highest-ROI automation opportunity—and show you how fast we can launch it.
                 </p>
               </div>
@@ -480,9 +480,9 @@ export const Contact: React.FC = () => {
                     <Phone className="h-6 w-6 text-sky-600" />
                   </div>
                   <div>
-                    <div className="text-slate-800 font-semibold">Call Us</div>
-                    <div className="text-slate-600" style={{ fontSize: '16px' }}>+389 78 508 690</div>
-                    <div className="text-slate-600" style={{ fontSize: '16px' }}>+389 70 699 636</div>
+                    <div className="text-slate-800 font-semibold text-lg">Call Us</div>
+                    <div className="text-slate-600" style={{ fontSize: '16px', lineHeight: '1.5' }}>+389 78 508 690</div>
+                    <div className="text-slate-600" style={{ fontSize: '16px', lineHeight: '1.5' }}>+389 70 699 636</div>
                   </div>
                 </div>
 
@@ -491,12 +491,12 @@ export const Contact: React.FC = () => {
                     <Mail className="h-6 w-6 text-emerald-600" />
                   </div>
                   <div>
-                    <div className="text-slate-800 font-semibold">Email Us</div>
+                    <div className="text-slate-800 font-semibold text-lg">Email Us</div>
                     <div className="text-slate-600">
                       <a 
                         href="mailto:ilekostadinov15@gmail.com" 
                         className="hover:text-emerald-600 transition-colors duration-200"
-                        style={{ fontSize: '16px' }}
+                        style={{ fontSize: '16px', lineHeight: '1.5' }}
                       >
                         ilekostadinov15@gmail.com
                       </a>
@@ -505,7 +505,7 @@ export const Contact: React.FC = () => {
                       <a 
                         href="mailto:matej.tasevski11@gmail.com" 
                         className="hover:text-emerald-600 transition-colors duration-200"
-                        style={{ fontSize: '16px' }}
+                        style={{ fontSize: '16px', lineHeight: '1.5' }}
                       >
                         matej.tasevski11@gmail.com
                       </a>
@@ -518,8 +518,8 @@ export const Contact: React.FC = () => {
                     <MapPin className="h-6 w-6 text-purple-600" />
                   </div>
                   <div>
-                    <div className="text-slate-800 font-semibold">Based in</div>
-                    <div className="text-slate-600" style={{ fontSize: '16px' }}>Skopje, North Macedonia</div>
+                    <div className="text-slate-800 font-semibold text-lg">Based in</div>
+                    <div className="text-slate-600" style={{ fontSize: '16px', lineHeight: '1.5' }}>Skopje, North Macedonia</div>
                   </div>
                 </div>
 
@@ -528,31 +528,38 @@ export const Contact: React.FC = () => {
                     <Calendar className="h-6 w-6 text-orange-600" />
                   </div>
                   <div>
-                    <div className="text-slate-800 font-semibold">Response Time</div>
-                    <div className="text-slate-600" style={{ fontSize: '16px' }}>Within 24 hours</div>
+                    <div className="text-slate-800 font-semibold text-lg">Response Time</div>
+                    <div className="text-slate-600" style={{ fontSize: '16px', lineHeight: '1.5' }}>Within 24 hours</div>
                   </div>
                 </div>
               </div>
 
-              <div className="premium-card rounded-2xl p-6 bg-gradient-to-r from-sky-500 to-emerald-500 text-white">
-                <h4 className="text-white font-bold mb-3">What Happens Next?</h4>
-                <div className="space-y-2 text-sky-100 text-sm">
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    <span style={{ fontSize: '16px' }}>We review your workflows</span>
+              <div className="premium-card rounded-2xl p-8 bg-gradient-to-r from-sky-500 to-emerald-500 text-white shadow-lg">
+                <h4 className="text-white font-bold text-xl mb-4">What Happens Next?</h4>
+                <div className="space-y-3 text-white">
+                  <div className="flex items-start">
+                    <div className="w-3 h-3 bg-white rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                    <span style={{ fontSize: '16px', lineHeight: '1.5' }}>We review your workflows and identify bottlenecks</span>
                   </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    <span style={{ fontSize: '16px' }}>Identify your biggest bottlenecks</span>
+                  <div className="flex items-start">
+                    <div className="w-3 h-3 bg-white rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                    <span style={{ fontSize: '16px', lineHeight: '1.5' }}>Show you what we can automate immediately</span>
                   </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    <span style={{ fontSize: '16px' }}>Show you what we can automate immediately</span>
+                  <div className="flex items-start">
+                    <div className="w-3 h-3 bg-white rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                    <span style={{ fontSize: '16px', lineHeight: '1.5' }}>Launch your first system within 48–72 hours</span>
                   </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    <span style={{ fontSize: '16px' }}>Launch your first system—often within 48–72 hours</span>
+                  <div className="flex items-start">
+                    <div className="w-3 h-3 bg-white rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                    <span style={{ fontSize: '16px', lineHeight: '1.5' }}>Provide ongoing support and optimization</span>
                   </div>
+                </div>
+                
+                <div className="mt-6 p-4 bg-white/20 rounded-lg backdrop-blur-sm">
+                  <p className="text-white font-medium text-center" style={{ fontSize: '16px', lineHeight: '1.5' }}>
+                    <strong>Result:</strong> You get a powerful automation system that works quietly in the background, 
+                    freeing your team to focus on growth and strategy.
+                  </p>
                 </div>
               </div>
             </div>
