@@ -68,16 +68,10 @@ export const Services: React.FC = () => {
 
   return (
     <section id="services" className="py-20 animated-gradient relative overflow-hidden">
-      {/* Floating Logo Animation */}
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
+      {/* Floating Particles */}
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className={`text-center mb-16 transition-all duration-1000 ${

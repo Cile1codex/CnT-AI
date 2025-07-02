@@ -18,25 +18,13 @@ export const Hero: React.FC = () => {
 
   return (
     <section id="home" className="min-h-screen animated-gradient relative overflow-hidden">
-      {/* Floating Logo Animation */}
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
+      {/* Floating Particles */}
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
 
       {/* Animated background elements */}
       <div className="absolute inset-0">
