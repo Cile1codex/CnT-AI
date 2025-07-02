@@ -31,40 +31,40 @@ export const UseCases: React.FC = () => {
   const useCases = [
     {
       icon: Store,
-      industry: 'E-commerce & Retail',
+      industry: '🏘️ Real Estate Agency',
       title: 'Automated Customer Support',
-      challenge: 'Overwhelming customer inquiries and support tickets',
-      solution: 'AI chatbots handling 80% of customer questions automatically',
+      challenge: 'Manual responses, slow lead handling, lost deals.',
+      solution: '24/7 chatbot + CRM routing. 70% less manual workload. 2x conversion rate from inbound traffic.',
       results: ['24/7 customer support', '70% reduction in support costs', '95% customer satisfaction'],
       color: 'from-sky-500 to-blue-600',
       caseStudyPath: '/case-study-automated-customer-support',
     },
     {
       icon: Truck,
-      industry: 'Service Businesses',
+      industry: '🧑‍🔧 Service Businesses',
       title: 'Lead Qualification & Booking',
-      challenge: 'Manual lead follow-up and appointment scheduling',
-      solution: 'Automated lead capture with smart qualification and booking flows',
+      challenge: 'Inconsistent booking. Lost leads. Burnout.',
+      solution: 'Smart forms + instant booking. 90% faster reply time. Zero missed inquiries.',
       results: ['50% more qualified leads', '90% faster response time', 'Zero missed opportunities'],
       color: 'from-emerald-500 to-teal-600',
       caseStudyPath: '/case-study-lead-qualification-booking',
     },
     {
       icon: Users,
-      industry: 'Marketing Agencies',
+      industry: '📈 Marketing Agencies',
       title: 'Client Onboarding Automation',
-      challenge: 'Time-consuming manual client onboarding processes',
-      solution: 'Automated workflows for contracts, payments, and project kickoffs',
+      challenge: 'Disjointed onboarding. Delayed contracts/payments.',
+      solution: 'Automated kickoffs. 5x faster onboarding. Clean, consistent delivery.',
       results: ['5x faster onboarding', 'Consistent client experience', 'More time for strategy'],
       color: 'from-purple-500 to-indigo-600',
       caseStudyPath: '/case-study-client-onboarding-automation',
     },
     {
       icon: Laptop,
-      industry: 'SaaS Companies',
+      industry: '🖥 Software-as-a-Service Companies',
       title: 'User Activation Flows',
-      challenge: 'Low user activation and high churn rates',
-      solution: 'Intelligent onboarding sequences with personalized guidance',
+      challenge: 'Low user activation. High churn. Support overload.',
+      solution: 'Personalized onboarding. Email nurture sequences. 60% higher activation. 40% churn reduction.',
       results: ['60% higher activation', '40% churn reduction', 'Scalable growth'],
       color: 'from-orange-500 to-red-600',
       caseStudyPath: '/case-study-user-activation-flows',
@@ -106,25 +106,13 @@ export const UseCases: React.FC = () => {
 
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-red-400 mb-2">❌ The Challenge</h4>
+                  <h4 className="font-semibold text-red-400 mb-2">❌ Before</h4>
                   <p className="text-gray-300">{useCase.challenge}</p>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-sky-400 mb-2">🔧 Our Solution</h4>
+                  <h4 className="font-semibold text-emerald-400 mb-2">✅ After</h4>
                   <p className="text-gray-300">{useCase.solution}</p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-emerald-400 mb-3">✅ Results Achieved</h4>
-                  <div className="grid grid-cols-1 gap-2">
-                    {useCase.results.map((result, resultIndex) => (
-                      <div key={resultIndex} className="flex items-center">
-                        <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></div>
-                        <span className="text-gray-300 font-medium">{result}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               </div>
 
@@ -153,7 +141,7 @@ export const UseCases: React.FC = () => {
               onClick={scrollToContact}
               className="bg-white text-sky-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105"
             >
-              Schedule Strategy Call
+              📞 Let's Build Your Use Case Next
             </button>
           </div>
         </div>

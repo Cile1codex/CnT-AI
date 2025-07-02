@@ -21,39 +21,46 @@ export const Services: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const services = [
     {
       icon: MessageSquare,
-      title: '24/7 AI Chatbot Systems',
-      description: 'Custom-trained chatbots that handle customer support, FAQs, lead capture, and product guidance — available at all hours.',
+      title: '💬 AI Chatbots That Never Sleep',
+      description: 'Custom-trained, brand-voiced, and built on your business logic. Support, sales, and lead capture—done without humans.',
       color: 'from-sky-500 to-blue-600',
       link: '/ai-chatbots',
     },
     {
-      icon: Globe,
-      title: 'Conversion-Optimized Websites',
-      description: 'Fully custom websites built from scratch to convert traffic into clients. Designed with automation and scalability in mind.',
-      color: 'from-emerald-500 to-teal-600',
-      link: '/conversion-websites',
-    },
-    {
       icon: Users,
-      title: 'Lead Capture & Funnel Automation',
-      description: 'We build smart forms and chat flows that collect and qualify leads — automatically sent to your CRM or email list.',
+      title: '🧲 Smart Lead Funnels',
+      description: 'Interactive chat + forms that qualify leads, sort them based on logic, and route them directly to your CRM or calendar.',
       color: 'from-purple-500 to-indigo-600',
       link: '/lead-funnel-automation',
     },
     {
       icon: Mail,
-      title: 'Automated Email Campaigns & Newsletters',
-      description: 'Trigger-based email flows for onboarding, sales, retention, and announcements — sent without you lifting a finger.',
+      title: '📬 Automated Email Workflows',
+      description: 'Welcome flows. Follow-ups. Retention. Everything sent at the perfect time—without writing another email manually.',
       color: 'from-orange-500 to-red-600',
       link: '/email-automation',
     },
     {
+      icon: Globe,
+      title: '🌐 Conversion Websites',
+      description: 'Built from scratch with automation baked in. Designed to turn traffic into booked calls—not bounce rates.',
+      color: 'from-emerald-500 to-teal-600',
+      link: '/conversion-websites',
+    },
+    {
       icon: Database,
-      title: 'Backend API & CRM Integration',
-      description: 'We connect all your tools: CRMs, forms, databases, booking systems, analytics platforms — synced in real-time.',
+      title: '🔗 CRM + Tool Integration',
+      description: 'APIs. Zapier. Webhooks. Direct connects. All your backend tools synced into one clean, responsive machine.',
       color: 'from-cyan-500 to-blue-600',
       link: '/backend-integration',
     },
@@ -70,7 +77,7 @@ export const Services: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
             <div
               key={service.title}
@@ -102,6 +109,17 @@ export const Services: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className={`text-center transition-all duration-1000 delay-600 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
+          <button 
+            onClick={scrollToContact}
+            className="bg-gradient-to-r from-sky-500 to-emerald-500 text-white font-semibold px-8 py-4 rounded-lg hover:from-sky-600 hover:to-emerald-600 transition-all duration-300 hover:scale-105 inline-flex items-center"
+          >
+            📞 Book Your Free Automation Audit
+          </button>
         </div>
       </div>
     </section>

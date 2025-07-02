@@ -228,10 +228,10 @@ export const Contact: React.FC = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
-            Ready to <span className="bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent">Automate and Grow</span>?
+            Have Questions or <span className="bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent">Business Inquiries</span>?
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Let's build a system that saves you time, reduces stress, and keeps working while you sleep.
+            If you have additional questions or want to reach us directly, feel free to get in touch:
           </p>
         </div>
 
@@ -245,10 +245,42 @@ export const Contact: React.FC = () => {
               
               {/* Success Message */}
               {submitSuccess && (
-                <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-lg">
-                  <p className="text-emerald-800 font-medium">
-                    ✅ Thank you! We'll be in touch within 24 hours.
-                  </p>
+                <div className="mb-6 p-6 bg-emerald-50 border border-emerald-200 rounded-lg">
+                  <h4 className="text-emerald-800 font-bold text-lg mb-3">What Happens After You Submit the Form?</h4>
+                  <div className="space-y-2 text-emerald-700">
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                      <span>We review your workflows</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                      <span>Identify your biggest bottlenecks</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                      <span>Show you what we can automate immediately</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                      <span>Launch your first system—often within 48–72 hours</span>
+                    </div>
+                  </div>
+                  <div className="mt-4 p-4 bg-emerald-100 rounded-lg">
+                    <p className="text-emerald-800 font-medium">
+                      You're no longer guessing. You're not stuck researching tools and patching things together.
+                    </p>
+                    <p className="text-emerald-800 font-medium mt-2">
+                      You've just found the team that builds the machine for you. Quietly. Powerfully. Fast.
+                    </p>
+                  </div>
+                  <div className="mt-4 text-center">
+                    <button 
+                      onClick={() => setSubmitSuccess(false)}
+                      className="bg-emerald-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors duration-200"
+                    >
+                      📞 Let's Talk – Book Your Free Call Now
+                    </button>
+                  </div>
                 </div>
               )}
               
@@ -384,7 +416,7 @@ export const Contact: React.FC = () => {
                   icon={Send}
                   onClick={undefined}
                 >
-                  {isSubmitting ? 'Submitting...' : 'Book Your Free Consultation'}
+                  {isSubmitting ? 'Submitting...' : '📞 Book Your Free Strategy Call Today'}
                 </Button>
 
                 {/* reCAPTCHA Notice */}
@@ -421,8 +453,7 @@ export const Contact: React.FC = () => {
               <div>
                 <h3 className="text-2xl font-bold text-slate-800 mb-6">Get In Touch</h3>
                 <p className="text-slate-600 text-lg leading-relaxed">
-                  Ready to transform your business operations? We're here to help you eliminate manual work 
-                  and focus on what matters most - growing your business.
+                  We'll map your highest-ROI automation opportunity—and show you how fast we can launch it.
                 </p>
               </div>
 
@@ -433,8 +464,8 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-slate-800 font-semibold">Call Us</div>
-                    <div className="text-slate-600">+389 78 508 690</div>
-                    <div className="text-slate-600">+389 70 699 636</div>
+                    <div className="text-slate-600">📞 +389 78 508 690</div>
+                    <div className="text-slate-600">📞 +389 70 699 636</div>
                   </div>
                 </div>
 
@@ -449,7 +480,7 @@ export const Contact: React.FC = () => {
                         href="mailto:ilekostadinov15@gmail.com" 
                         className="hover:text-emerald-600 transition-colors duration-200"
                       >
-                        ilekostadinov15@gmail.com
+                        📧 ilekostadinov15@gmail.com
                       </a>
                     </div>
                     <div className="text-slate-600">
@@ -457,7 +488,7 @@ export const Contact: React.FC = () => {
                         href="mailto:matej.tasevski11@gmail.com" 
                         className="hover:text-emerald-600 transition-colors duration-200"
                       >
-                        matej.tasevski11@gmail.com
+                        📧 matej.tasevski11@gmail.com
                       </a>
                     </div>
                   </div>
@@ -469,7 +500,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-slate-800 font-semibold">Based in</div>
-                    <div className="text-slate-600">Skopje, North Macedonia</div>
+                    <div className="text-slate-600">📍 Skopje, North Macedonia</div>
                   </div>
                 </div>
 
@@ -489,19 +520,19 @@ export const Contact: React.FC = () => {
                 <div className="space-y-2 text-sky-100 text-sm">
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    We analyze your current processes
+                    We review your workflows
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    Create a custom automation plan
+                    Identify your biggest bottlenecks
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    Show you the potential ROI
+                    Show you what we can automate immediately
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    Start implementation within 48 hours
+                    Launch your first system—often within 48–72 hours
                   </div>
                 </div>
               </div>
