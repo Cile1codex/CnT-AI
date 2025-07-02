@@ -37,18 +37,6 @@ export const Hero: React.FC = () => {
       <div className="floating-logo">
         <img src="/image.png" alt="CnT AI Logo" />
       </div>
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
 
       {/* Animated background elements */}
       <div className="absolute inset-0">
