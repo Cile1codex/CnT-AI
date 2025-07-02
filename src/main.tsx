@@ -11,3 +11,8 @@ createRoot(document.getElementById('root')!).render(
     </BrowserRouter>
   </StrictMode>
 );
+
+// Add page load animation
+document.addEventListener('DOMContentLoaded', function() {
+  document.body.classList.add('page-load-animation');
+});
