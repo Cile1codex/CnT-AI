@@ -36,7 +36,7 @@ export const UseCases: React.FC = () => {
       challenge: 'Manual responses, slow lead handling, lost deals.',
       solution: '24/7 chatbot + CRM routing. 70% less manual workload. 2x conversion rate from inbound traffic.',
       results: ['24/7 customer support', '70% reduction in support costs', '95% customer satisfaction'],
-      color: 'from-yellow-500 to-orange-600',
+      color: 'from-sky-500 to-blue-600',
       caseStudyPath: '/case-study-automated-customer-support',
     },
     {
@@ -46,7 +46,7 @@ export const UseCases: React.FC = () => {
       challenge: 'Inconsistent booking. Lost leads. Burnout.',
       solution: 'Smart forms + instant booking. 90% faster reply time. Zero missed inquiries.',
       results: ['50% more qualified leads', '90% faster response time', 'Zero missed opportunities'],
-      color: 'from-green-500 to-teal-600',
+      color: 'from-emerald-500 to-teal-600',
       caseStudyPath: '/case-study-lead-qualification-booking',
     },
     {
@@ -56,7 +56,7 @@ export const UseCases: React.FC = () => {
       challenge: 'Disjointed onboarding. Delayed contracts/payments.',
       solution: 'Automated kickoffs. 5x faster onboarding. Clean, consistent delivery.',
       results: ['5x faster onboarding', 'Consistent client experience', 'More time for strategy'],
-      color: 'from-pink-500 to-purple-600',
+      color: 'from-purple-500 to-indigo-600',
       caseStudyPath: '/case-study-client-onboarding-automation',
     },
     {
@@ -66,65 +66,65 @@ export const UseCases: React.FC = () => {
       challenge: 'Low user activation. High churn. Support overload.',
       solution: 'Personalized onboarding. Email nurture sequences. 60% higher activation. 40% churn reduction.',
       results: ['60% higher activation', '40% churn reduction', 'Scalable growth'],
-      color: 'from-blue-500 to-indigo-600',
+      color: 'from-orange-500 to-red-600',
       caseStudyPath: '/case-study-user-activation-flows',
     },
   ];
 
   return (
-    <section id="use-cases" className="py-24 section-energizing relative overflow-hidden">
-      {/* Floating Logo Symbols */}
-      <div className="floating-logo"></div>
-      <div className="floating-logo"></div>
-      <div className="floating-logo"></div>
+    <section id="use-cases" className="py-20 animated-gradient relative overflow-hidden">
+      {/* Floating Particles */}
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className={`text-center mb-20 transition-all duration-1000 ${
+        <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-hierarchy-2 text-slate-800 mb-8 tracking-tight">
-            Real-World <span className="bg-gradient-to-r from-yellow-600 to-green-600 bg-clip-text text-transparent">Success Stories</span>
+          <h2 className="text-4xl font-bold text-white mb-6 tracking-tight text-glow">
+            Real-World <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent text-glow-emerald">Success Stories</span>
           </h2>
-          <p className="text-slate-600 max-w-4xl mx-auto text-body">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto" style={{ fontSize: '20px' }}>
             See how businesses across different industries are saving time and money with our AI automation solutions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {useCases.map((useCase, index) => (
             <div
               key={useCase.industry}
-              className={`premium-card rounded-2xl p-10 shadow-lg hover-scale border-2 will-change-transform transition-all duration-700 ${
+              className={`premium-card-dark rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-700 hover:border-sky-500/50 hover-scale will-change-transform ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className="flex items-start mb-8">
-                <div className={`w-20 h-20 bg-gradient-to-r ${useCase.color} rounded-2xl flex items-center justify-center mr-8 flex-shrink-0`}>
-                  <useCase.icon className="h-10 w-10 text-white" />
+              <div className="flex items-start mb-6">
+                <div className={`w-16 h-16 bg-gradient-to-r ${useCase.color} rounded-2xl flex items-center justify-center mr-6 flex-shrink-0`}>
+                  <useCase.icon className="h-8 w-8 text-white" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-gray-500 mb-2">{useCase.industry}</div>
-                  <h3 className="text-hierarchy-3 text-slate-800">{useCase.title}</h3>
+                  <div className="text-sm font-semibold text-gray-400 mb-1">{useCase.industry}</div>
+                  <h3 className="text-xl font-bold text-white">{useCase.title}</h3>
                 </div>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-6">
                 <div>
-                  <h4 className="font-bold text-red-600 mb-4 text-lg">Before</h4>
-                  <p className="text-slate-700 text-body">{useCase.challenge}</p>
+                  <h4 className="font-semibold text-red-400 mb-2">Before</h4>
+                  <p className="text-gray-300" style={{ fontSize: '16px' }}>{useCase.challenge}</p>
                 </div>
 
                 <div>
-                  <h4 className="font-bold text-green-600 mb-4 text-lg">After</h4>
-                  <p className="text-slate-700 text-body">{useCase.solution}</p>
+                  <h4 className="font-semibold text-emerald-400 mb-2">After</h4>
+                  <p className="text-gray-300" style={{ fontSize: '16px' }}>{useCase.solution}</p>
                 </div>
               </div>
 
-              <div className="mt-10 pt-8 border-t border-gray-200">
+              <div className="mt-8 pt-6 border-t border-slate-700">
                 <Link 
                   to={useCase.caseStudyPath}
-                  className="text-indigo-600 font-semibold hover:text-indigo-500 transition-colors duration-200 hover:translate-x-2 transition-transform inline-block text-lg"
+                  className="text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-200 hover:translate-x-2 transition-transform inline-block"
                   onClick={() => window.scrollTo(0, 0)}
                 >
                   See Full Case Study →
@@ -134,17 +134,18 @@ export const UseCases: React.FC = () => {
           ))}
         </div>
 
-        <div className={`mt-20 text-center transition-all duration-1000 delay-1000 ${
+        <div className={`mt-16 text-center transition-all duration-1000 delay-800 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="premium-card-yellow rounded-2xl p-12 border-2">
-            <h3 className="text-hierarchy-3 text-slate-800 mb-6">Your Industry Next?</h3>
-            <p className="text-slate-600 mb-10 max-w-3xl mx-auto text-body">
+          <div className="premium-card rounded-2xl p-8 text-slate-800 border border-sky-200">
+            <h3 className="text-2xl font-bold mb-4">Your Industry Next?</h3>
+            <p className="text-slate-600 mb-6 max-w-2xl mx-auto" style={{ fontSize: '16px' }}>
               Every business has unique challenges. Let us show you how AI automation can solve yours with a personalized demo.
             </p>
             <button 
               onClick={scrollToContact}
-              className="premium-button-coral text-white font-semibold px-10 py-5 rounded-xl transition-all duration-300 text-lg"
+              className="premium-button text-white font-medium px-8 py-3 rounded-lg transition-all duration-300"
+              style={{ fontSize: '18px' }}
             >
               Let's Build Your Use Case Next
             </button>

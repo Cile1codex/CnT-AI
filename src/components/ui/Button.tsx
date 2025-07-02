@@ -20,18 +20,18 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   type = 'button',
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 will-change-transform';
+  const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 will-change-transform';
   
   const variantClasses = {
-    primary: 'premium-button text-white shadow-lg hover:shadow-xl focus:ring-indigo-500',
-    secondary: 'bg-gradient-to-r from-purple-600 to-indigo-700 text-white hover:from-purple-700 hover:to-indigo-800 shadow-lg hover:shadow-xl focus:ring-purple-500',
-    outline: 'border-2 border-indigo-400 text-indigo-600 hover:bg-indigo-50 hover:border-indigo-500 focus:ring-indigo-500 premium-card',
+    primary: 'premium-button text-white shadow-lg hover:shadow-xl focus:ring-sky-500',
+    secondary: 'bg-gradient-to-r from-indigo-800 to-indigo-700 text-white hover:from-indigo-900 hover:to-indigo-800 shadow-lg hover:shadow-xl focus:ring-indigo-700',
+    outline: 'border-2 border-sky-400 text-sky-600 hover:bg-sky-50 hover:border-sky-500 focus:ring-sky-500 premium-card',
   };
   
   const sizeClasses = {
-    sm: 'px-6 py-3 text-base',
-    md: 'px-8 py-4 text-lg',
-    lg: 'px-10 py-5 text-lg',
+    sm: 'px-4 py-2 text-base',
+    md: 'px-6 py-3 text-lg',
+    lg: 'px-8 py-4 text-lg',
   };
 
   return (
@@ -39,8 +39,9 @@ export const Button: React.FC<ButtonProps> = ({
       type={type}
       className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
       onClick={onClick}
+      style={{ fontSize: '18px' }}
     >
-      {Icon && <Icon className="w-6 h-6 mr-3" />}
+      {Icon && <Icon className="w-5 h-5 mr-2" />}
       {children}
     </button>
   );
