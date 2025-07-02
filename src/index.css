@@ -182,235 +182,224 @@ section {
   animation-delay: 9s;
 }
 
-/* Simple geometric particle animations - no logo-like shapes */
-@keyframes particleFloat {
+/* Star particle animations - consistent across all pages */
+@keyframes starFloat {
   0%, 100% { 
     transform: translateY(0px) translateX(0px) rotate(0deg); 
-    opacity: 0.3;
+    opacity: 0.4;
   }
   25% { 
     transform: translateY(-15px) translateX(5px) rotate(90deg); 
-    opacity: 0.4;
+    opacity: 0.5;
   }
   50% { 
     transform: translateY(-8px) translateX(-3px) rotate(180deg); 
-    opacity: 0.35;
+    opacity: 0.45;
   }
   75% { 
     transform: translateY(12px) translateX(8px) rotate(270deg); 
-    opacity: 0.3;
+    opacity: 0.4;
   }
 }
 
-@keyframes particleFloatSlow {
+@keyframes starFloatSlow {
   0%, 100% { 
     transform: translateY(0px) translateX(0px) rotate(0deg) scale(1); 
-    opacity: 0.35;
+    opacity: 0.45;
   }
   33% { 
     transform: translateY(-25px) translateX(-10px) rotate(120deg) scale(1.1); 
-    opacity: 0.4;
+    opacity: 0.5;
   }
   66% { 
     transform: translateY(18px) translateX(12px) rotate(240deg) scale(0.9); 
-    opacity: 0.3;
+    opacity: 0.4;
   }
 }
 
-@keyframes particleFloatReverse {
+@keyframes starFloatReverse {
   0%, 100% { 
     transform: translateY(0px) translateX(0px) rotate(360deg) scale(1); 
-    opacity: 0.3;
+    opacity: 0.4;
   }
   50% { 
     transform: translateY(20px) translateX(-15px) rotate(180deg) scale(1.05); 
-    opacity: 0.4;
+    opacity: 0.5;
   }
 }
 
-@keyframes particleFloatGentle {
+@keyframes starFloatGentle {
   0%, 100% { 
     transform: translateY(0px) translateX(0px) rotate(0deg); 
-    opacity: 0.35;
+    opacity: 0.45;
   }
   50% { 
     transform: translateY(-10px) translateX(5px) rotate(180deg); 
-    opacity: 0.4;
+    opacity: 0.5;
   }
 }
 
-@keyframes particleFloatDeep {
+@keyframes starFloatDeep {
   0%, 100% { 
     transform: translateY(0px) translateX(0px) rotate(0deg) scale(0.8); 
-    opacity: 0.25;
+    opacity: 0.3;
   }
   25% { 
     transform: translateY(-30px) translateX(-8px) rotate(90deg) scale(0.9); 
-    opacity: 0.3;
+    opacity: 0.35;
   }
   75% { 
     transform: translateY(25px) translateX(10px) rotate(270deg) scale(0.85); 
-    opacity: 0.28;
-  }
-}
-
-@keyframes particleFloatMedium {
-  0%, 100% { 
-    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1); 
-    opacity: 0.3;
-  }
-  40% { 
-    transform: translateY(-20px) translateX(8px) rotate(144deg) scale(1.05); 
-    opacity: 0.4;
-  }
-  80% { 
-    transform: translateY(15px) translateX(-5px) rotate(288deg) scale(0.95); 
     opacity: 0.32;
   }
 }
 
-/* Simple geometric particles - circles and diamonds */
+@keyframes starFloatMedium {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1); 
+    opacity: 0.4;
+  }
+  40% { 
+    transform: translateY(-20px) translateX(8px) rotate(144deg) scale(1.05); 
+    opacity: 0.5;
+  }
+  80% { 
+    transform: translateY(15px) translateX(-5px) rotate(288deg) scale(0.95); 
+    opacity: 0.42;
+  }
+}
+
+/* Consistent star particle styling */
 .floating-particle {
   position: absolute;
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.4;
   z-index: 1;
   will-change: transform, opacity;
-  width: 8px;
-  height: 8px;
 }
 
-/* Create simple geometric shapes instead of star emojis */
 .floating-particle::before {
-  content: '';
+  content: '⭐';
+  font-size: 1.5rem;
   display: block;
-  width: 100%;
-  height: 100%;
+  /* Consistent star styling with brand colors */
   background: linear-gradient(135deg, #31b3df, #4abedf);
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(49, 179, 223, 0.3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(49, 179, 223, 0.3));
   transition: all 0.3s ease;
 }
 
-/* Alternate between circles and diamonds */
-.floating-particle:nth-child(odd)::before {
-  border-radius: 50%; /* Circles */
-}
-
-.floating-particle:nth-child(even)::before {
-  border-radius: 2px; /* Small squares/diamonds */
-  transform: rotate(45deg);
-}
-
 .floating-particle:hover::before {
-  box-shadow: 0 4px 8px rgba(49, 179, 223, 0.5);
+  filter: drop-shadow(0 4px 8px rgba(49, 179, 223, 0.5));
   transform: scale(1.2);
 }
 
-/* Standard particle positioning - 30-40% more particles */
+/* Standard star particle positioning - 30-40% more stars */
 .floating-particle:nth-child(1) {
   top: 8%;
   left: 12%;
-  animation: particleFloat 8s ease-in-out infinite;
+  animation: starFloat 8s ease-in-out infinite;
   animation-delay: 0s;
 }
 
 .floating-particle:nth-child(2) {
   top: 25%;
   right: 18%;
-  animation: particleFloatSlow 12s ease-in-out infinite;
+  animation: starFloatSlow 12s ease-in-out infinite;
   animation-delay: 2s;
 }
 
 .floating-particle:nth-child(3) {
   top: 45%;
   left: 8%;
-  animation: particleFloatReverse 10s ease-in-out infinite;
+  animation: starFloatReverse 10s ease-in-out infinite;
   animation-delay: 4s;
 }
 
 .floating-particle:nth-child(4) {
   bottom: 30%;
   right: 15%;
-  animation: particleFloatGentle 9s ease-in-out infinite;
+  animation: starFloatGentle 9s ease-in-out infinite;
   animation-delay: 1s;
 }
 
 .floating-particle:nth-child(5) {
   top: 35%;
   right: 8%;
-  animation: particleFloat 11s ease-in-out infinite;
+  animation: starFloat 11s ease-in-out infinite;
   animation-delay: 3s;
 }
 
 .floating-particle:nth-child(6) {
   bottom: 15%;
   left: 25%;
-  animation: particleFloatSlow 7s ease-in-out infinite;
+  animation: starFloatSlow 7s ease-in-out infinite;
   animation-delay: 5s;
 }
 
 .floating-particle:nth-child(7) {
   top: 60%;
   left: 75%;
-  animation: particleFloatDeep 13s ease-in-out infinite;
+  animation: starFloatDeep 13s ease-in-out infinite;
   animation-delay: 6s;
 }
 
 .floating-particle:nth-child(8) {
   bottom: 45%;
   left: 5%;
-  animation: particleFloatReverse 15s ease-in-out infinite;
+  animation: starFloatReverse 15s ease-in-out infinite;
   animation-delay: 8s;
 }
 
 .floating-particle:nth-child(9) {
   top: 15%;
   left: 60%;
-  animation: particleFloatMedium 14s ease-in-out infinite;
+  animation: starFloatMedium 14s ease-in-out infinite;
   animation-delay: 7s;
 }
 
 .floating-particle:nth-child(10) {
   bottom: 8%;
   right: 35%;
-  animation: particleFloat 16s ease-in-out infinite;
+  animation: starFloat 16s ease-in-out infinite;
   animation-delay: 9s;
 }
 
-/* Additional particles for increased density */
+/* Additional stars for increased density */
 .floating-particle:nth-child(11) {
   top: 70%;
   left: 40%;
-  animation: particleFloatGentle 18s ease-in-out infinite;
+  animation: starFloatGentle 18s ease-in-out infinite;
   animation-delay: 10s;
 }
 
 .floating-particle:nth-child(12) {
   top: 50%;
   right: 45%;
-  animation: particleFloatSlow 20s ease-in-out infinite;
+  animation: starFloatSlow 20s ease-in-out infinite;
   animation-delay: 11s;
 }
 
 .floating-particle:nth-child(13) {
   bottom: 60%;
   left: 70%;
-  animation: particleFloatDeep 17s ease-in-out infinite;
+  animation: starFloatDeep 17s ease-in-out infinite;
   animation-delay: 12s;
 }
 
 .floating-particle:nth-child(14) {
   top: 30%;
   left: 30%;
-  animation: particleFloatMedium 19s ease-in-out infinite;
+  animation: starFloatMedium 19s ease-in-out infinite;
   animation-delay: 13s;
 }
 
 .floating-particle:nth-child(15) {
   bottom: 25%;
   right: 60%;
-  animation: particleFloatReverse 21s ease-in-out infinite;
+  animation: starFloatReverse 21s ease-in-out infinite;
   animation-delay: 14s;
 }
 
