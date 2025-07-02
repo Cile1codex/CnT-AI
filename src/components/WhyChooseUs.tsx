@@ -32,33 +32,29 @@ export const WhyChooseUs: React.FC = () => {
       icon: Zap,
       title: 'Built For You',
       description: 'Everything we build is tailored. No cookie-cutter flows or marketplace junk. Your logic, your stack, your business—wired tight.',
-      color: 'text-purple-500',
-      bgColor: 'bg-purple-500/10',
-      borderColor: 'border-purple-500/20',
+      color: 'text-sky-400',
+      bgColor: 'bg-sky-500/10',
     },
     {
       icon: Clock,
       title: 'Results Within Days',
       description: 'Forget long dev cycles. Most systems are running within 72 hours.',
-      color: 'text-indigo-500',
-      bgColor: 'bg-indigo-500/10',
-      borderColor: 'border-indigo-500/20',
+      color: 'text-emerald-400',
+      bgColor: 'bg-emerald-500/10',
     },
     {
       icon: Settings,
       title: 'We\'ve Sat Where You Sit',
       description: 'We\'ve been the ones stuck inside CRMs, chasing invoices, and losing leads to email threads. So we built what we wish we had.',
-      color: 'text-teal-500',
-      bgColor: 'bg-teal-500/10',
-      borderColor: 'border-teal-500/20',
+      color: 'text-purple-400',
+      bgColor: 'bg-purple-500/10',
     },
     {
       icon: Target,
       title: 'Quiet Backends That Just Work',
       description: 'This isn\'t hype. This is the silent, automated infrastructure that powers real teams to win more without more effort.',
-      color: 'text-pink-500',
-      bgColor: 'bg-pink-500/10',
-      borderColor: 'border-pink-500/20',
+      color: 'text-orange-400',
+      bgColor: 'bg-orange-500/10',
     },
   ];
 
@@ -78,7 +74,7 @@ export const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <section id="why-choose-us" className="py-20 bg-gradient-to-b from-sky-50 to-purple-50 relative overflow-hidden">
+    <section id="why-choose-us" className="py-20 bg-gradient-to-b from-blue-50 to-indigo-50 relative overflow-hidden">
       {/* Floating Particles */}
       <div className="floating-particle"></div>
       <div className="floating-particle"></div>
@@ -96,15 +92,15 @@ export const WhyChooseUs: React.FC = () => {
           <div className="max-w-3xl mx-auto mb-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
               {agitationPoints.map((point, index) => (
-                <div key={index} className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform border border-red-200">
+                <div key={index} className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform">
                   <CheckCircle className="h-5 w-5 text-red-500 mr-3 flex-shrink-0" />
-                  <span className="text-slate-700">{point}</span>
+                  <span className="text-slate-700" style={{ fontSize: '16px' }}>{point}</span>
                 </div>
               ))}
             </div>
           </div>
           
-          <p className="text-slate-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-slate-600 max-w-4xl mx-auto leading-relaxed" style={{ fontSize: '16px' }}>
             You're not growing—you're treading water. And deep down, you know it's costing you more than time. It's costing you scale. Reputation. Energy.
           </p>
         </div>
@@ -122,19 +118,19 @@ export const WhyChooseUs: React.FC = () => {
           <div className="max-w-4xl mx-auto mb-8">
             <div className="space-y-4 text-left">
               {transformationPoints.map((point, index) => (
-                <div key={index} className="flex items-start premium-card rounded-lg p-4 hover-scale will-change-transform border border-emerald-200">
+                <div key={index} className="flex items-start premium-card rounded-lg p-4 hover-scale will-change-transform">
                   <span className="text-emerald-500 text-xl mr-4 mt-1 flex-shrink-0">→</span>
-                  <span className="text-slate-700">{point}</span>
+                  <span className="text-slate-700" style={{ fontSize: '16px' }}>{point}</span>
                 </div>
               ))}
             </div>
           </div>
           
           <div className="max-w-4xl mx-auto mb-8">
-            <p className="text-slate-600 leading-relaxed mb-4">
+            <p className="text-slate-600 leading-relaxed mb-4" style={{ fontSize: '16px' }}>
               No training. No setup stress. Just a powerful system tailored to your business—working from day one.
             </p>
-            <p className="text-slate-600 leading-relaxed">
+            <p className="text-slate-600 leading-relaxed" style={{ fontSize: '16px' }}>
               This isn't theory. This is real. And it's ready in 3 days or less.
             </p>
           </div>
@@ -142,6 +138,7 @@ export const WhyChooseUs: React.FC = () => {
           <button 
             onClick={scrollToContact}
             className="premium-button text-white font-medium px-8 py-4 rounded-lg transition-all duration-300"
+            style={{ fontSize: '18px' }}
           >
             Book Your Free Strategy Call
           </button>
@@ -154,12 +151,12 @@ export const WhyChooseUs: React.FC = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <h2 className="text-4xl font-bold text-slate-800 mb-6 tracking-tight">
-            Why Founders & Operators Choose <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">CnT AI</span>
+            Why Founders & Operators Choose <span className="bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent">CnT AI</span>
           </h2>
-          <p className="text-xl font-semibold text-slate-700 mb-8">
+          <p className="text-xl font-semibold text-slate-700 mb-8" style={{ fontSize: '20px' }}>
             Real systems. Real ROI. No noise.
           </p>
-          <p className="text-slate-600 max-w-4xl mx-auto leading-relaxed mb-12">
+          <p className="text-slate-600 max-w-4xl mx-auto leading-relaxed mb-12" style={{ fontSize: '16px' }}>
             We don't automate for the sake of it. We automate where it hurts—so your time goes to scaling, not scrambling.
           </p>
         </div>
@@ -168,20 +165,20 @@ export const WhyChooseUs: React.FC = () => {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className={`premium-card rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover-scale border ${feature.borderColor} will-change-transform ${
+              className={`premium-card rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover-scale border border-slate-200/50 will-change-transform ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 100 + 600}ms` }}
             >
-              <div className={`w-16 h-16 ${feature.bgColor} rounded-2xl flex items-center justify-center mb-6 border ${feature.borderColor}`}>
-                <feature.icon className={`h-8 w-8 ${feature.color} icon-hover`} />
+              <div className={`w-16 h-16 ${feature.bgColor} rounded-2xl flex items-center justify-center mb-6`}>
+                <feature.icon className={`h-8 w-8 ${feature.color}`} />
               </div>
               
               <h3 className="text-xl font-bold text-slate-800 mb-4">
                 {feature.title}
               </h3>
               
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed" style={{ fontSize: '16px' }}>
                 {feature.description}
               </p>
             </div>
@@ -194,6 +191,7 @@ export const WhyChooseUs: React.FC = () => {
           <button 
             onClick={scrollToContact}
             className="premium-button text-white font-medium px-8 py-4 rounded-lg transition-all duration-300"
+            style={{ fontSize: '18px' }}
           >
             Start With a Free Strategy Call
           </button>

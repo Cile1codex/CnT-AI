@@ -36,7 +36,7 @@ export const UseCases: React.FC = () => {
       challenge: 'Мануелни одговори, бавно ракување со потенцијални клиенти, изгубени договори.',
       solution: '24/7 чатбот + CRM рутирање. 70% помалку мануелна работа. 2x стапка на конверзија од дојдовен сообраќај.',
       results: ['24/7 корисничка поддршка', '70% намалување на трошоците за поддршка', '95% задоволство на клиентите'],
-      color: 'from-purple-500 to-indigo-600',
+      color: 'from-sky-500 to-blue-600',
       caseStudyPath: '/mk/case-study-automated-customer-support',
     },
     {
@@ -46,7 +46,7 @@ export const UseCases: React.FC = () => {
       challenge: 'Неконзистентни резервации. Изгубени потенцијални клиенти. Изгореност.',
       solution: 'Паметни форми + моментални резервации. 90% побрзо време на одговор. Нула пропуштени барања.',
       results: ['50% повеќе квалификувани потенцијални клиенти', '90% побрзо време на одговор', 'Нула пропуштени можности'],
-      color: 'from-teal-500 to-emerald-600',
+      color: 'from-emerald-500 to-teal-600',
       caseStudyPath: '/mk/case-study-lead-qualification-booking',
     },
     {
@@ -56,7 +56,7 @@ export const UseCases: React.FC = () => {
       challenge: 'Неповрзан вовед. Одложени договори/плаќања.',
       solution: 'Автоматизирани започнувања. 5x побрз вовед. Чиста, конзистентна достава.',
       results: ['5x побрз вовед', 'Конзистентно искуство за клиентите', 'Повеќе време за стратегија'],
-      color: 'from-pink-500 to-rose-600',
+      color: 'from-purple-500 to-indigo-600',
       caseStudyPath: '/mk/case-study-client-onboarding-automation',
     },
     {
@@ -66,26 +66,21 @@ export const UseCases: React.FC = () => {
       challenge: 'Ниска активација на корисници. Високо напуштање. Преоптоварување на поддршката.',
       solution: 'Персонализиран вовед. Email секвенци за негување. 60% повисока активација. 40% намалување на напуштање.',
       results: ['60% повисока активација', '40% намалување на напуштање', 'Скалабилен раст'],
-      color: 'from-yellow-500 to-orange-600',
+      color: 'from-orange-500 to-red-600',
       caseStudyPath: '/mk/case-study-user-activation-flows',
     },
   ];
 
   return (
-    <section id="use-cases" className="py-20 bg-gradient-to-b from-teal-50 to-pink-50 relative overflow-hidden">
-      {/* Floating Particles */}
-      <div className="floating-particle"></div>
-      <div className="floating-particle"></div>
-      <div className="floating-particle"></div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="use-cases" className="py-20 bg-slate-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-4xl font-bold text-slate-800 mb-6 tracking-tight">
-            Реални <span className="bg-gradient-to-r from-teal-600 to-pink-600 bg-clip-text text-transparent">Приказни за Успех</span>
+          <h2 className="text-4xl font-bold text-white mb-6 tracking-tight">
+            Реални <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">Приказни за Успех</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto" style={{ fontSize: '20px' }}>
             Видете како бизнисите од различни индустрии штедат време и пари со нашите АИ решенија за автоматизација.
           </p>
         </div>
@@ -94,7 +89,7 @@ export const UseCases: React.FC = () => {
           {useCases.map((useCase, index) => (
             <div
               key={useCase.industry}
-              className={`premium-card rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 hover-scale will-change-transform ${
+              className={`bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-700 hover:border-sky-500/50 hover:transform hover:scale-105 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
@@ -104,27 +99,27 @@ export const UseCases: React.FC = () => {
                   <useCase.icon className="h-8 w-8 text-white" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-gray-500 mb-1">{useCase.industry}</div>
-                  <h3 className="text-xl font-bold text-slate-800">{useCase.title}</h3>
+                  <div className="text-sm font-semibold text-gray-400 mb-1">{useCase.industry}</div>
+                  <h3 className="text-xl font-bold text-white">{useCase.title}</h3>
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-red-500 mb-2">Пред</h4>
-                  <p className="text-slate-600">{useCase.challenge}</p>
+                  <h4 className="font-semibold text-red-400 mb-2">Пред</h4>
+                  <p className="text-gray-300" style={{ fontSize: '16px' }}>{useCase.challenge}</p>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-emerald-500 mb-2">После</h4>
-                  <p className="text-slate-600">{useCase.solution}</p>
+                  <h4 className="font-semibold text-emerald-400 mb-2">После</h4>
+                  <p className="text-gray-300" style={{ fontSize: '16px' }}>{useCase.solution}</p>
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-slate-200">
+              <div className="mt-8 pt-6 border-t border-slate-700">
                 <Link 
                   to={useCase.caseStudyPath}
-                  className="text-purple-600 font-semibold hover:text-purple-500 transition-colors duration-200 hover:translate-x-2 transition-transform inline-block"
+                  className="text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-200 hover:translate-x-2 transition-transform inline-block"
                   onClick={() => window.scrollTo(0, 0)}
                 >
                   Видете Целосна Студија на Случај →
@@ -137,14 +132,15 @@ export const UseCases: React.FC = () => {
         <div className={`mt-16 text-center transition-all duration-1000 delay-800 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="cta-gradient rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-sky-500 to-emerald-500 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Вашата Индустрија Следна?</h3>
-            <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
+            <p className="text-sky-100 mb-6 max-w-2xl mx-auto" style={{ fontSize: '16px' }}>
               Секој бизнис има уникатни предизвици. Дозволете ни да ви покажеме како АИ автоматизацијата може да ги реши вашите со персонализирано демо.
             </p>
             <button 
               onClick={scrollToContact}
-              className="bg-white text-purple-600 font-medium px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+              className="bg-white text-sky-600 font-medium px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+              style={{ fontSize: '18px' }}
             >
               Да Го Изградиме Вашиот Случај на Употреба Следен
             </button>
