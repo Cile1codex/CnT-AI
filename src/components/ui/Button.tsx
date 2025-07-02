@@ -20,12 +20,12 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   type = 'button',
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 will-change-transform';
+  const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 will-change-transform btn-hover';
   
   const variantClasses = {
-    primary: 'premium-button text-white shadow-lg hover:shadow-xl focus:ring-sky-500',
+    primary: 'premium-button text-white shadow-lg hover:shadow-xl focus:ring-purple-500',
     secondary: 'bg-gradient-to-r from-indigo-800 to-indigo-700 text-white hover:from-indigo-900 hover:to-indigo-800 shadow-lg hover:shadow-xl focus:ring-indigo-700',
-    outline: 'border-2 border-sky-400 text-sky-600 hover:bg-sky-50 hover:border-sky-500 focus:ring-sky-500 premium-card',
+    outline: 'border-2 border-purple-400 text-purple-600 hover:bg-purple-50 hover:border-purple-500 focus:ring-purple-500 premium-card',
   };
   
   const sizeClasses = {

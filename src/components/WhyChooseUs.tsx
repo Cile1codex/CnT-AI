@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Clock, Settings, Zap, Target, CheckCircle } from 'lucide-react';
+import { AnimatedSection } from './AnimatedSection';
 
 export const WhyChooseUs: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -86,9 +87,7 @@ export const WhyChooseUs: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Agitation Section */}
-        <div className={`text-center mb-20 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <AnimatedSection className="text-center mb-20">
           <h2 className="text-4xl font-bold text-slate-800 mb-8 tracking-tight">
             Right now, your business is leaking time.
           </h2>
@@ -96,10 +95,16 @@ export const WhyChooseUs: React.FC = () => {
           <div className="max-w-3xl mx-auto mb-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
               {agitationPoints.map((point, index) => (
-                <div key={index} className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform border border-red-200">
-                  <CheckCircle className="h-5 w-5 text-red-500 mr-3 flex-shrink-0" />
-                  <span className="text-slate-700">{point}</span>
-                </div>
+                <AnimatedSection
+                  key={index}
+                  delay={index * 100}
+                  className="animate-on-scroll"
+                >
+                  <div className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform border border-red-200">
+                    <CheckCircle className="h-5 w-5 text-red-500 mr-3 flex-shrink-0" />
+                    <span className="text-slate-700">{point}</span>
+                  </div>
+                </AnimatedSection>
               ))}
             </div>
           </div>
@@ -107,14 +112,12 @@ export const WhyChooseUs: React.FC = () => {
           <p className="text-slate-600 max-w-4xl mx-auto leading-relaxed">
             You're not growing—you're treading water. And deep down, you know it's costing you more than time. It's costing you scale. Reputation. Energy.
           </p>
-        </div>
+        </AnimatedSection>
 
         <div className="section-divider"></div>
 
         {/* Emotional Flip Section */}
-        <div className={`text-center mb-20 transition-all duration-1000 delay-200 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <AnimatedSection className="text-center mb-20" delay={200}>
           <h2 className="text-4xl font-bold text-slate-800 mb-8 tracking-tight">
             Now imagine logging in tomorrow… and realizing:
           </h2>
@@ -122,10 +125,16 @@ export const WhyChooseUs: React.FC = () => {
           <div className="max-w-4xl mx-auto mb-8">
             <div className="space-y-4 text-left">
               {transformationPoints.map((point, index) => (
-                <div key={index} className="flex items-start premium-card rounded-lg p-4 hover-scale will-change-transform border border-emerald-200">
-                  <span className="text-emerald-500 text-xl mr-4 mt-1 flex-shrink-0">→</span>
-                  <span className="text-slate-700">{point}</span>
-                </div>
+                <AnimatedSection
+                  key={index}
+                  delay={index * 150}
+                  className="animate-on-scroll"
+                >
+                  <div className="flex items-start premium-card rounded-lg p-4 hover-scale will-change-transform border border-emerald-200">
+                    <span className="text-emerald-500 text-xl mr-4 mt-1 flex-shrink-0">→</span>
+                    <span className="text-slate-700">{point}</span>
+                  </div>
+                </AnimatedSection>
               ))}
             </div>
           </div>
@@ -141,18 +150,16 @@ export const WhyChooseUs: React.FC = () => {
           
           <button 
             onClick={scrollToContact}
-            className="premium-button text-white font-medium px-8 py-4 rounded-lg transition-all duration-300"
+            className="premium-button text-white font-medium px-8 py-4 rounded-lg transition-all duration-300 btn-hover"
           >
             Book Your Free Strategy Call
           </button>
-        </div>
+        </AnimatedSection>
 
         <div className="section-divider"></div>
 
         {/* Why Us Section */}
-        <div className={`text-center mb-16 transition-all duration-1000 delay-400 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <AnimatedSection className="text-center mb-16" delay={400}>
           <h2 className="text-4xl font-bold text-slate-800 mb-6 tracking-tight">
             Why Founders & Operators Choose <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">CnT AI</span>
           </h2>
@@ -162,42 +169,40 @@ export const WhyChooseUs: React.FC = () => {
           <p className="text-slate-600 max-w-4xl mx-auto leading-relaxed mb-12">
             We don't automate for the sake of it. We automate where it hurts—so your time goes to scaling, not scrambling.
           </p>
-        </div>
+        </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {features.map((feature, index) => (
-            <div
+            <AnimatedSection
               key={feature.title}
-              className={`premium-card rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover-scale border ${feature.borderColor} will-change-transform ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-              style={{ transitionDelay: `${index * 100 + 600}ms` }}
+              delay={index * 100 + 600}
+              className="animate-on-scroll"
             >
-              <div className={`w-16 h-16 ${feature.bgColor} rounded-2xl flex items-center justify-center mb-6 border ${feature.borderColor}`}>
-                <feature.icon className={`h-8 w-8 ${feature.color} icon-hover`} />
+              <div className={`premium-card rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover-scale border ${feature.borderColor} will-change-transform`}>
+                <div className={`w-16 h-16 ${feature.bgColor} rounded-2xl flex items-center justify-center mb-6 border ${feature.borderColor}`}>
+                  <feature.icon className={`h-8 w-8 ${feature.color} icon-hover`} />
+                </div>
+                
+                <h3 className="text-xl font-bold text-slate-800 mb-4">
+                  {feature.title}
+                </h3>
+                
+                <p className="text-slate-600 leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
-              
-              <h3 className="text-xl font-bold text-slate-800 mb-4">
-                {feature.title}
-              </h3>
-              
-              <p className="text-slate-600 leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
 
-        <div className={`text-center transition-all duration-1000 delay-800 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <AnimatedSection className="text-center" delay={800}>
           <button 
             onClick={scrollToContact}
-            className="premium-button text-white font-medium px-8 py-4 rounded-lg transition-all duration-300"
+            className="premium-button text-white font-medium px-8 py-4 rounded-lg transition-all duration-300 btn-hover"
           >
             Start With a Free Strategy Call
           </button>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );
