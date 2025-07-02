@@ -7,21 +7,18 @@ interface AnimatedSectionProps {
   animationType?: 'fadeIn' | 'slideUp' | 'slideLeft' | 'slideRight' | 'scale';
   delay?: number;
   threshold?: number;
-  staggerChildren?: boolean;
 }
 
 export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   children,
   className = '',
-  animationType = 'slideUp',
+  animationType = 'fadeIn',
   delay = 0,
   threshold = 0.1,
-  staggerChildren = false,
 }) => {
   const { elementRef, isVisible } = useScrollAnimation({ 
     threshold, 
-    triggerOnce: true,
-    staggerDelay: staggerChildren ? 150 : 0
+    triggerOnce: true 
   });
 
   const getAnimationClasses = () => {

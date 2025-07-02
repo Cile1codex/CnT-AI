@@ -226,18 +226,6 @@ section {
   }
 }
 
-/* Scroll-triggered animation classes */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.animate-on-scroll.animate-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .animate-slide-in-up {
   animation: slideInUp 0.8s ease-out forwards;
 }
@@ -263,34 +251,16 @@ section {
 }
 
 /* Premium hover effects with selective glow */
-.hover-glow {
-  transition: all 0.3s ease-out;
-  will-change: transform, box-shadow;
-}
-
 .hover-glow:hover {
   box-shadow: 0 0 30px rgba(124, 58, 237, 0.4);
   transform: translateY(-2px);
-}
-
-.hover-scale {
   transition: all 0.3s ease-out;
-  will-change: transform;
 }
 
 .hover-scale:hover {
   transform: scale(1.02);
-}
-
-/* Button hover effects */
-.btn-hover {
-  transition: all 0.2s ease-out;
-  will-change: transform, box-shadow;
-}
-
-.btn-hover:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+  transition: all 0.3s ease-out;
+  will-change: transform;
 }
 
 /* Premium card styling with emotional colors */
@@ -305,7 +275,6 @@ section {
 .premium-card:hover {
   border-color: rgba(124, 58, 237, 0.4);
   box-shadow: 0 12px 40px rgba(124, 58, 237, 0.15);
-  transform: translateY(-2px);
 }
 
 .premium-card-dark {
@@ -319,7 +288,6 @@ section {
 .premium-card-dark:hover {
   border-color: rgba(99, 102, 241, 0.5);
   box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2);
-  transform: translateY(-2px);
 }
 
 /* Enhanced button styles with selective glow */
@@ -353,44 +321,20 @@ section {
 }
 
 /* Icon hover effects with gentle glow */
-.icon-hover {
-  transition: all 0.3s ease-out;
-  will-change: transform, filter;
-}
-
 .icon-hover:hover {
   color: #7c3aed;
   filter: drop-shadow(0 0 8px rgba(124, 58, 237, 0.5));
   transform: scale(1.1);
-}
-
-/* Form enhancements */
-.form-input {
   transition: all 0.3s ease-out;
 }
 
+/* Form enhancements */
 .form-input:focus {
   border-color: #7c3aed;
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
   outline: none;
-}
-
-/* Link hover effects */
-.link-hover {
   transition: all 0.3s ease-out;
-  position: relative;
 }
-
-.link-hover:hover {
-  transform: translateX(4px);
-}
-
-/* Card stagger animation */
-.card-stagger-1 { animation-delay: 0.1s; }
-.card-stagger-2 { animation-delay: 0.2s; }
-.card-stagger-3 { animation-delay: 0.3s; }
-.card-stagger-4 { animation-delay: 0.4s; }
-.card-stagger-5 { animation-delay: 0.5s; }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -412,10 +356,6 @@ section {
   
   p, span, div {
     font-size: 16px !important;
-  }
-  
-  .hover-scale:hover {
-    transform: scale(1.01);
   }
 }
 

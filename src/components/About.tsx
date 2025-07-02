@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { AnimatedSection } from './AnimatedSection';
 
 export const About: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,7 +34,9 @@ export const About: React.FC = () => {
       <div className="floating-particle"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <AnimatedSection className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
             About Us
           </h2>
@@ -53,30 +54,32 @@ export const About: React.FC = () => {
               Whether you're a startup scaling fast or an established business looking to reduce operational drag, CnT AI brings the tech and strategic thinking to make your entire system run smoother — with fewer people, fewer mistakes, and no wasted time.
             </p>
           </div>
-        </AnimatedSection>
+        </div>
 
         {/* What Sets Us Apart */}
-        <AnimatedSection className="mb-16" delay={300} staggerChildren>
+        <div className={`mb-16 transition-all duration-1000 delay-300 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-8 text-center">
               What Sets Us Apart
             </h3>
             <div className="space-y-6">
-              <div className="flex items-start premium-card rounded-lg p-6 border border-purple-200 hover-scale animate-on-scroll">
+              <div className="flex items-start premium-card rounded-lg p-6 border border-purple-200 hover-scale">
                 <div className="w-3 h-3 bg-purple-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <h4 className="text-lg font-semibold text-slate-800 mb-2">Real Automation, No Hype</h4>
                   <p className="text-slate-600">We don't automate for the sake of it. We solve for time, performance, and ROI.</p>
                 </div>
               </div>
-              <div className="flex items-start premium-card rounded-lg p-6 border border-teal-200 hover-scale animate-on-scroll">
+              <div className="flex items-start premium-card rounded-lg p-6 border border-teal-200 hover-scale">
                 <div className="w-3 h-3 bg-teal-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <h4 className="text-lg font-semibold text-slate-800 mb-2">Tailored Systems</h4>
                   <p className="text-slate-600">Every business is different. Our builds are customized to fit your exact backend logic and workflow.</p>
                 </div>
               </div>
-              <div className="flex items-start premium-card rounded-lg p-6 border border-pink-200 hover-scale animate-on-scroll">
+              <div className="flex items-start premium-card rounded-lg p-6 border border-pink-200 hover-scale">
                 <div className="w-3 h-3 bg-pink-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <h4 className="text-lg font-semibold text-slate-800 mb-2">Execution-Ready</h4>
@@ -85,10 +88,12 @@ export const About: React.FC = () => {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
         {/* Built by Operators */}
-        <AnimatedSection className="mb-16" delay={500}>
+        <div className={`mb-16 transition-all duration-1000 delay-500 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6">
               Built by Operators, for Operators
@@ -97,10 +102,12 @@ export const About: React.FC = () => {
               We know what it's like to lose time to repetitive tasks and clunky systems. That's why we build platforms that run silently in the background — giving your team space to focus on what really matters: growth, sales, and strategy.
             </p>
           </div>
-        </AnimatedSection>
+        </div>
 
         {/* CTA Section */}
-        <AnimatedSection className="text-center" delay={700}>
+        <div className={`text-center transition-all duration-1000 delay-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="cta-gradient rounded-2xl p-8 text-white">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Let's Automate the Boring Stuff</h3>
             <p className="text-yellow-100 mb-6 text-lg">
@@ -111,13 +118,13 @@ export const About: React.FC = () => {
             </p>
             <button 
               onClick={scrollToContact}
-              className="bg-white text-purple-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 btn-hover inline-flex items-center"
+              className="bg-white text-purple-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 inline-flex items-center"
             >
               Book a Free Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
           </div>
-        </AnimatedSection>
+        </div>
       </div>
     </section>
   );

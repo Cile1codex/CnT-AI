@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ArrowRight, Bot, Zap, TrendingUp } from 'lucide-react';
 import { Button } from './ui/Button';
 
-const Hero: React.FC = () => {
+export const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -90,5 +90,3 @@ const Hero: React.FC = () => {
     </section>
   );
 };
-
-export default Hero;

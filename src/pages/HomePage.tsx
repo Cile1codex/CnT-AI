@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { Navbar } from '../components/Navbar';
-import Hero from '../components/Hero';
+import { Hero } from '../components/Hero';
 import { WhyChooseUs } from '../components/WhyChooseUs';
 import { Services } from '../components/Services';
 import { UseCases } from '../components/UseCases';
