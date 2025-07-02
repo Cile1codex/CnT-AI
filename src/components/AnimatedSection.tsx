@@ -22,7 +22,7 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   });
 
   const getAnimationClasses = () => {
-    const baseClasses = 'transition-all duration-500 ease-out';
+    const baseClasses = 'transition-all duration-700 ease-out';
     
     if (!isVisible) {
       switch (animationType) {

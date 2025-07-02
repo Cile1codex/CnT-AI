@@ -86,7 +86,7 @@ export const Services: React.FC = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`premium-card-dark rounded-2xl p-10 border-2 border-purple-500/30 hover-scale group will-change-transform ${
+              className={`premium-card-dark rounded-2xl p-10 border-2 border-purple-500/30 hover-scale group will-change-transform transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}

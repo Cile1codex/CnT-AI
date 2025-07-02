@@ -96,7 +96,13 @@ export const WhyChooseUs: React.FC = () => {
           <div className="max-w-4xl mx-auto mb-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {agitationPoints.map((point, index) => (
-                <div key={index} className="premium-card rounded-xl p-6 hover-lift will-change-transform">
+                <div 
+                  key={index} 
+                  className={`premium-card rounded-xl p-6 hover-lift will-change-transform transition-all duration-500 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                  }`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
                   <div className="flex items-center">
                     <CheckCircle className="h-6 w-6 text-red-500 mr-4 flex-shrink-0" />
                     <span className="text-slate-700 font-medium text-body">{point}</span>
@@ -124,7 +130,13 @@ export const WhyChooseUs: React.FC = () => {
           <div className="max-w-5xl mx-auto mb-12">
             <div className="space-y-6">
               {transformationPoints.map((point, index) => (
-                <div key={index} className="premium-card-green rounded-xl p-6 hover-lift will-change-transform">
+                <div 
+                  key={index} 
+                  className={`premium-card-green rounded-xl p-6 hover-lift will-change-transform transition-all duration-500 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                  }`}
+                  style={{ transitionDelay: `${(index + 5) * 100}ms` }}
+                >
                   <div className="flex items-start">
                     <span className="text-green-600 text-2xl mr-6 mt-1 flex-shrink-0 font-bold">→</span>
                     <span className="text-slate-700 font-medium text-body text-left">{point}</span>
@@ -172,7 +184,7 @@ export const WhyChooseUs: React.FC = () => {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className={`${feature.cardClass} rounded-2xl p-10 shadow-lg hover-scale border-2 will-change-transform ${
+              className={`${feature.cardClass} rounded-2xl p-10 shadow-lg hover-scale border-2 will-change-transform transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 150 + 600}ms` }}

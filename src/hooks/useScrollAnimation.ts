@@ -9,14 +9,24 @@ interface UseScrollAnimationOptions {
 export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const currentElement = elementRef.current;
+    
+    if (!currentElement) return;
+
+    // Clean up previous observer
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+
+    observerRef.current = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          if (options.triggerOnce) {
-            observer.unobserve(entry.target);
+          if (options.triggerOnce && observerRef.current) {
+            observerRef.current.unobserve(entry.target);
           }
         } else if (!options.triggerOnce) {
           setIsVisible(false);
@@ -28,14 +38,11 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
       }
     );
 
-    const currentElement = elementRef.current;
-    if (currentElement) {
-      observer.observe(currentElement);
-    }
+    observerRef.current.observe(currentElement);
 
     return () => {
-      if (currentElement) {
-        observer.unobserve(currentElement);
+      if (observerRef.current) {
+        observerRef.current.disconnect();
       }
     };
   }, [options.threshold, options.rootMargin, options.triggerOnce]);

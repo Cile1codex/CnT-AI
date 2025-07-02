@@ -94,7 +94,7 @@ export const UseCases: React.FC = () => {
           {useCases.map((useCase, index) => (
             <div
               key={useCase.industry}
-              className={`premium-card rounded-2xl p-10 shadow-lg hover-scale border-2 will-change-transform ${
+              className={`premium-card rounded-2xl p-10 shadow-lg hover-scale border-2 will-change-transform transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
