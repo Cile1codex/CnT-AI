@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Store, Truck, Users, Laptop } from 'lucide-react';
-import { AnimatedSection } from './AnimatedSection';
 
 export const UseCases: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -80,22 +79,25 @@ export const UseCases: React.FC = () => {
       <div className="floating-logo"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <AnimatedSection animationType="slideUp" className="text-center mb-20">
+        <div className={`text-center mb-20 transition-all duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <h2 className="text-hierarchy-2 text-slate-800 mb-8 tracking-tight">
             Real-World <span className="bg-gradient-to-r from-yellow-600 to-green-600 bg-clip-text text-transparent">Success Stories</span>
           </h2>
           <p className="text-slate-600 max-w-4xl mx-auto text-body">
             See how businesses across different industries are saving time and money with our AI automation solutions.
           </p>
-        </AnimatedSection>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {useCases.map((useCase, index) => (
-            <AnimatedSection
+            <div
               key={useCase.industry}
-              animationType="slideUp"
-              delay={index * 200}
-              className="premium-card rounded-2xl p-10 shadow-lg hover-scale border-2 will-change-transform"
+              className={`premium-card rounded-2xl p-10 shadow-lg hover-scale border-2 will-change-transform ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+              style={{ transitionDelay: `${index * 200}ms` }}
             >
               <div className="flex items-start mb-8">
                 <div className={`w-20 h-20 bg-gradient-to-r ${useCase.color} rounded-2xl flex items-center justify-center mr-8 flex-shrink-0`}>
@@ -108,33 +110,33 @@ export const UseCases: React.FC = () => {
               </div>
 
               <div className="space-y-8">
-                <AnimatedSection animationType="slideUp" delay={index * 200 + 300}>
+                <div>
                   <h4 className="font-bold text-red-600 mb-4 text-lg">Before</h4>
                   <p className="text-slate-700 text-body">{useCase.challenge}</p>
-                </AnimatedSection>
+                </div>
 
-                <AnimatedSection animationType="slideUp" delay={index * 200 + 450}>
+                <div>
                   <h4 className="font-bold text-green-600 mb-4 text-lg">After</h4>
                   <p className="text-slate-700 text-body">{useCase.solution}</p>
-                </AnimatedSection>
+                </div>
               </div>
 
-              <AnimatedSection animationType="slideUp" delay={index * 200 + 600}>
-                <div className="mt-10 pt-8 border-t border-gray-200">
-                  <Link 
-                    to={useCase.caseStudyPath}
-                    className="text-indigo-600 font-semibold hover:text-indigo-500 transition-colors duration-200 hover:translate-x-2 transition-transform inline-block text-lg"
-                    onClick={() => window.scrollTo(0, 0)}
-                  >
-                    See Full Case Study →
-                  </Link>
-                </div>
-              </AnimatedSection>
-            </AnimatedSection>
+              <div className="mt-10 pt-8 border-t border-gray-200">
+                <Link 
+                  to={useCase.caseStudyPath}
+                  className="text-indigo-600 font-semibold hover:text-indigo-500 transition-colors duration-200 hover:translate-x-2 transition-transform inline-block text-lg"
+                  onClick={() => window.scrollTo(0, 0)}
+                >
+                  See Full Case Study →
+                </Link>
+              </div>
+            </div>
           ))}
         </div>
 
-        <AnimatedSection animationType="slideUp" delay={1000} className="mt-20 text-center">
+        <div className={`mt-20 text-center transition-all duration-1000 delay-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <div className="premium-card-yellow rounded-2xl p-12 border-2">
             <h3 className="text-hierarchy-3 text-slate-800 mb-6">Your Industry Next?</h3>
             <p className="text-slate-600 mb-10 max-w-3xl mx-auto text-body">
@@ -147,7 +149,7 @@ export const UseCases: React.FC = () => {
               Let's Build Your Use Case Next
             </button>
           </div>
-        </AnimatedSection>
+        </div>
       </div>
     </section>
   );

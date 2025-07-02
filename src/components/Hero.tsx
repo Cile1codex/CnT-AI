@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Bot, Zap, TrendingUp } from 'lucide-react';
 import { Button } from './ui/Button';
-import { AnimatedSection } from './AnimatedSection';
 
 export const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Trigger page load animation
-    const timer = setTimeout(() => setIsVisible(true), 100);
-    return () => clearTimeout(timer);
+    setIsVisible(true);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -38,75 +35,55 @@ export const Hero: React.FC = () => {
 
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="max-w-7xl mx-auto text-center">
-          <AnimatedSection animationType="fadeIn" delay={0}>
+          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="flex justify-center mb-8">
-              <div className="premium-card-dark rounded-full px-8 py-4 hover-glow">
+              <div className="premium-card-dark rounded-full px-8 py-4 animate-fade-in-scale">
                 <span className="text-purple-300 font-medium">One strategy call. One custom automation. Live in 72 hours.</span>
               </div>
             </div>
-          </AnimatedSection>
-          
-          <AnimatedSection animationType="slideUp" delay={200}>
-            <h1 className="text-hierarchy-1 text-white mb-8 leading-tight tracking-tight">
+            
+            <h1 className="text-hierarchy-1 text-white mb-8 leading-tight tracking-tight animate-slide-in-up">
               You're Wasting Time.
               <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-teal-300 bg-clip-text text-transparent mt-4">
                 We're Here to End That.
               </span>
             </h1>
-          </AnimatedSection>
-          
-          <AnimatedSection animationType="slideUp" delay={400}>
-            <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+            
+            <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed animate-slide-in-up" style={{ animationDelay: '0.2s' }}>
               We build intelligent AI systems that run your lead intake, customer support, and backend—so you stop babysitting your business and start scaling it.
             </p>
-          </AnimatedSection>
 
-          <AnimatedSection animationType="slideUp" delay={600}>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-              <Button 
-                size="lg" 
-                onClick={() => scrollToSection('contact')} 
-                icon={ArrowRight} 
-                className="premium-button btn-hover"
-              >
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-slide-in-up" style={{ animationDelay: '0.4s' }}>
+              <Button size="lg" onClick={() => scrollToSection('contact')} icon={ArrowRight} className="premium-button">
                 Book Your Free Consultation
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                onClick={() => scrollToSection('services')} 
-                className="premium-card border-2 border-purple-400 text-purple-300 hover:bg-purple-50 btn-hover"
-              >
+              <Button variant="outline" size="lg" onClick={() => scrollToSection('services')} className="premium-card border-2 border-purple-400 text-purple-300 hover:bg-purple-50">
                 See What We Automate
               </Button>
             </div>
-          </AnimatedSection>
+          </div>
 
           {/* Feature highlights */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
-            <AnimatedSection animationType="slideUp" delay={800}>
-              <div className="premium-card-dark rounded-2xl p-8 card-hover gpu-accelerated">
-                <Bot className="h-16 w-16 text-purple-400 mb-6 mx-auto" />
-                <h3 className="text-white font-bold text-xl mb-4">Real AI. Real Results.</h3>
-                <p className="text-gray-400">Our solutions integrate directly with your workflows and tools</p>
-              </div>
-            </AnimatedSection>
+          <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 transition-all duration-1000 delay-300 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
+            <div className="premium-card-dark rounded-2xl p-8 hover-scale will-change-transform">
+              <Bot className="h-16 w-16 text-purple-400 mb-6 mx-auto" />
+              <h3 className="text-white font-bold text-xl mb-4">Real AI. Real Results.</h3>
+              <p className="text-gray-400">Our solutions integrate directly with your workflows and tools</p>
+            </div>
             
-            <AnimatedSection animationType="slideUp" delay={1000}>
-              <div className="premium-card-dark rounded-2xl p-8 card-hover gpu-accelerated">
-                <Zap className="h-16 w-16 text-teal-400 mb-6 mx-auto" />
-                <h3 className="text-white font-bold text-xl mb-4">24/7 Systems</h3>
-                <p className="text-gray-400">From chatbots to backend processes, your systems never sleep</p>
-              </div>
-            </AnimatedSection>
+            <div className="premium-card-dark rounded-2xl p-8 hover-scale will-change-transform">
+              <Zap className="h-16 w-16 text-teal-400 mb-6 mx-auto" />
+              <h3 className="text-white font-bold text-xl mb-4">24/7 Systems</h3>
+              <p className="text-gray-400">From chatbots to backend processes, your systems never sleep</p>
+            </div>
             
-            <AnimatedSection animationType="slideUp" delay={1200}>
-              <div className="premium-card-dark rounded-2xl p-8 card-hover gpu-accelerated">
-                <TrendingUp className="h-16 w-16 text-pink-400 mb-6 mx-auto" />
-                <h3 className="text-white font-bold text-xl mb-4">Quick Deployment. Fast ROI.</h3>
-                <p className="text-gray-400">Our clients start seeing results within days</p>
-              </div>
-            </AnimatedSection>
+            <div className="premium-card-dark rounded-2xl p-8 hover-scale will-change-transform">
+              <TrendingUp className="h-16 w-16 text-pink-400 mb-6 mx-auto" />
+              <h3 className="text-white font-bold text-xl mb-4">Quick Deployment. Fast ROI.</h3>
+              <p className="text-gray-400">Our clients start seeing results within days</p>
+            </div>
           </div>
         </div>
       </div>

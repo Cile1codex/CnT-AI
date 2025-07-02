@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Clock, Settings, Zap, Target, CheckCircle } from 'lucide-react';
-import { AnimatedSection } from './AnimatedSection';
 
 export const WhyChooseUs: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -87,7 +86,9 @@ export const WhyChooseUs: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Agitation Section */}
-        <AnimatedSection animationType="slideUp" className="text-center mb-24">
+        <div className={`text-center mb-24 transition-all duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <h2 className="text-hierarchy-2 text-slate-800 mb-12 tracking-tight">
             Right now, your business is leaking time.
           </h2>
@@ -95,32 +96,27 @@ export const WhyChooseUs: React.FC = () => {
           <div className="max-w-4xl mx-auto mb-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {agitationPoints.map((point, index) => (
-                <AnimatedSection
-                  key={index}
-                  animationType="slideUp"
-                  delay={index * 100}
-                  className="premium-card rounded-xl p-6 hover-lift will-change-transform"
-                >
+                <div key={index} className="premium-card rounded-xl p-6 hover-lift will-change-transform">
                   <div className="flex items-center">
                     <CheckCircle className="h-6 w-6 text-red-500 mr-4 flex-shrink-0" />
                     <span className="text-slate-700 font-medium text-body">{point}</span>
                   </div>
-                </AnimatedSection>
+                </div>
               ))}
             </div>
           </div>
           
-          <AnimatedSection animationType="slideUp" delay={600}>
-            <p className="text-slate-600 max-w-5xl mx-auto leading-relaxed text-body">
-              You're not growing—you're treading water. And deep down, you know it's costing you more than time. It's costing you scale. Reputation. Energy.
-            </p>
-          </AnimatedSection>
-        </AnimatedSection>
+          <p className="text-slate-600 max-w-5xl mx-auto leading-relaxed text-body">
+            You're not growing—you're treading water. And deep down, you know it's costing you more than time. It's costing you scale. Reputation. Energy.
+          </p>
+        </div>
 
         <div className="section-divider"></div>
 
         {/* Emotional Flip Section */}
-        <AnimatedSection animationType="slideUp" delay={200} className="text-center mb-24">
+        <div className={`text-center mb-24 transition-all duration-1000 delay-200 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <h2 className="text-hierarchy-2 text-slate-800 mb-12 tracking-tight">
             Now imagine logging in tomorrow… and realizing:
           </h2>
@@ -128,48 +124,39 @@ export const WhyChooseUs: React.FC = () => {
           <div className="max-w-5xl mx-auto mb-12">
             <div className="space-y-6">
               {transformationPoints.map((point, index) => (
-                <AnimatedSection
-                  key={index}
-                  animationType="slideUp"
-                  delay={index * 150}
-                  className="premium-card-green rounded-xl p-6 hover-lift will-change-transform"
-                >
+                <div key={index} className="premium-card-green rounded-xl p-6 hover-lift will-change-transform">
                   <div className="flex items-start">
                     <span className="text-green-600 text-2xl mr-6 mt-1 flex-shrink-0 font-bold">→</span>
                     <span className="text-slate-700 font-medium text-body text-left">{point}</span>
                   </div>
-                </AnimatedSection>
+                </div>
               ))}
             </div>
           </div>
           
           <div className="max-w-5xl mx-auto mb-12 space-y-6">
-            <AnimatedSection animationType="slideUp" delay={600}>
-              <p className="text-slate-600 leading-relaxed text-body">
-                No training. No setup stress. Just a powerful system tailored to your business—working from day one.
-              </p>
-            </AnimatedSection>
-            <AnimatedSection animationType="slideUp" delay={750}>
-              <p className="text-slate-700 leading-relaxed text-body font-semibold">
-                This isn't theory. This is real. And it's ready in 3 days or less.
-              </p>
-            </AnimatedSection>
+            <p className="text-slate-600 leading-relaxed text-body">
+              No training. No setup stress. Just a powerful system tailored to your business—working from day one.
+            </p>
+            <p className="text-slate-700 leading-relaxed text-body font-semibold">
+              This isn't theory. This is real. And it's ready in 3 days or less.
+            </p>
           </div>
           
-          <AnimatedSection animationType="slideUp" delay={900}>
-            <button 
-              onClick={scrollToContact}
-              className="premium-button-coral text-white font-semibold px-10 py-5 rounded-xl transition-all duration-300 text-lg"
-            >
-              Book Your Free Strategy Call
-            </button>
-          </AnimatedSection>
-        </AnimatedSection>
+          <button 
+            onClick={scrollToContact}
+            className="premium-button-coral text-white font-semibold px-10 py-5 rounded-xl transition-all duration-300 text-lg"
+          >
+            Book Your Free Strategy Call
+          </button>
+        </div>
 
         <div className="section-divider"></div>
 
         {/* Why Us Section */}
-        <AnimatedSection animationType="slideUp" delay={400} className="text-center mb-20">
+        <div className={`text-center mb-20 transition-all duration-1000 delay-400 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <h2 className="text-hierarchy-2 text-slate-800 mb-8 tracking-tight">
             Why Founders & Operators Choose <span className="bg-gradient-to-r from-indigo-600 to-teal-600 bg-clip-text text-transparent">CnT AI</span>
           </h2>
@@ -179,15 +166,16 @@ export const WhyChooseUs: React.FC = () => {
           <p className="text-slate-600 max-w-5xl mx-auto leading-relaxed mb-16 text-body">
             We don't automate for the sake of it. We automate where it hurts—so your time goes to scaling, not scrambling.
           </p>
-        </AnimatedSection>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           {features.map((feature, index) => (
-            <AnimatedSection
+            <div
               key={feature.title}
-              animationType="slideUp"
-              delay={index * 150 + 600}
-              className={`${feature.cardClass} rounded-2xl p-10 shadow-lg hover-scale border-2 will-change-transform`}
+              className={`${feature.cardClass} rounded-2xl p-10 shadow-lg hover-scale border-2 will-change-transform ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+              style={{ transitionDelay: `${index * 150 + 600}ms` }}
             >
               <div className={`w-20 h-20 ${feature.bgColor} rounded-2xl flex items-center justify-center mb-8`}>
                 <feature.icon className={`h-10 w-10 ${feature.color}`} />
@@ -200,18 +188,20 @@ export const WhyChooseUs: React.FC = () => {
               <p className="text-slate-600 leading-relaxed text-body">
                 {feature.description}
               </p>
-            </AnimatedSection>
+            </div>
           ))}
         </div>
 
-        <AnimatedSection animationType="slideUp" delay={1000} className="text-center">
+        <div className={`text-center transition-all duration-1000 delay-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <button 
             onClick={scrollToContact}
             className="premium-button text-white font-semibold px-10 py-5 rounded-xl transition-all duration-300 text-lg"
           >
             Start With a Free Strategy Call
           </button>
-        </AnimatedSection>
+        </div>
       </div>
     </section>
   );
