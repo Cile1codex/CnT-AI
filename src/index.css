@@ -94,7 +94,7 @@ button {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -102,10 +102,43 @@ button {
   }
 }
 
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .scroll-fade-in {
   opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInUp 300ms ease-out forwards;
+  transform: translateY(20px);
+  animation: fadeInUp 500ms cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 .scroll-fade-in-delay-1 {
@@ -120,6 +153,21 @@ button {
   animation-delay: 450ms;
 }
 
+.scroll-fade-in-delay-4 {
+  animation-delay: 600ms;
+}
+
+.scroll-fade-in-delay-5 {
+  animation-delay: 750ms;
+}
+
+/* Staggered animation classes */
+.stagger-1 { animation-delay: 100ms; }
+.stagger-2 { animation-delay: 250ms; }
+.stagger-3 { animation-delay: 400ms; }
+.stagger-4 { animation-delay: 550ms; }
+.stagger-5 { animation-delay: 700ms; }
+
 /* PAGE LOAD SEQUENCE */
 @keyframes pageLoadFade {
   from {
@@ -132,46 +180,46 @@ button {
 
 .page-load-animation {
   opacity: 0;
-  animation: pageLoadFade 250ms ease-out 100ms forwards;
+  animation: pageLoadFade 400ms ease-out 100ms forwards;
 }
 
 /* HOVER STATES */
 .hover-scale {
-  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+  transition: transform 300ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 300ms ease-out;
   will-change: transform;
 }
 
 .hover-scale:hover {
-  transform: scale(1.02);
+  transform: scale(1.02) translateY(-2px);
 }
 
 .hover-lift {
-  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+  transition: transform 300ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 300ms ease-out;
   will-change: transform;
 }
 
 .hover-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .hover-glow {
-  transition: box-shadow 200ms ease-out;
+  transition: box-shadow 300ms ease-out;
   will-change: box-shadow;
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
 }
 
 /* Button hover effects */
 .btn-hover {
-  transition: all 200ms ease-out;
+  transition: all 300ms cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, background-color;
 }
 
 .btn-hover:hover {
-  transform: scale(1.02);
+  transform: scale(1.02) translateY(-1px);
 }
 
 /* Link hover effects */
@@ -188,7 +236,7 @@ button {
   width: 0;
   height: 2px;
   background: currentColor;
-  transition: width 200ms ease-out;
+  transition: width 300ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .link-hover:hover::after {
@@ -197,13 +245,13 @@ button {
 
 /* Card hover effects */
 .card-hover {
-  transition: all 200ms ease-out;
+  transition: all 300ms cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, box-shadow;
 }
 
 .card-hover:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 /* Section spacing and dividers */
@@ -341,7 +389,7 @@ section {
 @keyframes slideInUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -352,7 +400,7 @@ section {
 @keyframes fadeInScale {
   from {
     opacity: 0;
-    transform: scale(0.92);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
@@ -363,7 +411,7 @@ section {
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-40px);
+    transform: translateX(-30px);
   }
   to {
     opacity: 1;
@@ -374,7 +422,7 @@ section {
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(40px);
+    transform: translateX(30px);
   }
   to {
     opacity: 1;
@@ -383,22 +431,22 @@ section {
 }
 
 .animate-slide-in-up {
-  animation: slideInUp 0.8s ease-out forwards;
+  animation: slideInUp 500ms cubic-bezier(0.25, 1, 0.5, 1) forwards;
   will-change: transform, opacity;
 }
 
 .animate-fade-in-scale {
-  animation: fadeInScale 0.7s ease-out forwards;
+  animation: fadeInScale 400ms cubic-bezier(0.25, 1, 0.5, 1) forwards;
   will-change: transform, opacity;
 }
 
 .animate-slide-in-left {
-  animation: slideInLeft 0.8s ease-out forwards;
+  animation: slideInLeft 500ms cubic-bezier(0.25, 1, 0.5, 1) forwards;
   will-change: transform, opacity;
 }
 
 .animate-slide-in-right {
-  animation: slideInRight 0.8s ease-out forwards;
+  animation: slideInRight 500ms cubic-bezier(0.25, 1, 0.5, 1) forwards;
   will-change: transform, opacity;
 }
 
@@ -410,11 +458,11 @@ section {
 }
 
 .form-shake {
-  animation: shake 200ms ease-in-out;
+  animation: shake 300ms ease-in-out;
 }
 
 .input-focus {
-  transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+  transition: border-color 300ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 300ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .input-focus:focus {
@@ -428,7 +476,7 @@ section {
   backdrop-filter: blur(12px);
   border: 1px solid rgba(99, 102, 241, 0.2);
   box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
-  transition: all 0.4s ease;
+  transition: all 400ms cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, box-shadow;
 }
 
@@ -443,7 +491,7 @@ section {
   backdrop-filter: blur(12px);
   border: 1px solid rgba(167, 139, 250, 0.3);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  transition: all 0.4s ease;
+  transition: all 400ms cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, box-shadow;
 }
 
@@ -458,7 +506,7 @@ section {
   backdrop-filter: blur(12px);
   border: 1px solid var(--seafoam-teal);
   box-shadow: 0 12px 40px rgba(20, 184, 166, 0.2);
-  transition: all 0.4s ease;
+  transition: all 400ms cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, box-shadow;
 }
 
@@ -467,7 +515,7 @@ section {
   backdrop-filter: blur(12px);
   border: 1px solid var(--sunset-coral);
   box-shadow: 0 12px 40px rgba(244, 114, 182, 0.2);
-  transition: all 0.4s ease;
+  transition: all 400ms cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, box-shadow;
 }
 
@@ -476,7 +524,7 @@ section {
   backdrop-filter: blur(12px);
   border: 1px solid var(--lemon-yellow);
   box-shadow: 0 12px 40px rgba(250, 204, 21, 0.2);
-  transition: all 0.4s ease;
+  transition: all 400ms cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, box-shadow;
 }
 
@@ -485,7 +533,7 @@ section {
   backdrop-filter: blur(12px);
   border: 1px solid var(--calm-green);
   box-shadow: 0 12px 40px rgba(74, 222, 128, 0.2);
-  transition: all 0.4s ease;
+  transition: all 400ms cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, box-shadow;
 }
 
@@ -493,7 +541,7 @@ section {
 .premium-button {
   background: linear-gradient(135deg, var(--electric-indigo), var(--seafoam-teal));
   box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
-  transition: all 0.4s ease;
+  transition: all 400ms cubic-bezier(0.25, 1, 0.5, 1);
   position: relative;
   overflow: hidden;
   border: none;
@@ -510,7 +558,7 @@ section {
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.6s ease;
+  transition: left 600ms ease;
 }
 
 .premium-button:hover::before {
@@ -525,7 +573,7 @@ section {
 .premium-button-coral {
   background: linear-gradient(135deg, var(--sunset-coral), var(--soft-purple));
   box-shadow: 0 8px 25px rgba(244, 114, 182, 0.4);
-  transition: all 0.4s ease;
+  transition: all 400ms cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, box-shadow;
 }
 
@@ -538,7 +586,7 @@ section {
   background: linear-gradient(135deg, var(--lemon-yellow), var(--calm-green));
   box-shadow: 0 8px 25px rgba(250, 204, 21, 0.4);
   color: var(--charcoal-navy);
-  transition: all 0.4s ease;
+  transition: all 400ms cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, box-shadow;
 }
 
@@ -638,7 +686,12 @@ section {
   }
   
   .hover-lift:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+  }
+  
+  /* Faster animations on mobile */
+  .scroll-fade-in {
+    animation-duration: 400ms;
   }
 }
 
@@ -664,6 +717,12 @@ section {
   .card-hover:hover,
   .btn-hover:hover {
     transform: none !important;
+  }
+  
+  .scroll-fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
   }
 }
 
@@ -715,7 +774,7 @@ select:focus {
 .fade-in-observer {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 500ms ease-out, transform 500ms ease-out;
+  transition: opacity 500ms cubic-bezier(0.25, 1, 0.5, 1), transform 500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .fade-in-observer.visible {
@@ -723,16 +782,39 @@ select:focus {
   transform: translateY(0);
 }
 
-/* Staggered animations */
-.stagger-1 { transition-delay: 100ms; }
-.stagger-2 { transition-delay: 200ms; }
-.stagger-3 { transition-delay: 300ms; }
-.stagger-4 { transition-delay: 400ms; }
-.stagger-5 { transition-delay: 500ms; }
-
 /* High-performance transforms */
 .gpu-accelerated {
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
+}
+
+/* Professional scroll animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.scroll-animate.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered content animations */
+.content-stagger > * {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 400ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.content-stagger.animate > *:nth-child(1) { transition-delay: 0ms; }
+.content-stagger.animate > *:nth-child(2) { transition-delay: 100ms; }
+.content-stagger.animate > *:nth-child(3) { transition-delay: 200ms; }
+.content-stagger.animate > *:nth-child(4) { transition-delay: 300ms; }
+.content-stagger.animate > *:nth-child(5) { transition-delay: 400ms; }
+
+.content-stagger.animate > * {
+  opacity: 1;
+  transform: translateY(0);
 }

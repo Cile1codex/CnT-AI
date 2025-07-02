@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { AnimatedSection } from './AnimatedSection';
 
 export const About: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,9 +31,7 @@ export const About: React.FC = () => {
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-blue-50 to-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <AnimatedSection animationType="slideUp" className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
             About Us
           </h2>
@@ -40,56 +39,64 @@ export const About: React.FC = () => {
             Smarter Systems. Real Results.
           </p>
           <div className="max-w-4xl mx-auto space-y-6">
-            <p className="text-lg text-slate-600 leading-relaxed">
-              At CnT AI, we believe the best businesses don't run harder — they run smarter. Our mission is to help modern companies eliminate repetitive tasks, streamline their backend, and unlock scalable growth through tailored AI automation.
-            </p>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              We're not here to sell templates or plug-ins. We build intelligent, fully customized systems that solve real operational problems — from 24/7 chatbot support and lead capture funnels to backend API workflows, automated email flows, and CRM integrations.
-            </p>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              Whether you're a startup scaling fast or an established business looking to reduce operational drag, CnT AI brings the tech and strategic thinking to make your entire system run smoother — with fewer people, fewer mistakes, and no wasted time.
-            </p>
+            <AnimatedSection animationType="slideUp" delay={200}>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                At CnT AI, we believe the best businesses don't run harder — they run smarter. Our mission is to help modern companies eliminate repetitive tasks, streamline their backend, and unlock scalable growth through tailored AI automation.
+              </p>
+            </AnimatedSection>
+            <AnimatedSection animationType="slideUp" delay={400}>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                We're not here to sell templates or plug-ins. We build intelligent, fully customized systems that solve real operational problems — from 24/7 chatbot support and lead capture funnels to backend API workflows, automated email flows, and CRM integrations.
+              </p>
+            </AnimatedSection>
+            <AnimatedSection animationType="slideUp" delay={600}>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Whether you're a startup scaling fast or an established business looking to reduce operational drag, CnT AI brings the tech and strategic thinking to make your entire system run smoother — with fewer people, fewer mistakes, and no wasted time.
+              </p>
+            </AnimatedSection>
           </div>
-        </div>
+        </AnimatedSection>
 
         {/* What Sets Us Apart */}
-        <div className={`mb-16 transition-all duration-1000 delay-300 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <AnimatedSection animationType="slideUp" delay={300} className="mb-16">
           <div className="max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-8 text-center">
               What Sets Us Apart
             </h3>
             <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="w-3 h-3 bg-sky-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <div>
-                  <h4 className="text-lg font-semibold text-slate-800 mb-2">Real Automation, No Hype</h4>
-                  <p className="text-slate-600">We don't automate for the sake of it. We solve for time, performance, and ROI.</p>
+              <AnimatedSection animationType="slideUp" delay={500}>
+                <div className="flex items-start">
+                  <div className="w-3 h-3 bg-sky-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-slate-800 mb-2">Real Automation, No Hype</h4>
+                    <p className="text-slate-600">We don't automate for the sake of it. We solve for time, performance, and ROI.</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start">
-                <div className="w-3 h-3 bg-emerald-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <div>
-                  <h4 className="text-lg font-semibold text-slate-800 mb-2">Tailored Systems</h4>
-                  <p className="text-slate-600">Every business is different. Our builds are customized to fit your exact backend logic and workflow.</p>
+              </AnimatedSection>
+              <AnimatedSection animationType="slideUp" delay={650}>
+                <div className="flex items-start">
+                  <div className="w-3 h-3 bg-emerald-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-slate-800 mb-2">Tailored Systems</h4>
+                    <p className="text-slate-600">Every business is different. Our builds are customized to fit your exact backend logic and workflow.</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start">
-                <div className="w-3 h-3 bg-purple-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <div>
-                  <h4 className="text-lg font-semibold text-slate-800 mb-2">Execution-Ready</h4>
-                  <p className="text-slate-600">We move fast, and our tech works. Most clients start seeing impact within days of deployment.</p>
+              </AnimatedSection>
+              <AnimatedSection animationType="slideUp" delay={800}>
+                <div className="flex items-start">
+                  <div className="w-3 h-3 bg-purple-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-slate-800 mb-2">Execution-Ready</h4>
+                    <p className="text-slate-600">We move fast, and our tech works. Most clients start seeing impact within days of deployment.</p>
+                  </div>
                 </div>
-              </div>
+              </AnimatedSection>
             </div>
           </div>
-        </div>
+        </AnimatedSection>
 
         {/* Built by Operators */}
-        <div className={`mb-16 transition-all duration-1000 delay-500 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <AnimatedSection animationType="slideUp" delay={500} className="mb-16">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6">
               Built by Operators, for Operators
@@ -98,12 +105,10 @@ export const About: React.FC = () => {
               We know what it's like to lose time to repetitive tasks and clunky systems. That's why we build platforms that run silently in the background — giving your team space to focus on what really matters: growth, sales, and strategy.
             </p>
           </div>
-        </div>
+        </AnimatedSection>
 
         {/* CTA Section */}
-        <div className={`text-center transition-all duration-1000 delay-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <AnimatedSection animationType="slideUp" delay={700} className="text-center">
           <div className="bg-gradient-to-r from-sky-500 to-emerald-500 rounded-2xl p-8 text-white">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Let's Automate the Boring Stuff</h3>
             <p className="text-sky-100 mb-6 text-lg">
@@ -120,7 +125,7 @@ export const About: React.FC = () => {
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );
