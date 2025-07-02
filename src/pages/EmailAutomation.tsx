@@ -23,7 +23,12 @@ export const EmailAutomation: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-blue-50 w-full overflow-x-hidden">
+      {/* Floating Particles */}
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -46,20 +51,25 @@ export const EmailAutomation: React.FC = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800 relative overflow-hidden">
+      <section className="py-20 animated-gradient relative overflow-hidden">
+        {/* Floating Particles */}
+        <div className="floating-particle"></div>
+        <div className="floating-particle"></div>
+
+        {/* Animated background elements */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-600 rounded-3xl flex items-center justify-center mx-auto mb-8">
+          <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-600 rounded-3xl flex items-center justify-center mx-auto mb-8 hover-scale will-change-transform">
             <Mail className="h-10 w-10 text-white" />
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight text-glow">
             Email Sequences That Onboard,
-            <span className="block bg-gradient-to-r from-orange-400 to-sky-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-orange-400 to-sky-400 bg-clip-text text-transparent text-glow-emerald">
               Sell & Retain Automatically
             </span>
           </h1>
@@ -68,14 +78,14 @@ export const EmailAutomation: React.FC = () => {
             Build powerful, automated campaigns that onboard users, recover carts, and upsell services — no manual work required.
           </p>
           
-          <Button size="lg" onClick={scrollToContact} icon={ArrowRight}>
+          <Button size="lg" onClick={scrollToContact} icon={ArrowRight} className="premium-button">
             Launch Your Automated Email Strategy
           </Button>
         </div>
       </section>
 
       {/* What You Get Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
@@ -87,7 +97,7 @@ export const EmailAutomation: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
+            <div className="text-center premium-card rounded-2xl p-8 hover-scale will-change-transform">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Zap className="h-8 w-8 text-white" />
               </div>
@@ -97,7 +107,7 @@ export const EmailAutomation: React.FC = () => {
               </p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center premium-card rounded-2xl p-8 hover-scale will-change-transform">
               <div className="w-16 h-16 bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Target className="h-8 w-8 text-white" />
               </div>
@@ -107,7 +117,7 @@ export const EmailAutomation: React.FC = () => {
               </p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center premium-card rounded-2xl p-8 hover-scale will-change-transform">
               <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <BarChart3 className="h-8 w-8 text-white" />
               </div>
@@ -121,7 +131,7 @@ export const EmailAutomation: React.FC = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
@@ -130,7 +140,7 @@ export const EmailAutomation: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
+            <div className="premium-card rounded-2xl p-8 shadow-lg border border-slate-200 hover-scale will-change-transform">
               <h3 className="text-xl font-bold text-slate-800 mb-4">Welcome Flows</h3>
               <p className="text-slate-600 mb-6">
                 Onboard new subscribers or customers with a series of educational and engaging emails that build trust and drive action.
@@ -151,7 +161,7 @@ export const EmailAutomation: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
+            <div className="premium-card rounded-2xl p-8 shadow-lg border border-slate-200 hover-scale will-change-transform">
               <h3 className="text-xl font-bold text-slate-800 mb-4">Win-Back Campaigns</h3>
               <p className="text-slate-600 mb-6">
                 Re-engage inactive subscribers and customers with targeted campaigns that bring them back to your business.
@@ -172,7 +182,7 @@ export const EmailAutomation: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
+            <div className="premium-card rounded-2xl p-8 shadow-lg border border-slate-200 hover-scale will-change-transform">
               <h3 className="text-xl font-bold text-slate-800 mb-4">Weekly/Monthly Newsletters</h3>
               <p className="text-slate-600 mb-6">
                 Keep your audience engaged with regular, valuable content that positions you as an industry expert.
@@ -197,7 +207,7 @@ export const EmailAutomation: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-slate-100 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
@@ -206,7 +216,7 @@ export const EmailAutomation: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
+            <div className="text-center premium-card rounded-lg p-6 hover-scale will-change-transform">
               <div className="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Zap className="h-6 w-6 text-orange-600" />
               </div>
@@ -214,7 +224,7 @@ export const EmailAutomation: React.FC = () => {
               <p className="text-sm text-slate-600">Emails triggered by user actions, time delays, or specific events.</p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center premium-card rounded-lg p-6 hover-scale will-change-transform">
               <div className="w-12 h-12 bg-sky-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Target className="h-6 w-6 text-sky-600" />
               </div>
@@ -222,7 +232,7 @@ export const EmailAutomation: React.FC = () => {
               <p className="text-sm text-slate-600">Drag-and-drop email builder with pre-designed templates.</p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center premium-card rounded-lg p-6 hover-scale will-change-transform">
               <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Users className="h-6 w-6 text-emerald-600" />
               </div>
@@ -230,7 +240,7 @@ export const EmailAutomation: React.FC = () => {
               <p className="text-sm text-slate-600">Seamless integration with your existing CRM and customer data.</p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center premium-card rounded-lg p-6 hover-scale will-change-transform">
               <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <BarChart3 className="h-6 w-6 text-purple-600" />
               </div>
@@ -242,9 +252,13 @@ export const EmailAutomation: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-500 to-sky-500">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
+      <section className="py-20 bg-gradient-to-r from-orange-500 to-sky-500 relative overflow-hidden">
+        {/* Floating Particles */}
+        <div className="floating-particle"></div>
+        <div className="floating-particle"></div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="premium-card-dark rounded-3xl p-12 border border-white/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               ✉️ Ready to Automate Your Email Marketing?
             </h2>
@@ -254,7 +268,7 @@ export const EmailAutomation: React.FC = () => {
             <Button 
               size="lg" 
               onClick={scrollToContact}
-              className="bg-white text-orange-600 hover:bg-gray-100"
+              className="bg-white text-orange-600 hover:bg-gray-100 premium-button"
             >
               Launch Your Email Strategy Today
             </Button>

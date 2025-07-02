@@ -23,7 +23,12 @@ export const LeadFunnelAutomation: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-blue-50 w-full overflow-x-hidden">
+      {/* Floating Particles */}
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -46,20 +51,25 @@ export const LeadFunnelAutomation: React.FC = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800 relative overflow-hidden">
+      <section className="py-20 animated-gradient relative overflow-hidden">
+        {/* Floating Particles */}
+        <div className="floating-particle"></div>
+        <div className="floating-particle"></div>
+
+        {/* Animated background elements */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-8">
+          <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-8 hover-scale will-change-transform">
             <Users className="h-10 w-10 text-white" />
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight text-glow">
             Lead Capture & Funnel Automation
-            <span className="block bg-gradient-to-r from-purple-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-purple-400 to-emerald-400 bg-clip-text text-transparent text-glow-emerald">
               That Works While You Sleep
             </span>
           </h1>
@@ -68,14 +78,14 @@ export const LeadFunnelAutomation: React.FC = () => {
             From smart forms to intelligent chat flows, we automate the entire lead capture and qualification process.
           </p>
           
-          <Button size="lg" onClick={scrollToContact} icon={ArrowRight}>
+          <Button size="lg" onClick={scrollToContact} icon={ArrowRight} className="premium-button">
             Let's Automate Your Lead Funnel
           </Button>
         </div>
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
@@ -87,7 +97,7 @@ export const LeadFunnelAutomation: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
+            <div className="text-center premium-card rounded-2xl p-8 hover-scale will-change-transform">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Target className="h-8 w-8 text-white" />
               </div>
@@ -97,7 +107,7 @@ export const LeadFunnelAutomation: React.FC = () => {
               </p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center premium-card rounded-2xl p-8 hover-scale will-change-transform">
               <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Filter className="h-8 w-8 text-white" />
               </div>
@@ -107,7 +117,7 @@ export const LeadFunnelAutomation: React.FC = () => {
               </p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center premium-card rounded-2xl p-8 hover-scale will-change-transform">
               <div className="w-16 h-16 bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Zap className="h-8 w-8 text-white" />
               </div>
@@ -121,7 +131,7 @@ export const LeadFunnelAutomation: React.FC = () => {
       </section>
 
       {/* Why It Works Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
@@ -158,7 +168,7 @@ export const LeadFunnelAutomation: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-500 to-emerald-500 rounded-2xl p-8 text-white">
+            <div className="premium-card rounded-2xl p-8 bg-gradient-to-br from-purple-500 to-emerald-500 text-white">
               <h3 className="text-2xl font-bold mb-6">Proven Results</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -184,7 +194,7 @@ export const LeadFunnelAutomation: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-slate-100 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
@@ -193,7 +203,7 @@ export const LeadFunnelAutomation: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
+            <div className="text-center premium-card rounded-lg p-6 hover-scale will-change-transform">
               <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Filter className="h-6 w-6 text-purple-600" />
               </div>
@@ -201,7 +211,7 @@ export const LeadFunnelAutomation: React.FC = () => {
               <p className="text-sm text-slate-600">Smart forms that adapt based on user responses and behavior.</p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center premium-card rounded-lg p-6 hover-scale will-change-transform">
               <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <BarChart3 className="h-6 w-6 text-emerald-600" />
               </div>
@@ -209,7 +219,7 @@ export const LeadFunnelAutomation: React.FC = () => {
               <p className="text-sm text-slate-600">Track conversion rates and optimize every step of your funnel.</p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center premium-card rounded-lg p-6 hover-scale will-change-transform">
               <div className="w-12 h-12 bg-sky-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Zap className="h-6 w-6 text-sky-600" />
               </div>
@@ -217,7 +227,7 @@ export const LeadFunnelAutomation: React.FC = () => {
               <p className="text-sm text-slate-600">Seamless connection to Salesforce, HubSpot, Pipedrive, and more.</p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center premium-card rounded-lg p-6 hover-scale will-change-transform">
               <div className="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <TrendingUp className="h-6 w-6 text-orange-600" />
               </div>
@@ -229,9 +239,13 @@ export const LeadFunnelAutomation: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-500 to-emerald-500">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
+      <section className="py-20 bg-gradient-to-r from-purple-500 to-emerald-500 relative overflow-hidden">
+        {/* Floating Particles */}
+        <div className="floating-particle"></div>
+        <div className="floating-particle"></div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="premium-card-dark rounded-3xl p-12 border border-white/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               🎯 Ready to Fill Your Pipeline with Qualified Leads?
             </h2>
@@ -241,7 +255,7 @@ export const LeadFunnelAutomation: React.FC = () => {
             <Button 
               size="lg" 
               onClick={scrollToContact}
-              className="bg-white text-purple-600 hover:bg-gray-100"
+              className="bg-white text-purple-600 hover:bg-gray-100 premium-button"
             >
               Book a Free Lead Funnel Audit
             </Button>

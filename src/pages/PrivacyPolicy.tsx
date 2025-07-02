@@ -10,7 +10,11 @@ export const PrivacyPolicy: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-blue-50 w-full overflow-x-hidden">
+      {/* Floating Particles */}
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -34,7 +38,7 @@ export const PrivacyPolicy: React.FC = () => {
 
       {/* Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 md:p-12">
+        <div className="premium-card rounded-2xl shadow-lg border border-slate-200 p-8 md:p-12">
           <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-8">Privacy Policy</h1>
           
           <div className="prose prose-slate max-w-none">

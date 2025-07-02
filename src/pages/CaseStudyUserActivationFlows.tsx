@@ -18,7 +18,11 @@ export const CaseStudyUserActivationFlows: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-blue-50 w-full overflow-x-hidden">
+      {/* Floating Particles */}
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -42,7 +46,7 @@ export const CaseStudyUserActivationFlows: React.FC = () => {
 
       {/* Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 md:p-12">
+        <div className="premium-card rounded-2xl shadow-lg border border-slate-200 p-8 md:p-12">
           {/* Header */}
           <div className="flex items-start justify-between mb-8">
             <div>
@@ -59,7 +63,7 @@ export const CaseStudyUserActivationFlows: React.FC = () => {
                 <span className="text-orange-600">SaaS Startup</span>
               </div>
             </div>
-            <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+            <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center flex-shrink-0 hover-scale will-change-transform">
               <CheckCircle className="h-8 w-8 text-white" />
             </div>
           </div>
@@ -108,25 +112,25 @@ export const CaseStudyUserActivationFlows: React.FC = () => {
                 Results Achieved
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 hover-scale will-change-transform">
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-orange-600 mr-3 flex-shrink-0" />
                     <span className="text-slate-800 font-medium">60% improvement in user activation</span>
                   </div>
                 </div>
-                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 hover-scale will-change-transform">
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-orange-600 mr-3 flex-shrink-0" />
                     <span className="text-slate-800 font-medium">40% reduction in churn within 90 days</span>
                   </div>
                 </div>
-                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 hover-scale will-change-transform">
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-orange-600 mr-3 flex-shrink-0" />
                     <span className="text-slate-800 font-medium">Improved product feedback collection</span>
                   </div>
                 </div>
-                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 hover-scale will-change-transform">
                   <div className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-orange-600 mr-3 flex-shrink-0" />
                     <span className="text-slate-800 font-medium">Scalable onboarding without increasing support tickets</span>
@@ -144,7 +148,7 @@ export const CaseStudyUserActivationFlows: React.FC = () => {
                 </p>
                 <button
                   onClick={handleBookConsultation}
-                  className="inline-flex items-center bg-white text-orange-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+                  className="inline-flex items-center bg-white text-orange-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 premium-button"
                 >
                   Book Your Free Consultation
                 </button>
