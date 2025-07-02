@@ -36,7 +36,7 @@ export const UseCases: React.FC = () => {
       challenge: 'Manual responses, slow lead handling, lost deals.',
       solution: '24/7 chatbot + CRM routing. 70% less manual workload. 2x conversion rate from inbound traffic.',
       results: ['24/7 customer support', '70% reduction in support costs', '95% customer satisfaction'],
-      color: 'from-sky-500 to-blue-600',
+      color: 'from-purple-500 to-indigo-600',
       caseStudyPath: '/case-study-automated-customer-support',
     },
     {
@@ -46,7 +46,7 @@ export const UseCases: React.FC = () => {
       challenge: 'Inconsistent booking. Lost leads. Burnout.',
       solution: 'Smart forms + instant booking. 90% faster reply time. Zero missed inquiries.',
       results: ['50% more qualified leads', '90% faster response time', 'Zero missed opportunities'],
-      color: 'from-emerald-500 to-teal-600',
+      color: 'from-teal-500 to-emerald-600',
       caseStudyPath: '/case-study-lead-qualification-booking',
     },
     {
@@ -56,7 +56,7 @@ export const UseCases: React.FC = () => {
       challenge: 'Disjointed onboarding. Delayed contracts/payments.',
       solution: 'Automated kickoffs. 5x faster onboarding. Clean, consistent delivery.',
       results: ['5x faster onboarding', 'Consistent client experience', 'More time for strategy'],
-      color: 'from-purple-500 to-indigo-600',
+      color: 'from-pink-500 to-rose-600',
       caseStudyPath: '/case-study-client-onboarding-automation',
     },
     {
@@ -66,13 +66,13 @@ export const UseCases: React.FC = () => {
       challenge: 'Low user activation. High churn. Support overload.',
       solution: 'Personalized onboarding. Email nurture sequences. 60% higher activation. 40% churn reduction.',
       results: ['60% higher activation', '40% churn reduction', 'Scalable growth'],
-      color: 'from-orange-500 to-red-600',
+      color: 'from-yellow-500 to-orange-600',
       caseStudyPath: '/case-study-user-activation-flows',
     },
   ];
 
   return (
-    <section id="use-cases" className="py-20 animated-gradient relative overflow-hidden">
+    <section id="use-cases" className="py-20 bg-gradient-to-b from-teal-50 to-pink-50 relative overflow-hidden">
       {/* Floating Particles */}
       <div className="floating-particle"></div>
       <div className="floating-particle"></div>
@@ -82,10 +82,10 @@ export const UseCases: React.FC = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-4xl font-bold text-white mb-6 tracking-tight text-glow">
-            Real-World <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent text-glow-emerald">Success Stories</span>
+          <h2 className="text-4xl font-bold text-slate-800 mb-6 tracking-tight">
+            Real-World <span className="bg-gradient-to-r from-teal-600 to-pink-600 bg-clip-text text-transparent">Success Stories</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto" style={{ fontSize: '20px' }}>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             See how businesses across different industries are saving time and money with our AI automation solutions.
           </p>
         </div>
@@ -94,7 +94,7 @@ export const UseCases: React.FC = () => {
           {useCases.map((useCase, index) => (
             <div
               key={useCase.industry}
-              className={`premium-card-dark rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-700 hover:border-sky-500/50 hover-scale will-change-transform ${
+              className={`premium-card rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 hover-scale will-change-transform ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
@@ -104,27 +104,27 @@ export const UseCases: React.FC = () => {
                   <useCase.icon className="h-8 w-8 text-white" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-gray-400 mb-1">{useCase.industry}</div>
-                  <h3 className="text-xl font-bold text-white">{useCase.title}</h3>
+                  <div className="text-sm font-semibold text-gray-500 mb-1">{useCase.industry}</div>
+                  <h3 className="text-xl font-bold text-slate-800">{useCase.title}</h3>
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-red-400 mb-2">Before</h4>
-                  <p className="text-gray-300" style={{ fontSize: '16px' }}>{useCase.challenge}</p>
+                  <h4 className="font-semibold text-red-500 mb-2">Before</h4>
+                  <p className="text-slate-600">{useCase.challenge}</p>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-emerald-400 mb-2">After</h4>
-                  <p className="text-gray-300" style={{ fontSize: '16px' }}>{useCase.solution}</p>
+                  <h4 className="font-semibold text-emerald-500 mb-2">After</h4>
+                  <p className="text-slate-600">{useCase.solution}</p>
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-slate-700">
+              <div className="mt-8 pt-6 border-t border-slate-200">
                 <Link 
                   to={useCase.caseStudyPath}
-                  className="text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-200 hover:translate-x-2 transition-transform inline-block"
+                  className="text-purple-600 font-semibold hover:text-purple-500 transition-colors duration-200 hover:translate-x-2 transition-transform inline-block"
                   onClick={() => window.scrollTo(0, 0)}
                 >
                   See Full Case Study →
@@ -137,15 +137,14 @@ export const UseCases: React.FC = () => {
         <div className={`mt-16 text-center transition-all duration-1000 delay-800 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="premium-card rounded-2xl p-8 text-slate-800 border border-sky-200">
+          <div className="cta-gradient rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Your Industry Next?</h3>
-            <p className="text-slate-600 mb-6 max-w-2xl mx-auto" style={{ fontSize: '16px' }}>
+            <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
               Every business has unique challenges. Let us show you how AI automation can solve yours with a personalized demo.
             </p>
             <button 
               onClick={scrollToContact}
-              className="premium-button text-white font-medium px-8 py-3 rounded-lg transition-all duration-300"
-              style={{ fontSize: '18px' }}
+              className="bg-white text-purple-600 font-medium px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105"
             >
               Let's Build Your Use Case Next
             </button>

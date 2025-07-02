@@ -49,7 +49,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-purple-500/20' : 'bg-transparent'
     }`}>
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center py-4">
@@ -58,7 +58,7 @@ export const Navbar: React.FC = () => {
             onClick={() => scrollToSection('home')}
           >
             <Logo size="md" className="mr-3 group-hover:scale-110 transition-transform duration-300" />
-            <span className="text-xl font-bold bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-teal-400 bg-clip-text text-transparent">
               CnT AI
             </span>
           </div>
@@ -69,8 +69,8 @@ export const Navbar: React.FC = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-sky-400 ${
-                  activeSection === item.id ? 'text-sky-400' : 'text-gray-300'
+                className={`text-sm font-medium transition-colors duration-200 hover:text-purple-400 nav-link ${
+                  activeSection === item.id ? 'text-purple-400' : 'text-gray-300'
                 }`}
               >
                 {item.label}
@@ -98,13 +98,13 @@ export const Navbar: React.FC = () => {
         <div className={`md:hidden transition-all duration-300 overflow-hidden ${
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-slate-900/95 backdrop-blur-md rounded-lg mb-4">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-slate-900/95 backdrop-blur-md rounded-lg mb-4 border border-purple-500/20">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-200 hover:text-sky-400 w-full text-left ${
-                  activeSection === item.id ? 'text-sky-400' : 'text-gray-300'
+                className={`block px-3 py-2 text-base font-medium transition-colors duration-200 hover:text-purple-400 w-full text-left ${
+                  activeSection === item.id ? 'text-purple-400' : 'text-gray-300'
                 }`}
               >
                 {item.label}

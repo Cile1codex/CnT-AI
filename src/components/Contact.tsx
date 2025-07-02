@@ -222,7 +222,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-slate-100 to-blue-50 relative overflow-hidden">
+    <section id="contact" className="py-20 bg-gradient-to-b from-yellow-50 to-sky-50 relative overflow-hidden">
       {/* Floating Particles */}
       <div className="floating-particle"></div>
       <div className="floating-particle"></div>
@@ -232,9 +232,9 @@ export const Contact: React.FC = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <h2 className="text-4xl font-bold text-slate-800 mb-6 tracking-tight">
-            Have Questions or <span className="bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent">Business Inquiries</span>?
+            Have Questions or <span className="bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent">Business Inquiries</span>?
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto" style={{ fontSize: '20px' }}>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             If you have additional questions or want to reach us directly, feel free to get in touch:
           </p>
         </div>
@@ -244,7 +244,7 @@ export const Contact: React.FC = () => {
           <div className={`transition-all duration-1000 delay-200 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
           }`}>
-            <div className="premium-card rounded-2xl p-8 border border-slate-200 shadow-lg">
+            <div className="premium-card rounded-2xl p-8 border border-purple-200 shadow-lg">
               <h3 className="text-2xl font-bold text-slate-800 mb-6">Book Your Free Consultation</h3>
               
               {/* Success Message */}
@@ -254,26 +254,26 @@ export const Contact: React.FC = () => {
                   <div className="space-y-2 text-emerald-700">
                     <div className="flex items-center">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                      <span style={{ fontSize: '16px' }}>We review your workflows</span>
+                      <span>We review your workflows</span>
                     </div>
                     <div className="flex items-center">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                      <span style={{ fontSize: '16px' }}>Identify your biggest bottlenecks</span>
+                      <span>Identify your biggest bottlenecks</span>
                     </div>
                     <div className="flex items-center">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                      <span style={{ fontSize: '16px' }}>Show you what we can automate immediately</span>
+                      <span>Show you what we can automate immediately</span>
                     </div>
                     <div className="flex items-center">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                      <span style={{ fontSize: '16px' }}>Launch your first system—often within 48–72 hours</span>
+                      <span>Launch your first system—often within 48–72 hours</span>
                     </div>
                   </div>
                   <div className="mt-4 p-4 bg-emerald-100 rounded-lg">
-                    <p className="text-emerald-800 font-medium" style={{ fontSize: '16px' }}>
+                    <p className="text-emerald-800 font-medium">
                       You're no longer guessing. You're not stuck researching tools and patching things together.
                     </p>
-                    <p className="text-emerald-800 font-medium mt-2" style={{ fontSize: '16px' }}>
+                    <p className="text-emerald-800 font-medium mt-2">
                       You've just found the team that builds the machine for you. Quietly. Powerfully. Fast.
                     </p>
                   </div>
@@ -281,7 +281,6 @@ export const Contact: React.FC = () => {
                     <button 
                       onClick={() => setSubmitSuccess(false)}
                       className="premium-button text-white font-medium px-6 py-2 rounded-lg transition-all duration-300"
-                      style={{ fontSize: '18px' }}
                     >
                       Let's Talk – Book Your Free Call Now
                     </button>
@@ -312,9 +311,8 @@ export const Contact: React.FC = () => {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 hover-glow"
+                      className="w-full px-4 py-3 bg-sky-50 border border-purple-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 hover-glow form-input"
                       placeholder="Your name"
-                      style={{ fontSize: '16px' }}
                     />
                   </div>
                   
@@ -330,9 +328,8 @@ export const Contact: React.FC = () => {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 hover-glow"
+                      className="w-full px-4 py-3 bg-sky-50 border border-purple-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 hover-glow form-input"
                       placeholder="your@email.com"
-                      style={{ fontSize: '16px' }}
                     />
                   </div>
                 </div>
@@ -348,9 +345,8 @@ export const Contact: React.FC = () => {
                     value={formData.company}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 hover-glow"
+                    className="w-full px-4 py-3 bg-sky-50 border border-purple-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 hover-glow form-input"
                     placeholder="Your company"
-                    style={{ fontSize: '16px' }}
                   />
                 </div>
 
@@ -366,9 +362,8 @@ export const Contact: React.FC = () => {
                     required
                     disabled={isSubmitting}
                     rows={4}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 resize-none disabled:opacity-50 hover-glow"
+                    className="w-full px-4 py-3 bg-sky-50 border border-purple-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 resize-none disabled:opacity-50 hover-glow form-input"
                     placeholder="Describe the manual processes that are wasting your time..."
-                    style={{ fontSize: '16px' }}
                   />
                 </div>
 
@@ -384,15 +379,15 @@ export const Contact: React.FC = () => {
                       required
                       disabled={isSubmitting}
                       aria-describedby="privacy-error"
-                      className={`mt-1 h-4 w-4 text-sky-600 border-2 rounded focus:ring-sky-500 focus:ring-2 transition-colors duration-200 disabled:opacity-50 ${
-                        errors.privacyAccepted ? 'border-red-500' : 'border-slate-300'
+                      className={`mt-1 h-4 w-4 text-purple-600 border-2 rounded focus:ring-purple-500 focus:ring-2 transition-colors duration-200 disabled:opacity-50 ${
+                        errors.privacyAccepted ? 'border-red-500' : 'border-purple-300'
                       }`}
                     />
                     <label htmlFor="privacyAccepted" className="ml-3 text-sm text-slate-700 leading-relaxed">
                       I have read and agree to the{' '}
                       <Link
                         to="/privacy-policy"
-                        className="text-slate-600 hover:text-sky-400 transition-colors duration-200"
+                        className="text-purple-600 hover:text-purple-500 transition-colors duration-200"
                       >
                         Privacy Policy
                       </Link>
@@ -435,7 +430,7 @@ export const Contact: React.FC = () => {
                     href="https://policies.google.com/privacy" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-slate-600 hover:text-sky-400 transition-colors duration-200"
+                    className="text-purple-600 hover:text-purple-500 transition-colors duration-200"
                   >
                     Privacy Policy
                   </a>{' '}
@@ -444,7 +439,7 @@ export const Contact: React.FC = () => {
                     href="https://policies.google.com/terms" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-slate-600 hover:text-sky-400 transition-colors duration-200"
+                    className="text-purple-600 hover:text-purple-500 transition-colors duration-200"
                   >
                     Terms of Service
                   </a>{' '}
@@ -461,34 +456,33 @@ export const Contact: React.FC = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-slate-800 mb-6">Get In Touch</h3>
-                <p className="text-slate-600 text-lg leading-relaxed" style={{ fontSize: '16px' }}>
+                <p className="text-slate-600 text-lg leading-relaxed">
                   We'll map your highest-ROI automation opportunity—and show you how fast we can launch it.
                 </p>
               </div>
 
               <div className="space-y-6">
-                <div className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform">
-                  <div className="bg-sky-500/20 p-3 rounded-lg mr-4">
-                    <Phone className="h-6 w-6 text-sky-600" />
+                <div className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform border border-purple-200">
+                  <div className="bg-purple-500/20 p-3 rounded-lg mr-4">
+                    <Phone className="h-6 w-6 text-purple-600" />
                   </div>
                   <div>
                     <div className="text-slate-800 font-semibold">Call Us</div>
-                    <div className="text-slate-600" style={{ fontSize: '16px' }}>+389 78 508 690</div>
-                    <div className="text-slate-600" style={{ fontSize: '16px' }}>+389 70 699 636</div>
+                    <div className="text-slate-600">+389 78 508 690</div>
+                    <div className="text-slate-600">+389 70 699 636</div>
                   </div>
                 </div>
 
-                <div className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform">
-                  <div className="bg-emerald-500/20 p-3 rounded-lg mr-4">
-                    <Mail className="h-6 w-6 text-emerald-600" />
+                <div className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform border border-teal-200">
+                  <div className="bg-teal-500/20 p-3 rounded-lg mr-4">
+                    <Mail className="h-6 w-6 text-teal-600" />
                   </div>
                   <div>
                     <div className="text-slate-800 font-semibold">Email Us</div>
                     <div className="text-slate-600">
                       <a 
                         href="mailto:ilekostadinov15@gmail.com" 
-                        className="hover:text-emerald-600 transition-colors duration-200"
-                        style={{ fontSize: '16px' }}
+                        className="hover:text-teal-600 transition-colors duration-200"
                       >
                         ilekostadinov15@gmail.com
                       </a>
@@ -496,8 +490,7 @@ export const Contact: React.FC = () => {
                     <div className="text-slate-600">
                       <a 
                         href="mailto:matej.tasevski11@gmail.com" 
-                        className="hover:text-emerald-600 transition-colors duration-200"
-                        style={{ fontSize: '16px' }}
+                        className="hover:text-teal-600 transition-colors duration-200"
                       >
                         matej.tasevski11@gmail.com
                       </a>
@@ -505,45 +498,45 @@ export const Contact: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform">
-                  <div className="bg-purple-500/20 p-3 rounded-lg mr-4">
-                    <MapPin className="h-6 w-6 text-purple-600" />
+                <div className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform border border-pink-200">
+                  <div className="bg-pink-500/20 p-3 rounded-lg mr-4">
+                    <MapPin className="h-6 w-6 text-pink-600" />
                   </div>
                   <div>
                     <div className="text-slate-800 font-semibold">Based in</div>
-                    <div className="text-slate-600" style={{ fontSize: '16px' }}>Skopje, North Macedonia</div>
+                    <div className="text-slate-600">Skopje, North Macedonia</div>
                   </div>
                 </div>
 
-                <div className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform">
-                  <div className="bg-orange-500/20 p-3 rounded-lg mr-4">
-                    <Calendar className="h-6 w-6 text-orange-600" />
+                <div className="flex items-center premium-card rounded-lg p-4 hover-scale will-change-transform border border-yellow-200">
+                  <div className="bg-yellow-500/20 p-3 rounded-lg mr-4">
+                    <Calendar className="h-6 w-6 text-yellow-600" />
                   </div>
                   <div>
                     <div className="text-slate-800 font-semibold">Response Time</div>
-                    <div className="text-slate-600" style={{ fontSize: '16px' }}>Within 24 hours</div>
+                    <div className="text-slate-600">Within 24 hours</div>
                   </div>
                 </div>
               </div>
 
-              <div className="premium-card rounded-2xl p-6 bg-gradient-to-r from-sky-500 to-emerald-500 text-white">
+              <div className="cta-gradient rounded-2xl p-6 text-white">
                 <h4 className="text-white font-bold mb-3">What Happens Next?</h4>
-                <div className="space-y-2 text-sky-100 text-sm">
+                <div className="space-y-2 text-purple-100 text-sm">
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    <span style={{ fontSize: '16px' }}>We review your workflows</span>
+                    <span>We review your workflows</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    <span style={{ fontSize: '16px' }}>Identify your biggest bottlenecks</span>
+                    <span>Identify your biggest bottlenecks</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    <span style={{ fontSize: '16px' }}>Show you what we can automate immediately</span>
+                    <span>Show you what we can automate immediately</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    <span style={{ fontSize: '16px' }}>Launch your first system—often within 48–72 hours</span>
+                    <span>Launch your first system—often within 48–72 hours</span>
                   </div>
                 </div>
               </div>
