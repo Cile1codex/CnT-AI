@@ -75,7 +75,19 @@ export const WhyChooseUs: React.FC = () => {
 
   return (
     <section id="why-choose-us" className="py-20 bg-gradient-to-b from-blue-50 to-indigo-50 relative overflow-hidden">
-      {/* Floating Particles */}
+      {/* Consistent Star Particles */}
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
       <div className="floating-particle"></div>
       <div className="floating-particle"></div>
       <div className="floating-particle"></div>
