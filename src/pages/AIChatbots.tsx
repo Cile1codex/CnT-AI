@@ -24,16 +24,10 @@ export const AIChatbots: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-blue-50 w-full overflow-x-hidden">
-      {/* Floating Logo Animation */}
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
-      <div className="floating-logo">
-        <img src="/image.png" alt="CnT AI Logo" />
-      </div>
+      {/* Floating Particles */}
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
+      <div className="floating-particle"></div>
 
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-slate-200">
@@ -58,13 +52,9 @@ export const AIChatbots: React.FC = () => {
 
       {/* Hero Section */}
       <section className="py-20 animated-gradient relative overflow-hidden">
-        {/* Floating Logo Animation */}
-        <div className="floating-logo">
-          <img src="/image.png" alt="CnT AI Logo" />
-        </div>
-        <div className="floating-logo">
-          <img src="/image.png" alt="CnT AI Logo" />
-        </div>
+        {/* Floating Particles */}
+        <div className="floating-particle"></div>
+        <div className="floating-particle"></div>
 
         {/* Animated background elements */}
         <div className="absolute inset-0">
@@ -250,13 +240,9 @@ export const AIChatbots: React.FC = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-sky-500 to-emerald-500 relative overflow-hidden">
-        {/* Floating Logo Animation */}
-        <div className="floating-logo">
-          <img src="/image.png" alt="CnT AI Logo" />
-        </div>
-        <div className="floating-logo">
-          <img src="/image.png" alt="CnT AI Logo" />
-        </div>
+        {/* Floating Particles */}
+        <div className="floating-particle"></div>
+        <div className="floating-particle"></div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="premium-card-dark rounded-3xl p-12 border border-white/20">
