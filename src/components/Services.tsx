@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MessageSquare, Globe, Users, Mail, Database, Bot } from 'lucide-react';
+import { MessageSquare, Globe, Users, Mail, Database } from 'lucide-react';
 
 export const Services: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,35 +31,35 @@ export const Services: React.FC = () => {
   const services = [
     {
       icon: MessageSquare,
-      title: '💬 AI Chatbots That Never Sleep',
+      title: 'AI Chatbots That Never Sleep',
       description: 'Custom-trained, brand-voiced, and built on your business logic. Support, sales, and lead capture—done without humans.',
       color: 'from-sky-500 to-blue-600',
       link: '/ai-chatbots',
     },
     {
       icon: Users,
-      title: '🧲 Smart Lead Funnels',
+      title: 'Smart Lead Funnels',
       description: 'Interactive chat + forms that qualify leads, sort them based on logic, and route them directly to your CRM or calendar.',
       color: 'from-purple-500 to-indigo-600',
       link: '/lead-funnel-automation',
     },
     {
       icon: Mail,
-      title: '📬 Automated Email Workflows',
+      title: 'Automated Email Workflows',
       description: 'Welcome flows. Follow-ups. Retention. Everything sent at the perfect time—without writing another email manually.',
       color: 'from-orange-500 to-red-600',
       link: '/email-automation',
     },
     {
       icon: Globe,
-      title: '🌐 Conversion Websites',
+      title: 'Conversion Websites',
       description: 'Built from scratch with automation baked in. Designed to turn traffic into booked calls—not bounce rates.',
       color: 'from-emerald-500 to-teal-600',
       link: '/conversion-websites',
     },
     {
       icon: Database,
-      title: '🔗 CRM + Tool Integration',
+      title: 'CRM + Tool Integration',
       description: 'APIs. Zapier. Webhooks. Direct connects. All your backend tools synced into one clean, responsive machine.',
       color: 'from-cyan-500 to-blue-600',
       link: '/backend-integration',
@@ -72,7 +72,7 @@ export const Services: React.FC = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-bold text-white mb-6 tracking-tight">
             What We <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">Automate</span>
           </h2>
         </div>
@@ -94,7 +94,7 @@ export const Services: React.FC = () => {
                 {service.title}
               </h3>
               
-              <p className="text-gray-300 mb-6 leading-relaxed">
+              <p className="text-gray-300 mb-6 leading-relaxed" style={{ fontSize: '16px' }}>
                 {service.description}
               </p>
 
@@ -116,9 +116,10 @@ export const Services: React.FC = () => {
         }`}>
           <button 
             onClick={scrollToContact}
-            className="bg-gradient-to-r from-sky-500 to-emerald-500 text-white font-semibold px-8 py-4 rounded-lg hover:from-sky-600 hover:to-emerald-600 transition-all duration-300 hover:scale-105 inline-flex items-center"
+            className="bg-gradient-to-r from-sky-500 to-emerald-500 text-white font-medium px-8 py-4 rounded-lg hover:from-sky-600 hover:to-emerald-600 transition-all duration-300 hover:scale-105"
+            style={{ fontSize: '18px' }}
           >
-            📞 Book Your Free Automation Audit
+            Book Your Free Automation Audit
           </button>
         </div>
       </div>

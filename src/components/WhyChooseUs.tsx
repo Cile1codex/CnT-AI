@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Clock, DollarSign, Settings, Zap, Target } from 'lucide-react';
+import { Clock, Settings, Zap, Target, CheckCircle } from 'lucide-react';
 
 export const WhyChooseUs: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -58,104 +58,100 @@ export const WhyChooseUs: React.FC = () => {
     },
   ];
 
+  const agitationPoints = [
+    'Leads falling through the cracks',
+    'Onboarding done manually',
+    'Questions answered one…by…one',
+    'Support staff overwhelmed',
+    'Tasks repeated every. single. day.'
+  ];
+
+  const transformationPoints = [
+    'Every lead is qualified and in your CRM before you wake up',
+    'Clients onboard themselves—contracts signed, payments handled',
+    'Support runs 24/7 without a single employee',
+    'Your backend is synced, clean, and quietly doing the work for you'
+  ];
+
   return (
     <section id="why-choose-us" className="py-20 bg-gradient-to-b from-blue-50 to-indigo-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Agitation Section */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${
+        <div className={`text-center mb-20 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
+          <h2 className="text-4xl font-bold text-slate-800 mb-8 tracking-tight">
             Right now, your business is leaking time.
           </h2>
           
           <div className="max-w-3xl mx-auto mb-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-              <div className="flex items-center">
-                <span className="text-red-500 text-xl mr-3">✅</span>
-                <span className="text-slate-700 text-lg">Leads falling through the cracks</span>
-              </div>
-              <div className="flex items-center">
-                <span className="text-red-500 text-xl mr-3">✅</span>
-                <span className="text-slate-700 text-lg">Onboarding done manually</span>
-              </div>
-              <div className="flex items-center">
-                <span className="text-red-500 text-xl mr-3">✅</span>
-                <span className="text-slate-700 text-lg">Questions answered one…by…one</span>
-              </div>
-              <div className="flex items-center">
-                <span className="text-red-500 text-xl mr-3">✅</span>
-                <span className="text-slate-700 text-lg">Support staff overwhelmed</span>
-              </div>
-              <div className="flex items-center md:col-span-2 justify-center">
-                <span className="text-red-500 text-xl mr-3">✅</span>
-                <span className="text-slate-700 text-lg">Tasks repeated every. single. day.</span>
-              </div>
+              {agitationPoints.map((point, index) => (
+                <div key={index} className="flex items-center">
+                  <CheckCircle className="h-5 w-5 text-red-500 mr-3 flex-shrink-0" />
+                  <span className="text-slate-700" style={{ fontSize: '16px' }}>{point}</span>
+                </div>
+              ))}
             </div>
           </div>
           
-          <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-slate-600 max-w-4xl mx-auto leading-relaxed" style={{ fontSize: '16px' }}>
             You're not growing—you're treading water. And deep down, you know it's costing you more than time. It's costing you scale. Reputation. Energy.
           </p>
         </div>
 
+        <div className="section-divider"></div>
+
         {/* Emotional Flip Section */}
-        <div className={`text-center mb-16 transition-all duration-1000 delay-200 ${
+        <div className={`text-center mb-20 transition-all duration-1000 delay-200 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-8">
+          <h2 className="text-4xl font-bold text-slate-800 mb-8 tracking-tight">
             Now imagine logging in tomorrow… and realizing:
           </h2>
           
           <div className="max-w-4xl mx-auto mb-8">
             <div className="space-y-4 text-left">
-              <div className="flex items-start">
-                <span className="text-emerald-500 text-xl mr-4 mt-1">→</span>
-                <span className="text-slate-700 text-lg">Every lead is qualified and in your CRM before you wake up</span>
-              </div>
-              <div className="flex items-start">
-                <span className="text-emerald-500 text-xl mr-4 mt-1">→</span>
-                <span className="text-slate-700 text-lg">Clients onboard themselves—contracts signed, payments handled</span>
-              </div>
-              <div className="flex items-start">
-                <span className="text-emerald-500 text-xl mr-4 mt-1">→</span>
-                <span className="text-slate-700 text-lg">Support runs 24/7 without a single employee</span>
-              </div>
-              <div className="flex items-start">
-                <span className="text-emerald-500 text-xl mr-4 mt-1">→</span>
-                <span className="text-slate-700 text-lg">Your backend is synced, clean, and quietly doing the work for you</span>
-              </div>
+              {transformationPoints.map((point, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="text-emerald-500 text-xl mr-4 mt-1 flex-shrink-0">→</span>
+                  <span className="text-slate-700" style={{ fontSize: '16px' }}>{point}</span>
+                </div>
+              ))}
             </div>
           </div>
           
           <div className="max-w-4xl mx-auto mb-8">
-            <p className="text-lg text-slate-600 leading-relaxed mb-4">
+            <p className="text-slate-600 leading-relaxed mb-4" style={{ fontSize: '16px' }}>
               No training. No setup stress. Just a powerful system tailored to your business—working from day one.
             </p>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-slate-600 leading-relaxed" style={{ fontSize: '16px' }}>
               This isn't theory. This is real. And it's ready in 3 days or less.
             </p>
           </div>
           
           <button 
             onClick={scrollToContact}
-            className="bg-gradient-to-r from-sky-500 to-emerald-500 text-white font-semibold px-8 py-4 rounded-lg hover:from-sky-600 hover:to-emerald-600 transition-all duration-300 hover:scale-105 inline-flex items-center"
+            className="bg-gradient-to-r from-sky-500 to-emerald-500 text-white font-medium px-8 py-4 rounded-lg hover:from-sky-600 hover:to-emerald-600 transition-all duration-300 hover:scale-105"
+            style={{ fontSize: '18px' }}
           >
-            📞 Book Your Free Strategy Call
+            Book Your Free Strategy Call
           </button>
         </div>
+
+        <div className="section-divider"></div>
 
         {/* Why Us Section */}
         <div className={`text-center mb-16 transition-all duration-1000 delay-400 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
+          <h2 className="text-4xl font-bold text-slate-800 mb-6 tracking-tight">
             Why Founders & Operators Choose <span className="bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent">CnT AI</span>
           </h2>
-          <p className="text-xl md:text-2xl font-semibold text-slate-700 mb-8">
+          <p className="text-xl font-semibold text-slate-700 mb-8" style={{ fontSize: '20px' }}>
             Real systems. Real ROI. No noise.
           </p>
-          <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed mb-12">
+          <p className="text-slate-600 max-w-4xl mx-auto leading-relaxed mb-12" style={{ fontSize: '16px' }}>
             We don't automate for the sake of it. We automate where it hurts—so your time goes to scaling, not scrambling.
           </p>
         </div>
@@ -177,7 +173,7 @@ export const WhyChooseUs: React.FC = () => {
                 {feature.title}
               </h3>
               
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed" style={{ fontSize: '16px' }}>
                 {feature.description}
               </p>
             </div>
@@ -189,9 +185,10 @@ export const WhyChooseUs: React.FC = () => {
         }`}>
           <button 
             onClick={scrollToContact}
-            className="bg-gradient-to-r from-sky-500 to-emerald-500 text-white font-semibold px-8 py-4 rounded-lg hover:from-sky-600 hover:to-emerald-600 transition-all duration-300 hover:scale-105 inline-flex items-center"
+            className="bg-gradient-to-r from-sky-500 to-emerald-500 text-white font-medium px-8 py-4 rounded-lg hover:from-sky-600 hover:to-emerald-600 transition-all duration-300 hover:scale-105"
+            style={{ fontSize: '18px' }}
           >
-            📞 Start With a Free Strategy Call
+            Start With a Free Strategy Call
           </button>
         </div>
       </div>

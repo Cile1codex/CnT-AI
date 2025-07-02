@@ -227,10 +227,10 @@ export const Contact: React.FC = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
+          <h2 className="text-4xl font-bold text-slate-800 mb-6 tracking-tight">
             Have Questions or <span className="bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent">Business Inquiries</span>?
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto" style={{ fontSize: '20px' }}>
             If you have additional questions or want to reach us directly, feel free to get in touch:
           </p>
         </div>
@@ -250,35 +250,36 @@ export const Contact: React.FC = () => {
                   <div className="space-y-2 text-emerald-700">
                     <div className="flex items-center">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                      <span>We review your workflows</span>
+                      <span style={{ fontSize: '16px' }}>We review your workflows</span>
                     </div>
                     <div className="flex items-center">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                      <span>Identify your biggest bottlenecks</span>
+                      <span style={{ fontSize: '16px' }}>Identify your biggest bottlenecks</span>
                     </div>
                     <div className="flex items-center">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                      <span>Show you what we can automate immediately</span>
+                      <span style={{ fontSize: '16px' }}>Show you what we can automate immediately</span>
                     </div>
                     <div className="flex items-center">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                      <span>Launch your first system—often within 48–72 hours</span>
+                      <span style={{ fontSize: '16px' }}>Launch your first system—often within 48–72 hours</span>
                     </div>
                   </div>
                   <div className="mt-4 p-4 bg-emerald-100 rounded-lg">
-                    <p className="text-emerald-800 font-medium">
+                    <p className="text-emerald-800 font-medium" style={{ fontSize: '16px' }}>
                       You're no longer guessing. You're not stuck researching tools and patching things together.
                     </p>
-                    <p className="text-emerald-800 font-medium mt-2">
+                    <p className="text-emerald-800 font-medium mt-2" style={{ fontSize: '16px' }}>
                       You've just found the team that builds the machine for you. Quietly. Powerfully. Fast.
                     </p>
                   </div>
                   <div className="mt-4 text-center">
                     <button 
                       onClick={() => setSubmitSuccess(false)}
-                      className="bg-emerald-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors duration-200"
+                      className="bg-emerald-600 text-white font-medium px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors duration-200"
+                      style={{ fontSize: '18px' }}
                     >
-                      📞 Let's Talk – Book Your Free Call Now
+                      Let's Talk – Book Your Free Call Now
                     </button>
                   </div>
                 </div>
@@ -309,6 +310,7 @@ export const Contact: React.FC = () => {
                       disabled={isSubmitting}
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50"
                       placeholder="Your name"
+                      style={{ fontSize: '16px' }}
                     />
                   </div>
                   
@@ -326,6 +328,7 @@ export const Contact: React.FC = () => {
                       disabled={isSubmitting}
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50"
                       placeholder="your@email.com"
+                      style={{ fontSize: '16px' }}
                     />
                   </div>
                 </div>
@@ -343,6 +346,7 @@ export const Contact: React.FC = () => {
                     disabled={isSubmitting}
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50"
                     placeholder="Your company"
+                    style={{ fontSize: '16px' }}
                   />
                 </div>
 
@@ -360,6 +364,7 @@ export const Contact: React.FC = () => {
                     rows={4}
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 resize-none disabled:opacity-50"
                     placeholder="Describe the manual processes that are wasting your time..."
+                    style={{ fontSize: '16px' }}
                   />
                 </div>
 
@@ -416,7 +421,7 @@ export const Contact: React.FC = () => {
                   icon={Send}
                   onClick={undefined}
                 >
-                  {isSubmitting ? 'Submitting...' : '📞 Book Your Free Strategy Call Today'}
+                  {isSubmitting ? 'Submitting...' : 'Book Your Free Strategy Call Today'}
                 </Button>
 
                 {/* reCAPTCHA Notice */}
@@ -452,7 +457,7 @@ export const Contact: React.FC = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-slate-800 mb-6">Get In Touch</h3>
-                <p className="text-slate-600 text-lg leading-relaxed">
+                <p className="text-slate-600 text-lg leading-relaxed" style={{ fontSize: '16px' }}>
                   We'll map your highest-ROI automation opportunity—and show you how fast we can launch it.
                 </p>
               </div>
@@ -464,8 +469,8 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-slate-800 font-semibold">Call Us</div>
-                    <div className="text-slate-600">📞 +389 78 508 690</div>
-                    <div className="text-slate-600">📞 +389 70 699 636</div>
+                    <div className="text-slate-600" style={{ fontSize: '16px' }}>+389 78 508 690</div>
+                    <div className="text-slate-600" style={{ fontSize: '16px' }}>+389 70 699 636</div>
                   </div>
                 </div>
 
@@ -479,16 +484,18 @@ export const Contact: React.FC = () => {
                       <a 
                         href="mailto:ilekostadinov15@gmail.com" 
                         className="hover:text-emerald-600 transition-colors duration-200"
+                        style={{ fontSize: '16px' }}
                       >
-                        📧 ilekostadinov15@gmail.com
+                        ilekostadinov15@gmail.com
                       </a>
                     </div>
                     <div className="text-slate-600">
                       <a 
                         href="mailto:matej.tasevski11@gmail.com" 
                         className="hover:text-emerald-600 transition-colors duration-200"
+                        style={{ fontSize: '16px' }}
                       >
-                        📧 matej.tasevski11@gmail.com
+                        matej.tasevski11@gmail.com
                       </a>
                     </div>
                   </div>
@@ -500,7 +507,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-slate-800 font-semibold">Based in</div>
-                    <div className="text-slate-600">📍 Skopje, North Macedonia</div>
+                    <div className="text-slate-600" style={{ fontSize: '16px' }}>Skopje, North Macedonia</div>
                   </div>
                 </div>
 
@@ -510,7 +517,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-slate-800 font-semibold">Response Time</div>
-                    <div className="text-slate-600">Within 24 hours</div>
+                    <div className="text-slate-600" style={{ fontSize: '16px' }}>Within 24 hours</div>
                   </div>
                 </div>
               </div>
@@ -520,19 +527,19 @@ export const Contact: React.FC = () => {
                 <div className="space-y-2 text-sky-100 text-sm">
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    We review your workflows
+                    <span style={{ fontSize: '16px' }}>We review your workflows</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    Identify your biggest bottlenecks
+                    <span style={{ fontSize: '16px' }}>Identify your biggest bottlenecks</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    Show you what we can automate immediately
+                    <span style={{ fontSize: '16px' }}>Show you what we can automate immediately</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    Launch your first system—often within 48–72 hours
+                    <span style={{ fontSize: '16px' }}>Launch your first system—often within 48–72 hours</span>
                   </div>
                 </div>
               </div>

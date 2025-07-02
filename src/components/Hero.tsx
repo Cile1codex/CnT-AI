@@ -30,24 +30,24 @@ export const Hero: React.FC = () => {
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="flex justify-center mb-8">
               <div className="bg-gradient-to-r from-sky-500/20 to-emerald-500/20 backdrop-blur-sm border border-sky-500/30 rounded-full px-6 py-3">
-                <span className="text-sky-300 text-sm font-medium">🚀 One strategy call. One custom automation. Live in 72 hours.</span>
+                <span className="text-sky-300 text-sm font-medium">One strategy call. One custom automation. Live in 72 hours.</span>
               </div>
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight" style={{ fontSize: '48px' }}>
               You're Wasting Time.
               <span className="block bg-gradient-to-r from-sky-400 via-emerald-400 to-sky-300 bg-clip-text text-transparent">
                 We're Here to End That.
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed" style={{ fontSize: '20px' }}>
               We build intelligent AI systems that run your lead intake, customer support, and backend—so you stop babysitting your business and start scaling it.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button size="lg" onClick={() => scrollToSection('contact')} icon={ArrowRight}>
-                📞 Book Your Free Consultation
+                Book Your Free Consultation
               </Button>
               <Button variant="outline" size="lg" onClick={() => scrollToSection('services')}>
                 See What We Automate

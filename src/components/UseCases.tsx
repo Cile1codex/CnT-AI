@@ -31,7 +31,7 @@ export const UseCases: React.FC = () => {
   const useCases = [
     {
       icon: Store,
-      industry: '🏘️ Real Estate Agency',
+      industry: 'Real Estate Agency',
       title: 'Automated Customer Support',
       challenge: 'Manual responses, slow lead handling, lost deals.',
       solution: '24/7 chatbot + CRM routing. 70% less manual workload. 2x conversion rate from inbound traffic.',
@@ -41,7 +41,7 @@ export const UseCases: React.FC = () => {
     },
     {
       icon: Truck,
-      industry: '🧑‍🔧 Service Businesses',
+      industry: 'Service Businesses',
       title: 'Lead Qualification & Booking',
       challenge: 'Inconsistent booking. Lost leads. Burnout.',
       solution: 'Smart forms + instant booking. 90% faster reply time. Zero missed inquiries.',
@@ -51,7 +51,7 @@ export const UseCases: React.FC = () => {
     },
     {
       icon: Users,
-      industry: '📈 Marketing Agencies',
+      industry: 'Marketing Agencies',
       title: 'Client Onboarding Automation',
       challenge: 'Disjointed onboarding. Delayed contracts/payments.',
       solution: 'Automated kickoffs. 5x faster onboarding. Clean, consistent delivery.',
@@ -61,7 +61,7 @@ export const UseCases: React.FC = () => {
     },
     {
       icon: Laptop,
-      industry: '🖥 Software-as-a-Service Companies',
+      industry: 'Software-as-a-Service Companies',
       title: 'User Activation Flows',
       challenge: 'Low user activation. High churn. Support overload.',
       solution: 'Personalized onboarding. Email nurture sequences. 60% higher activation. 40% churn reduction.',
@@ -77,10 +77,10 @@ export const UseCases: React.FC = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-bold text-white mb-6 tracking-tight">
             Real-World <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">Success Stories</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto" style={{ fontSize: '20px' }}>
             See how businesses across different industries are saving time and money with our AI automation solutions.
           </p>
         </div>
@@ -106,13 +106,13 @@ export const UseCases: React.FC = () => {
 
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-red-400 mb-2">❌ Before</h4>
-                  <p className="text-gray-300">{useCase.challenge}</p>
+                  <h4 className="font-semibold text-red-400 mb-2">Before</h4>
+                  <p className="text-gray-300" style={{ fontSize: '16px' }}>{useCase.challenge}</p>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-emerald-400 mb-2">✅ After</h4>
-                  <p className="text-gray-300">{useCase.solution}</p>
+                  <h4 className="font-semibold text-emerald-400 mb-2">After</h4>
+                  <p className="text-gray-300" style={{ fontSize: '16px' }}>{useCase.solution}</p>
                 </div>
               </div>
 
@@ -134,14 +134,15 @@ export const UseCases: React.FC = () => {
         }`}>
           <div className="bg-gradient-to-r from-sky-500 to-emerald-500 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Your Industry Next?</h3>
-            <p className="text-sky-100 mb-6 max-w-2xl mx-auto">
+            <p className="text-sky-100 mb-6 max-w-2xl mx-auto" style={{ fontSize: '16px' }}>
               Every business has unique challenges. Let us show you how AI automation can solve yours with a personalized demo.
             </p>
             <button 
               onClick={scrollToContact}
-              className="bg-white text-sky-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+              className="bg-white text-sky-600 font-medium px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+              style={{ fontSize: '18px' }}
             >
-              📞 Let's Build Your Use Case Next
+              Let's Build Your Use Case Next
             </button>
           </div>
         </div>
