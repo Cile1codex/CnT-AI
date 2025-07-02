@@ -223,13 +223,7 @@ export const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-slate-100 to-blue-50 relative overflow-hidden">
-      {/* Dynamic Particle Animation System */}
-      <div className="floating-particle"></div>
-      <div className="floating-particle"></div>
-      <div className="floating-particle"></div>
-      <div className="floating-particle"></div>
-      <div className="floating-particle"></div>
-      <div className="floating-particle"></div>
+      {/* Floating Particles */}
       <div className="floating-particle"></div>
       <div className="floating-particle"></div>
 
