@@ -21,39 +21,46 @@ export const Services: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const services = [
     {
       icon: MessageSquare,
-      title: '24/7 АИ Чатбот Системи',
-      description: 'Прилагодени чатботови што се справуваат со корисничка поддршка, ЧПП, заробување на потенцијални клиенти и водење на производи — достапни во секое време.',
+      title: 'АИ Чатботови Што Никогаш Не Спијат',
+      description: 'Прилагодено обучени, со глас на брендот и изградени врз вашата бизнис логика. Поддршка, продажба и заробување потенцијални клиенти—направено без луѓе.',
       color: 'from-sky-500 to-blue-600',
       link: '/mk/ai-chatbots',
     },
     {
-      icon: Globe,
-      title: 'Веб-страници Оптимизирани за Конверзија',
-      description: 'Целосно прилагодени веб-страници изградени од нула за да го конвертираат сообраќајот во клиенти. Дизајнирани со автоматизација и скалабилност.',
-      color: 'from-emerald-500 to-teal-600',
-      link: '/mk/conversion-websites',
-    },
-    {
       icon: Users,
-      title: 'Заробување на Потенцијални Клиенти и Автоматизација на Фунел',
-      description: 'Градиме паметни форми и чет текови што собираат и квалификуваат потенцијални клиенти — автоматски испратени до вашиот CRM или email листа.',
+      title: 'Паметни Фунели за Потенцијални Клиенти',
+      description: 'Интерактивен чет + форми што ги квалификуваат потенцијалните клиенти, ги сортираат врз основа на логика и ги насочуваат директно до вашиот CRM или календар.',
       color: 'from-purple-500 to-indigo-600',
       link: '/mk/lead-funnel-automation',
     },
     {
       icon: Mail,
-      title: 'Автоматизирани Email Кампањи и Билтени',
-      description: 'Email текови базирани на тригери за вовед, продажба, задржување и објави — испратени без да крените прст.',
+      title: 'Автоматизирани Email Работни Текови',
+      description: 'Текови за добредојде. Следења. Задржување. Сè испратено во совршеното време—без да напишете уште еден email мануелно.',
       color: 'from-orange-500 to-red-600',
       link: '/mk/email-automation',
     },
     {
+      icon: Globe,
+      title: 'Веб-страници за Конверзија',
+      description: 'Изградени од нула со вградена автоматизација. Дизајнирани да го претворат сообраќајот во резервирани повици—не во стапки на напуштање.',
+      color: 'from-emerald-500 to-teal-600',
+      link: '/mk/conversion-websites',
+    },
+    {
       icon: Database,
-      title: 'Backend API и CRM Интеграција',
-      description: 'Ги поврзуваме сите ваши алатки: CRM-ови, форми, бази на податоци, системи за резервации, аналитички платформи — синхронизирани во реално време.',
+      title: 'CRM + Интеграција на Алатки',
+      description: 'API-ја. Zapier. Webhooks. Директни врски. Сите ваши backend алатки синхронизирани во една чиста, одзивна машина.',
       color: 'from-cyan-500 to-blue-600',
       link: '/mk/backend-integration',
     },
@@ -65,12 +72,12 @@ export const Services: React.FC = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-bold text-white mb-6 tracking-tight">
             Што <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">Автоматизираме</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
             <div
               key={service.title}
@@ -87,7 +94,7 @@ export const Services: React.FC = () => {
                 {service.title}
               </h3>
               
-              <p className="text-gray-300 mb-6 leading-relaxed">
+              <p className="text-gray-300 mb-6 leading-relaxed" style={{ fontSize: '16px' }}>
                 {service.description}
               </p>
 
@@ -102,6 +109,18 @@ export const Services: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className={`text-center transition-all duration-1000 delay-600 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
+          <button 
+            onClick={scrollToContact}
+            className="bg-gradient-to-r from-sky-500 to-emerald-500 text-white font-medium px-8 py-4 rounded-lg hover:from-sky-600 hover:to-emerald-600 transition-all duration-300 hover:scale-105"
+            style={{ fontSize: '18px' }}
+          >
+            Резервирајте Ја Вашата Бесплатна Ревизија за Автоматизација
+          </button>
         </div>
       </div>
     </section>

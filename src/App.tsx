@@ -42,7 +42,7 @@ function App() {
         <Route path="/mk/privacy-policy" element={<MacedonianPrivacyPolicy />} />
         <Route path="/mk/terms-of-service" element={<MacedonianTermsOfService />} />
         
-        {/* Macedonian service pages - placeholder routes for now */}
+        {/* Macedonian service pages - using English pages for now, can be translated later */}
         <Route path="/mk/ai-chatbots" element={<AIChatbots />} />
         <Route path="/mk/conversion-websites" element={<ConversionWebsites />} />
         <Route path="/mk/lead-funnel-automation" element={<LeadFunnelAutomation />} />

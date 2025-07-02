@@ -227,11 +227,11 @@ export const Contact: React.FC = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
-            Готови да <span className="bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent">Автоматизирате и Растете</span>?
+          <h2 className="text-4xl font-bold text-slate-800 mb-6 tracking-tight">
+            Имате Прашања или <span className="bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent">Деловни Барања</span>?
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Да изградиме систем што ви штеди време, го намалува стресот и продолжува да работи додека спиете.
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto" style={{ fontSize: '20px' }}>
+            Ако имате дополнителни прашања или сакате да не контактирате директно, слободно контактирајте не:
           </p>
         </div>
 
@@ -245,10 +245,43 @@ export const Contact: React.FC = () => {
               
               {/* Success Message */}
               {submitSuccess && (
-                <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-lg">
-                  <p className="text-emerald-800 font-medium">
-                    ✅ Ви благодариме! Ќе се јавиме во рок од 24 часа.
-                  </p>
+                <div className="mb-6 p-6 bg-emerald-50 border border-emerald-200 rounded-lg">
+                  <h4 className="text-emerald-800 font-bold text-lg mb-3">Што Се Случува Откако Ќе Ја Поднесете Формата?</h4>
+                  <div className="space-y-2 text-emerald-700">
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                      <span style={{ fontSize: '16px' }}>Ги прегледуваме вашите работни текови</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                      <span style={{ fontSize: '16px' }}>Ги идентификуваме вашите најголеми тесни грла</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                      <span style={{ fontSize: '16px' }}>Ви покажуваме што можеме да автоматизираме веднаш</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                      <span style={{ fontSize: '16px' }}>Го лансираме вашиот прв систем—често во рок од 48–72 часа</span>
+                    </div>
+                  </div>
+                  <div className="mt-4 p-4 bg-emerald-100 rounded-lg">
+                    <p className="text-emerald-800 font-medium" style={{ fontSize: '16px' }}>
+                      Веќе не погодувате. Не сте заглавени во истражување алатки и спојување работи.
+                    </p>
+                    <p className="text-emerald-800 font-medium mt-2" style={{ fontSize: '16px' }}>
+                      Го најдовте тимот што ја гради машината за вас. Тивко. Моќно. Брзо.
+                    </p>
+                  </div>
+                  <div className="mt-4 text-center">
+                    <button 
+                      onClick={() => setSubmitSuccess(false)}
+                      className="bg-emerald-600 text-white font-medium px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors duration-200"
+                      style={{ fontSize: '18px' }}
+                    >
+                      Да Разговараме – Резервирајте Го Вашиот Бесплатен Повик Сега
+                    </button>
+                  </div>
                 </div>
               )}
               
@@ -277,6 +310,7 @@ export const Contact: React.FC = () => {
                       disabled={isSubmitting}
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50"
                       placeholder="Вашето име"
+                      style={{ fontSize: '16px' }}
                     />
                   </div>
                   
@@ -294,6 +328,7 @@ export const Contact: React.FC = () => {
                       disabled={isSubmitting}
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50"
                       placeholder="vashe@email.com"
+                      style={{ fontSize: '16px' }}
                     />
                   </div>
                 </div>
@@ -311,6 +346,7 @@ export const Contact: React.FC = () => {
                     disabled={isSubmitting}
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 disabled:opacity-50"
                     placeholder="Вашата компанија"
+                    style={{ fontSize: '16px' }}
                   />
                 </div>
 
@@ -328,6 +364,7 @@ export const Contact: React.FC = () => {
                     rows={4}
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 resize-none disabled:opacity-50"
                     placeholder="Опишете ги мануелните процеси што ви го губат времето..."
+                    style={{ fontSize: '16px' }}
                   />
                 </div>
 
@@ -384,7 +421,7 @@ export const Contact: React.FC = () => {
                   icon={Send}
                   onClick={undefined}
                 >
-                  {isSubmitting ? 'Се испраќа...' : 'Резервирај Ја Вашата Бесплатна Консултација'}
+                  {isSubmitting ? 'Се испраќа...' : 'Резервирајте Го Вашиот Бесплатен Стратешки Повик Денес'}
                 </Button>
 
                 {/* reCAPTCHA Notice */}
@@ -419,9 +456,8 @@ export const Contact: React.FC = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-slate-800 mb-6">Контактирајте Не</h3>
-                <p className="text-slate-600 text-lg leading-relaxed">
-                  Готови да ги трансформирате вашите деловни операции? Тука сме да ви помогнеме да ја елиминирате мануелната работа 
-                  и да се фокусирате на она што е најважно - растењето на вашиот бизнис.
+                <p className="text-slate-600 text-lg leading-relaxed" style={{ fontSize: '16px' }}>
+                  Ќе ја мапираме вашата можност за автоматизација со најголем ROI—и ќе ви покажеме колку брзо можеме да ја лансираме.
                 </p>
               </div>
 
@@ -432,8 +468,8 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-slate-800 font-semibold">Повикајте Не</div>
-                    <div className="text-slate-600">+389 78 508 690</div>
-                    <div className="text-slate-600">+389 70 699 636</div>
+                    <div className="text-slate-600" style={{ fontSize: '16px' }}>+389 78 508 690</div>
+                    <div className="text-slate-600" style={{ fontSize: '16px' }}>+389 70 699 636</div>
                   </div>
                 </div>
 
@@ -447,6 +483,7 @@ export const Contact: React.FC = () => {
                       <a 
                         href="mailto:ilekostadinov15@gmail.com" 
                         className="hover:text-emerald-600 transition-colors duration-200"
+                        style={{ fontSize: '16px' }}
                       >
                         ilekostadinov15@gmail.com
                       </a>
@@ -455,6 +492,7 @@ export const Contact: React.FC = () => {
                       <a 
                         href="mailto:matej.tasevski11@gmail.com" 
                         className="hover:text-emerald-600 transition-colors duration-200"
+                        style={{ fontSize: '16px' }}
                       >
                         matej.tasevski11@gmail.com
                       </a>
@@ -468,7 +506,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-slate-800 font-semibold">Базирани во</div>
-                    <div className="text-slate-600">Скопје, Северна Македонија</div>
+                    <div className="text-slate-600" style={{ fontSize: '16px' }}>Скопје, Северна Македонија</div>
                   </div>
                 </div>
 
@@ -478,7 +516,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-slate-800 font-semibold">Време на Одговор</div>
-                    <div className="text-slate-600">Во рок од 24 часа</div>
+                    <div className="text-slate-600" style={{ fontSize: '16px' }}>Во рок од 24 часа</div>
                   </div>
                 </div>
               </div>
@@ -488,19 +526,19 @@ export const Contact: React.FC = () => {
                 <div className="space-y-2 text-sky-100 text-sm">
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    Ги анализираме вашите тековни процеси
+                    <span style={{ fontSize: '16px' }}>Ги прегледуваме вашите работни текови</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    Создаваме прилагоден план за автоматизација
+                    <span style={{ fontSize: '16px' }}>Ги идентификуваме вашите најголеми тесни грла</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    Ви го покажуваме потенцијалниот ROI
+                    <span style={{ fontSize: '16px' }}>Ви покажуваме што можеме да автоматизираме веднаш</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    Започнуваме имплементација во рок од 48 часа
+                    <span style={{ fontSize: '16px' }}>Го лансираме вашиот прв систем—често во рок од 48–72 часа</span>
                   </div>
                 </div>
               </div>
