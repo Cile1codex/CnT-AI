@@ -158,7 +158,17 @@ section {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: brightness(0.8) contrast(1.1);
+  /* Updated logo styling with new background color */
+  background-color: #31b3df;
+  border-radius: 50%;
+  padding: 4px;
+  filter: brightness(1.1) contrast(1.2) drop-shadow(0 2px 8px rgba(49, 179, 223, 0.3));
+  transition: all 0.3s ease;
+}
+
+.floating-logo:hover img {
+  filter: brightness(1.3) contrast(1.3) drop-shadow(0 4px 12px rgba(49, 179, 223, 0.5));
+  transform: scale(1.1);
 }
 
 /* Different logo instances with varying sizes and animations */
@@ -252,19 +262,31 @@ section {
   animation-delay: 7s;
 }
 
-/* Legacy floating particle support (for backward compatibility) */
+/* Updated floating particle support with consistent star styling */
 .floating-particle {
   position: absolute;
   pointer-events: none;
-  opacity: 0.1;
+  opacity: 0.4;
   z-index: 1;
+  will-change: transform, opacity;
 }
 
 .floating-particle::before {
-  content: '💠';
+  content: '⭐';
   font-size: 1.5rem;
   display: block;
-  filter: blur(0.5px);
+  /* Consistent star styling with brand colors */
+  background: linear-gradient(135deg, #31b3df, #4abedf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(49, 179, 223, 0.3));
+  transition: all 0.3s ease;
+}
+
+.floating-particle:hover::before {
+  filter: drop-shadow(0 4px 8px rgba(49, 179, 223, 0.5));
+  transform: scale(1.2);
 }
 
 .floating-particle:nth-child(1) {
@@ -355,7 +377,7 @@ section {
 
 /* Enhanced hover effects */
 .hover-glow:hover {
-  box-shadow: 0 0 30px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 0 30px rgba(49, 179, 223, 0.4);
   transform: translateY(-2px);
 }
 
@@ -391,15 +413,15 @@ section {
   left: 0;
   right: 0;
   height: 100px;
-  background: linear-gradient(135deg, transparent 50%, rgba(14, 165, 233, 0.05) 50%);
+  background: linear-gradient(135deg, transparent 50%, rgba(49, 179, 223, 0.05) 50%);
   transform: skewY(-1deg);
   transform-origin: top left;
 }
 
-/* Enhanced button styles */
+/* Enhanced button styles with updated brand color */
 .premium-button {
-  background: linear-gradient(135deg, #0ea5e9, #10b981);
-  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+  background: linear-gradient(135deg, #31b3df, #10b981);
+  box-shadow: 0 4px 15px rgba(49, 179, 223, 0.4);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -421,7 +443,7 @@ section {
 }
 
 .premium-button:hover {
-  box-shadow: 0 6px 25px rgba(14, 165, 233, 0.6);
+  box-shadow: 0 6px 25px rgba(49, 179, 223, 0.6);
   transform: translateY(-2px);
 }
 
@@ -445,9 +467,9 @@ section {
   will-change: opacity;
 }
 
-/* Text glow effects */
+/* Text glow effects with updated brand color */
 .text-glow {
-  text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+  text-shadow: 0 0 20px rgba(49, 179, 223, 0.5);
 }
 
 .text-glow-emerald {
