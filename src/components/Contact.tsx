@@ -535,22 +535,22 @@ export const Contact: React.FC = () => {
               </div>
 
               <div className="premium-card rounded-2xl p-6 bg-gradient-to-r from-sky-500 to-emerald-500 text-white">
-                <h4 className="text-white font-bold mb-3">What Happens Next?</h4>
-                <div className="space-y-2 text-sky-100 text-sm">
+                <h4 className="text-slate-800 font-bold mb-3">What Happens Next?</h4>
+                <div className="space-y-2 text-slate-800 text-sm">
                   <div className="flex items-center">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-slate-800 rounded-full mr-3"></div>
                     <span style={{ fontSize: '16px' }}>We review your workflows</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-slate-800 rounded-full mr-3"></div>
                     <span style={{ fontSize: '16px' }}>Identify your biggest bottlenecks</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-slate-800 rounded-full mr-3"></div>
                     <span style={{ fontSize: '16px' }}>Show you what we can automate immediately</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-slate-800 rounded-full mr-3"></div>
                     <span style={{ fontSize: '16px' }}>Launch your first system—often within 48–72 hours</span>
                   </div>
                 </div>
