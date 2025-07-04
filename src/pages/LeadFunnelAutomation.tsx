@@ -168,24 +168,24 @@ export const LeadFunnelAutomation: React.FC = () => {
               </div>
             </div>
 
-            <div className="premium-card rounded-2xl p-8 bg-gradient-to-br from-purple-500 to-emerald-500 text-white">
-              <h3 className="text-2xl font-bold mb-6">Proven Results</h3>
+            <div className="premium-card rounded-2xl p-8 bg-gradient-to-br from-purple-500 to-emerald-500 text-black">
+              <h3 className="text-2xl font-bold mb-6 text-black">Proven Results</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                  <span>50% increase in qualified leads</span>
+                  <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
+                  <span className="text-black">50% increase in qualified leads</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                  <span>90% improvement in response time</span>
+                  <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
+                  <span className="text-black">90% improvement in response time</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                  <span>Zero missed opportunities</span>
+                  <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
+                  <span className="text-black">Zero missed opportunities</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                  <span>2x increase in booked meetings</span>
+                  <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
+                  <span className="text-black">2x increase in booked meetings</span>
                 </div>
               </div>
             </div>
