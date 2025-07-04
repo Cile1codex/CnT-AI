@@ -168,24 +168,24 @@ export const AIChatbots: React.FC = () => {
               </div>
             </div>
 
-            <div className="premium-card rounded-2xl p-8 bg-gradient-to-br from-sky-500 to-emerald-500 text-white">
-              <h3 className="text-2xl font-bold mb-6">Real Results</h3>
+            <div className="premium-card rounded-2xl p-8 bg-gradient-to-br from-sky-500 to-emerald-500 text-black">
+              <h3 className="text-2xl font-bold mb-6 text-black">Real Results</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                  <span>70% reduction in support tickets</span>
+                  <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
+                  <span className="text-black">70% reduction in support tickets</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                  <span>24/7 availability without hiring</span>
+                  <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
+                  <span className="text-black">24/7 availability without hiring</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                  <span>95% customer satisfaction maintained</span>
+                  <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
+                  <span className="text-black">95% customer satisfaction maintained</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                  <span>50% increase in lead capture</span>
+                  <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
+                  <span className="text-black">50% increase in lead capture</span>
                 </div>
               </div>
             </div>
