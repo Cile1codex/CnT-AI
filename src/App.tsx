@@ -17,6 +17,15 @@ import { BackendIntegration } from './pages/BackendIntegration';
 import { MacedonianHomePage } from './pages/mk/HomePage';
 import { MacedonianPrivacyPolicy } from './pages/mk/PrivacyPolicy';
 import { MacedonianTermsOfService } from './pages/mk/TermsOfService';
+import { MacedonianAIChatbots } from './pages/mk/AIChatbots';
+import { MacedonianConversionWebsites } from './pages/mk/ConversionWebsites';
+import { MacedonianLeadFunnelAutomation } from './pages/mk/LeadFunnelAutomation';
+import { MacedonianEmailAutomation } from './pages/mk/EmailAutomation';
+import { MacedonianBackendIntegration } from './pages/mk/BackendIntegration';
+import { MacedonianCaseStudyAutomatedCustomerSupport } from './pages/mk/CaseStudyAutomatedCustomerSupport';
+import { MacedonianCaseStudyLeadQualificationBooking } from './pages/mk/CaseStudyLeadQualificationBooking';
+import { MacedonianCaseStudyClientOnboardingAutomation } from './pages/mk/CaseStudyClientOnboardingAutomation';
+import { MacedonianCaseStudyUserActivationFlows } from './pages/mk/CaseStudyUserActivationFlows';
 
 function App() {
   return (
@@ -42,16 +51,16 @@ function App() {
         <Route path="/mk/privacy-policy" element={<MacedonianPrivacyPolicy />} />
         <Route path="/mk/terms-of-service" element={<MacedonianTermsOfService />} />
         
-        {/* Macedonian service pages - using English pages for now, can be translated later */}
-        <Route path="/mk/ai-chatbots" element={<AIChatbots />} />
-        <Route path="/mk/conversion-websites" element={<ConversionWebsites />} />
-        <Route path="/mk/lead-funnel-automation" element={<LeadFunnelAutomation />} />
-        <Route path="/mk/email-automation" element={<EmailAutomation />} />
-        <Route path="/mk/backend-integration" element={<BackendIntegration />} />
-        <Route path="/mk/case-study-automated-customer-support" element={<CaseStudyAutomatedCustomerSupport />} />
-        <Route path="/mk/case-study-lead-qualification-booking" element={<CaseStudyLeadQualificationBooking />} />
-        <Route path="/mk/case-study-client-onboarding-automation" element={<CaseStudyClientOnboardingAutomation />} />
-        <Route path="/mk/case-study-user-activation-flows" element={<CaseStudyUserActivationFlows />} />
+        {/* Macedonian service pages */}
+        <Route path="/mk/ai-chatbots" element={<MacedonianAIChatbots />} />
+        <Route path="/mk/conversion-websites" element={<MacedonianConversionWebsites />} />
+        <Route path="/mk/lead-funnel-automation" element={<MacedonianLeadFunnelAutomation />} />
+        <Route path="/mk/email-automation" element={<MacedonianEmailAutomation />} />
+        <Route path="/mk/backend-integration" element={<MacedonianBackendIntegration />} />
+        <Route path="/mk/case-study-automated-customer-support" element={<MacedonianCaseStudyAutomatedCustomerSupport />} />
+        <Route path="/mk/case-study-lead-qualification-booking" element={<MacedonianCaseStudyLeadQualificationBooking />} />
+        <Route path="/mk/case-study-client-onboarding-automation" element={<MacedonianCaseStudyClientOnboardingAutomation />} />
+        <Route path="/mk/case-study-user-activation-flows" element={<MacedonianCaseStudyUserActivationFlows />} />
       </Routes>
     </div>
   );
