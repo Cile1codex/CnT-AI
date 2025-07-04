@@ -31,7 +31,7 @@ export const Services: React.FC = () => {
   const services = [
     {
       icon: MessageSquare,
-      title: 'АИ Чатботови Што Никогаш Не Спијат',
+      title: 'AI Чатботови Што Никогаш Не Спијат',
       description: 'Прилагодено обучени, со глас на брендот и изградени врз вашата бизнис логика. Поддршка, продажба и заробување потенцијални клиенти—направено без луѓе.',
       color: 'from-sky-500 to-blue-600',
       link: '/mk/ai-chatbots',

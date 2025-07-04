@@ -43,14 +43,14 @@ export const Hero: React.FC = () => {
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-in-up text-glow" style={{ fontSize: '48px' }}>
-              Ви Губите Време.
+              Вие Го Губите Времето.
               <span className="block bg-gradient-to-r from-sky-400 via-emerald-400 to-sky-300 bg-clip-text text-transparent text-glow-emerald">
                 Ние Сме Тука Да Го Завршиме Тоа.
               </span>
             </h1>
             
             <p className="text-xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed animate-slide-in-up" style={{ fontSize: '20px', animationDelay: '0.2s' }}>
-              Градиме интелигентни АИ системи што ги водат вашите потенцијални клиенти, корисничка поддршка и backend—за да престанете да го чувате вашиот бизнис и да почнете да го скалирате.
+              Градиме интелигентни AI системи што ги водат вашите потенцијални клиенти, корисничка поддршка и backend—за да престанете да го чувате вашиот бизнис и да почнете да го скалирате.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-in-up" style={{ animationDelay: '0.4s' }}>
@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
           }`}>
             <div className="premium-card-dark rounded-2xl p-6 hover:border-sky-500/50 transition-all duration-300 hover-scale will-change-transform">
               <Bot className="h-12 w-12 text-sky-400 mb-4 mx-auto" />
-              <h3 className="text-white font-semibold text-lg mb-2">Вистинска АИ. Вистински Резултати.</h3>
+              <h3 className="text-white font-semibold text-lg mb-2">Вистинска AI. Вистински Резултати.</h3>
               <p className="text-gray-400 text-sm">Нашите решенија се интегрираат директно со вашите работни процеси и алатки</p>
             </div>
             

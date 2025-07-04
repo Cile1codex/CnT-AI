@@ -81,7 +81,7 @@ export const UseCases: React.FC = () => {
             Реални <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">Приказни за Успех</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto" style={{ fontSize: '20px' }}>
-            Видете како бизнисите од различни индустрии штедат време и пари со нашите АИ решенија за автоматизација.
+            Видете како бизнисите од различни индустрии штедат време и пари со нашите AI решенија за автоматизација.
           </p>
         </div>
 
@@ -135,7 +135,7 @@ export const UseCases: React.FC = () => {
           <div className="bg-gradient-to-r from-sky-500 to-emerald-500 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Вашата Индустрија Следна?</h3>
             <p className="text-sky-100 mb-6 max-w-2xl mx-auto" style={{ fontSize: '16px' }}>
-              Секој бизнис има уникатни предизвици. Дозволете ни да ви покажеме како АИ автоматизацијата може да ги реши вашите со персонализирано демо.
+              Секој бизнис има уникатни предизвици. Дозволете ни да ви покажеме како AI автоматизацијата може да ги реши вашите со персонализирано демо.
             </p>
             <button 
               onClick={scrollToContact}
