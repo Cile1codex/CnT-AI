@@ -45,17 +45,6 @@ html {
   }
 }
 
-/* Global text selection styles for better visibility */
-::selection {
-  background-color: #A0E6FF; /* Soft branded light blue background */
-  color: #000000; /* Black text for high contrast */
-}
-
-::-moz-selection {
-  background-color: #A0E6FF; /* Soft branded light blue background */
-  color: #000000; /* Black text for high contrast */
-}
-
 /* Typography improvements */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Inter', sans-serif;
