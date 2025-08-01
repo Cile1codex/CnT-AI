@@ -481,20 +481,11 @@ export const Contact: React.FC = () => {
                     <div className="text-slate-800 font-semibold">Испратете Email</div>
                     <div className="text-slate-600">
                       <a 
-                        href="mailto:ilekostadinov15@gmail.com" 
+                        href="mailto:cntautomations@gmail.com" 
                         className="hover:text-emerald-600 transition-colors duration-200"
                         style={{ fontSize: '16px' }}
                       >
-                        ilekostadinov15@gmail.com
-                      </a>
-                    </div>
-                    <div className="text-slate-600">
-                      <a 
-                        href="mailto:matej.tasevski11@gmail.com" 
-                        className="hover:text-emerald-600 transition-colors duration-200"
-                        style={{ fontSize: '16px' }}
-                      >
-                        matej.tasevski11@gmail.com
+                        cntautomations@gmail.com
                       </a>
                     </div>
                   </div>

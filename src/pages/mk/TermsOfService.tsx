@@ -105,7 +105,7 @@ export const MacedonianTermsOfService: React.FC = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-slate-800 mb-4">9. Контакт</h2>
               <div className="text-slate-700 leading-relaxed">
-                <p><strong>Email:</strong> hello@cnt-ai.com</p>
+                <p><strong>Email:</strong> cntautomations@gmail.com</p>
                 <p><strong>Веб-страница:</strong> https://cnt-ai.com</p>
               </div>
             </section>
