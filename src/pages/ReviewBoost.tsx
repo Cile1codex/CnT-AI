@@ -72,7 +72,7 @@ export const ReviewBoost: React.FC = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            We send personalized AI messages at precisely the right moment to get customers leaving glowing reviews. Automated. Authentic. Proven to work.
+            Messages come directly from YOU (the owner), not a generic company account. Creates genuine social pressure to respond—because ignoring the owner feels awkward.
           </p>
 
           <Button size="lg" onClick={scrollToContact} icon={ArrowRight} className="premium-button">
@@ -110,15 +110,62 @@ export const ReviewBoost: React.FC = () => {
         </div>
       </section>
 
+      {/* The Secret Section */}
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="premium-card rounded-3xl p-12 shadow-xl border-2 border-yellow-200 bg-gradient-to-br from-yellow-50 to-amber-50">
+            <div className="text-center mb-8">
+              <div className="inline-block bg-yellow-500 text-white px-6 py-2 rounded-full font-bold text-sm mb-4">
+                THE SECRET THAT MAKES THIS WORK
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
+                Messages Come From YOU, Not Your Company
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-xl p-6 border border-slate-200">
+                <div className="text-red-600 font-bold mb-3">❌ Generic Company Emails</div>
+                <ul className="space-y-2 text-slate-600 text-sm">
+                  <li>• From: "noreply@company.com"</li>
+                  <li>• Easy to ignore or delete</li>
+                  <li>• Feels like spam or automation</li>
+                  <li>• No personal connection</li>
+                  <li>• Low response rates (5-10%)</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-6 border-2 border-emerald-300">
+                <div className="text-emerald-600 font-bold mb-3">✅ Personal Owner Messages</div>
+                <ul className="space-y-2 text-slate-700 text-sm font-medium">
+                  <li>• From: "John Smith (Owner)"</li>
+                  <li>• Socially awkward to ignore</li>
+                  <li>• Feels genuine and personal</li>
+                  <li>• Customer-owner relationship</li>
+                  <li>• High response rates (80-90%)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-8 text-center">
+              <p className="text-lg text-slate-700 leading-relaxed">
+                When a message comes from <span className="font-bold text-yellow-700">you personally</span>, customers feel obligated to respond.
+                They know YOU—the owner—are reaching out. Ignoring the owner feels uncomfortable. It's basic social psychology, and it works incredibly well.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* What You Get Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-slate-100">
+      <section className="py-20 bg-gradient-to-b from-white to-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
               How We Get You More 5-Star Reviews
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Our proven system gets customers excited to leave reviews, not annoyed by them.
+              The complete system that leverages personal connection and perfect timing.
             </p>
           </div>
 
@@ -197,23 +244,23 @@ export const ReviewBoost: React.FC = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-sky-500 to-blue-600 rounded-xl flex items-center justify-center mr-4">
                   <span className="text-white font-bold text-lg">2</span>
                 </div>
-                <h3 className="text-xl font-bold text-slate-800">Personalized Outreach</h3>
+                <h3 className="text-xl font-bold text-slate-800">Personal Owner Messages</h3>
               </div>
               <p className="text-slate-600 leading-relaxed mb-4">
-                Each message is uniquely crafted with customer's name, specific product/service details, and references to their positive experience. Feels human, not robotic.
+                Messages sent directly from you (the owner) with your name and signature. Each uniquely crafted with customer's name, specific service details, and references to their positive experience. Creates social obligation to respond.
               </p>
               <div className="space-y-2">
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-sky-500 rounded-full mr-3"></div>
-                  <span className="text-slate-600 text-sm">Custom message per customer</span>
+                  <span className="text-slate-600 text-sm">Sent from owner's account</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-sky-500 rounded-full mr-3"></div>
-                  <span className="text-slate-600 text-sm">Brand voice matching</span>
+                  <span className="text-slate-600 text-sm">Personal signature and voice</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-sky-500 rounded-full mr-3"></div>
-                  <span className="text-slate-600 text-sm">Multi-channel delivery</span>
+                  <span className="text-slate-600 text-sm">Creates social pressure to respond</span>
                 </div>
               </div>
             </div>
@@ -323,7 +370,7 @@ export const ReviewBoost: React.FC = () => {
                   Customer Response Rate
                 </div>
                 <p className="text-slate-600">
-                  Most customers happily left reviews when asked at the right time with a personalized message. No incentives. No pressure. Just perfect timing.
+                  Most customers happily left reviews when receiving a personal message from the owner at the right moment. No incentives. No pressure. Just genuine owner outreach creating social obligation to respond.
                 </p>
               </div>
             </div>
