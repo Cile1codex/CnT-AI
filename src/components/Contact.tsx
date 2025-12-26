@@ -165,16 +165,20 @@ export const Contact: React.FC = () => {
         automation_needs: formData.message.trim(),
         policy_accepted: formData.privacyAccepted,
       };
-      
+
       // Insert into Supabase
-      const { error } = await supabase
-        .from('consultations')
-        .insert([consultationData]);
-      
-      if (error) {
-        throw error;
+      if (supabase) {
+        const { error } = await supabase
+          .from('consultations')
+          .insert([consultationData]);
+
+        if (error) {
+          throw error;
+        }
+      } else {
+        console.log('Form data:', consultationData);
       }
-      
+
       // Success! Show success message and reset form
       setSubmitSuccess(true);
       setFormData({
@@ -184,17 +188,17 @@ export const Contact: React.FC = () => {
         message: '',
         privacyAccepted: false,
       });
-      
+
       // Reset reCAPTCHA
       if (window.grecaptcha && recaptchaWidgetIdRef.current !== null) {
         window.grecaptcha.reset(recaptchaWidgetIdRef.current);
       }
-      
+
     } catch (error) {
       console.error('Error submitting consultation request:', error);
-      setErrors(prev => ({ 
-        ...prev, 
-        submission: 'There was an error submitting your request. Please try again.' 
+      setErrors(prev => ({
+        ...prev,
+        submission: 'There was an error submitting your request. Please try again.'
       }));
     } finally {
       setIsSubmitting(false);
