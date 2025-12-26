@@ -12,6 +12,8 @@ import { ConversionWebsites } from './pages/ConversionWebsites';
 import { LeadFunnelAutomation } from './pages/LeadFunnelAutomation';
 import { EmailAutomation } from './pages/EmailAutomation';
 import { BackendIntegration } from './pages/BackendIntegration';
+import { ReviewBoost } from './pages/ReviewBoost';
+import { CustomerReactivation } from './pages/CustomerReactivation';
 
 // Macedonian pages
 import { MacedonianHomePage } from './pages/mk/HomePage';
@@ -42,6 +44,12 @@ function App() {
       <div className="snowflake">❄</div>
       <div className="snowflake">❄</div>
 
+      {/* Christmas Decorations */}
+      <div className="candy-cane">🍭</div>
+      <div className="candy-cane">🍭</div>
+      <div className="christmas-ornament">🎄</div>
+      <div className="christmas-ornament">🎄</div>
+
       <Routes>
         {/* English routes */}
         <Route path="/" element={<HomePage />} />
@@ -56,7 +64,9 @@ function App() {
         <Route path="/lead-funnel-automation" element={<LeadFunnelAutomation />} />
         <Route path="/email-automation" element={<EmailAutomation />} />
         <Route path="/backend-integration" element={<BackendIntegration />} />
-        
+        <Route path="/review-boost" element={<ReviewBoost />} />
+        <Route path="/customer-reactivation" element={<CustomerReactivation />} />
+
         {/* Macedonian routes */}
         <Route path="/mk" element={<MacedonianHomePage />} />
         <Route path="/mk/" element={<MacedonianHomePage />} />

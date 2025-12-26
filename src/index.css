@@ -595,3 +595,75 @@ section {
     display: none;
   }
 }
+
+/* Christmas Decorations */
+.candy-cane {
+  position: fixed;
+  font-size: 2rem;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.6;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.candy-cane:nth-child(1) {
+  top: 10%;
+  right: 5%;
+  transform: rotate(45deg);
+}
+
+.candy-cane:nth-child(2) {
+  top: 60%;
+  left: 3%;
+  transform: rotate(-30deg);
+}
+
+.christmas-ornament {
+  position: fixed;
+  font-size: 1.5rem;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.5;
+  animation: ornamentSwing 3s ease-in-out infinite;
+}
+
+@keyframes ornamentSwing {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.christmas-ornament:nth-child(1) {
+  top: 5%;
+  left: 10%;
+}
+
+.christmas-ornament:nth-child(2) {
+  top: 5%;
+  right: 10%;
+}
+
+.santa-hat {
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  font-size: 2rem;
+  transform: rotate(25deg);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .candy-cane, .christmas-ornament {
+    display: none;
+  }
+
+  .santa-hat {
+    font-size: 1.5rem;
+    top: -10px;
+    right: -8px;
+  }
+}

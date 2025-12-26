@@ -69,14 +69,14 @@ export const Services: React.FC = () => {
       title: 'Boost 5-Star Reviews',
       description: 'We send personalized AI messages at precisely the right moment to get customers leaving glowing reviews. Proven system: 275 reviews in 5 months for one client—rocketing them to #1 on Google.',
       color: 'from-yellow-500 to-amber-600',
-      link: '#contact',
+      link: '/review-boost',
     },
     {
       icon: RefreshCw,
       title: 'Reactivate Old Customers',
       description: 'Automated personalized messages to stale leads and past customers with smart timing and exclusive discounts. One client made $6K in the first month just from returning customers.',
       color: 'from-pink-500 to-rose-600',
-      link: '#contact',
+      link: '/customer-reactivation',
     },
   ];
 

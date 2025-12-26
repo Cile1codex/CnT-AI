@@ -20,6 +20,7 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
         className="w-full h-full object-contain"
         loading="lazy"
       />
+      <span className="santa-hat">🎅</span>
     </div>
   );
 };
