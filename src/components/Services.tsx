@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MessageSquare, Globe, Users, Mail, Database } from 'lucide-react';
+import { MessageSquare, Globe, Users, Mail, Database, Star, RefreshCw } from 'lucide-react';
 
 export const Services: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -64,6 +64,20 @@ export const Services: React.FC = () => {
       color: 'from-cyan-500 to-blue-600',
       link: '/backend-integration',
     },
+    {
+      icon: Star,
+      title: 'Boost 5-Star Reviews',
+      description: 'We send personalized AI messages at precisely the right moment to get customers leaving glowing reviews. Proven system: 275 reviews in 5 months for one client—rocketing them to #1 on Google.',
+      color: 'from-yellow-500 to-amber-600',
+      link: '#contact',
+    },
+    {
+      icon: RefreshCw,
+      title: 'Reactivate Old Customers',
+      description: 'Automated personalized messages to stale leads and past customers with smart timing and exclusive discounts. One client made $6K in the first month just from returning customers.',
+      color: 'from-pink-500 to-rose-600',
+      link: '#contact',
+    },
   ];
 
   return (
@@ -104,13 +118,22 @@ export const Services: React.FC = () => {
               </p>
 
               <div className="mt-6 pt-6 border-t border-slate-700">
-                <Link
-                  to={service.link}
-                  className="text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-200 group-hover:translate-x-2 transition-transform inline-block"
-                  onClick={() => window.scrollTo(0, 0)}
-                >
-                  Learn More →
-                </Link>
+                {service.link.startsWith('#') ? (
+                  <button
+                    onClick={scrollToContact}
+                    className="text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-200 group-hover:translate-x-2 transition-transform inline-block cursor-pointer"
+                  >
+                    Get Started →
+                  </button>
+                ) : (
+                  <Link
+                    to={service.link}
+                    className="text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-200 group-hover:translate-x-2 transition-transform inline-block"
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
+                    Learn More →
+                  </Link>
+                )}
               </div>
             </div>
           ))}

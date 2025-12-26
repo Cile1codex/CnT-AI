@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MessageSquare, Globe, Users, Mail, Database } from 'lucide-react';
+import { MessageSquare, Globe, Users, Mail, Database, Star, RefreshCw } from 'lucide-react';
 
 export const Services: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -64,6 +64,20 @@ export const Services: React.FC = () => {
       color: 'from-cyan-500 to-blue-600',
       link: '/mk/backend-integration',
     },
+    {
+      icon: Star,
+      title: 'Зголемете 5-Ѕвездички Рецензии',
+      description: 'Испраќаме персонализирани AI пораки во точниот момент за да ги натераме клиентите да остават сјајни рецензии. Докажан систем: 275 рецензии за 5 месеци за еден клиент—катапултирајќи го на #1 на Google.',
+      color: 'from-yellow-500 to-amber-600',
+      link: '#contact',
+    },
+    {
+      icon: RefreshCw,
+      title: 'Реактивирајте Стари Клиенти',
+      description: 'Автоматизирани персонализирани пораки до стари потенцијални и минати клиенти со паметно време и ексклузивни попусти. Еден клиент заработи $6K во првиот месец само од враќање на клиенти.',
+      color: 'from-pink-500 to-rose-600',
+      link: '#contact',
+    },
   ];
 
   return (
@@ -99,13 +113,22 @@ export const Services: React.FC = () => {
               </p>
 
               <div className="mt-6 pt-6 border-t border-slate-700">
-                <Link
-                  to={service.link}
-                  className="text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-200 group-hover:translate-x-2 transition-transform inline-block"
-                  onClick={() => window.scrollTo(0, 0)}
-                >
-                  Дознајте Повеќе →
-                </Link>
+                {service.link.startsWith('#') ? (
+                  <button
+                    onClick={scrollToContact}
+                    className="text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-200 group-hover:translate-x-2 transition-transform inline-block cursor-pointer"
+                  >
+                    Започнете →
+                  </button>
+                ) : (
+                  <Link
+                    to={service.link}
+                    className="text-sky-400 font-semibold hover:text-sky-300 transition-colors duration-200 group-hover:translate-x-2 transition-transform inline-block"
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
+                    Дознајте Повеќе →
+                  </Link>
+                )}
               </div>
             </div>
           ))}

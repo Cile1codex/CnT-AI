@@ -439,3 +439,159 @@ section {
 .text-glow-emerald {
   text-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
 }
+
+/* Holiday/Winter Design - Snowflakes */
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes snowfallLeft {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(-50px) rotate(-360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes snowfallSlow {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(30px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+.snowflake {
+  position: fixed;
+  top: -10vh;
+  color: #ffffff;
+  font-size: 1.5rem;
+  pointer-events: none;
+  z-index: 9999;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  opacity: 0.8;
+}
+
+.snowflake:nth-child(1) {
+  left: 5%;
+  animation: snowfall 12s linear infinite;
+  animation-delay: 0s;
+  font-size: 1.2rem;
+}
+
+.snowflake:nth-child(2) {
+  left: 15%;
+  animation: snowfallLeft 15s linear infinite;
+  animation-delay: 2s;
+  font-size: 1.8rem;
+}
+
+.snowflake:nth-child(3) {
+  left: 25%;
+  animation: snowfallSlow 18s linear infinite;
+  animation-delay: 4s;
+  font-size: 1rem;
+}
+
+.snowflake:nth-child(4) {
+  left: 35%;
+  animation: snowfall 14s linear infinite;
+  animation-delay: 6s;
+  font-size: 1.5rem;
+}
+
+.snowflake:nth-child(5) {
+  left: 45%;
+  animation: snowfallLeft 16s linear infinite;
+  animation-delay: 8s;
+  font-size: 1.3rem;
+}
+
+.snowflake:nth-child(6) {
+  left: 55%;
+  animation: snowfall 13s linear infinite;
+  animation-delay: 10s;
+  font-size: 1.6rem;
+}
+
+.snowflake:nth-child(7) {
+  left: 65%;
+  animation: snowfallSlow 17s linear infinite;
+  animation-delay: 3s;
+  font-size: 1.1rem;
+}
+
+.snowflake:nth-child(8) {
+  left: 75%;
+  animation: snowfallLeft 14s linear infinite;
+  animation-delay: 5s;
+  font-size: 1.4rem;
+}
+
+.snowflake:nth-child(9) {
+  left: 85%;
+  animation: snowfall 15s linear infinite;
+  animation-delay: 7s;
+  font-size: 1.7rem;
+}
+
+.snowflake:nth-child(10) {
+  left: 95%;
+  animation: snowfallSlow 16s linear infinite;
+  animation-delay: 9s;
+  font-size: 1.2rem;
+}
+
+/* Holiday gradient accents */
+.holiday-gradient {
+  background: linear-gradient(135deg, #0ea5e9, #10b981, #ef4444);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Festive glow effect */
+.festive-glow {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3), 0 0 40px rgba(16, 185, 129, 0.2);
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .snowflake {
+    font-size: 1rem;
+  }
+
+  .snowflake:nth-child(n+6) {
+    display: none;
+  }
+}

@@ -485,7 +485,6 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-slate-800 font-semibold">Call Us</div>
-                    <div className="text-slate-600" style={{ fontSize: '16px' }}>+389 78 508 690</div>
                     <div className="text-slate-600" style={{ fontSize: '16px' }}>+389 70 699 636</div>
                   </div>
                 </div>
@@ -497,12 +496,12 @@ export const Contact: React.FC = () => {
                   <div>
                     <div className="text-slate-800 font-semibold">Email Us</div>
                     <div className="text-slate-600">
-                      <a 
-                        href="mailto:cntautomations@gmail.com" 
+                      <a
+                        href="mailto:solutions@ttgai.org"
                         className="hover:text-emerald-600 transition-colors duration-200"
                         style={{ fontSize: '16px' }}
                       >
-                        cntautomations@gmail.com
+                        solutions@ttgai.org
                       </a>
                     </div>
                   </div>

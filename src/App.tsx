@@ -30,6 +30,18 @@ import { MacedonianCaseStudyUserActivationFlows } from './pages/mk/CaseStudyUser
 function App() {
   return (
     <div className="min-h-screen bg-blue-50 w-full overflow-x-hidden">
+      {/* Holiday Snowflakes */}
+      <div className="snowflake">❄</div>
+      <div className="snowflake">❄</div>
+      <div className="snowflake">❄</div>
+      <div className="snowflake">❄</div>
+      <div className="snowflake">❄</div>
+      <div className="snowflake">❄</div>
+      <div className="snowflake">❄</div>
+      <div className="snowflake">❄</div>
+      <div className="snowflake">❄</div>
+      <div className="snowflake">❄</div>
+
       <Routes>
         {/* English routes */}
         <Route path="/" element={<HomePage />} />
