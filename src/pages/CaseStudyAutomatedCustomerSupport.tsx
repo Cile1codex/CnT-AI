@@ -58,9 +58,9 @@ export const CaseStudyAutomatedCustomerSupport: React.FC = () => {
                 Automated Customer Support
               </h1>
               <div className="text-slate-600 text-lg">
-                <span className="font-semibold">Client:</span> RetailFlow 
+                <span className="font-semibold">Client:</span> <a href="https://darmadoma.com.mk/" target="_blank" rel="noopener noreferrer" className="text-sky-600 hover:text-sky-700 underline">DarmaDoma</a>
                 <span className="text-slate-400 mx-2">•</span>
-                <span className="text-sky-600">E-Commerce & Retail</span>
+                <span className="text-sky-600">Real Estate Agency</span>
               </div>
             </div>
             <div className="w-16 h-16 bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 hover-scale will-change-transform">
@@ -76,7 +76,7 @@ export const CaseStudyAutomatedCustomerSupport: React.FC = () => {
                 The Challenge
               </h2>
               <p className="text-slate-700 leading-relaxed text-lg">
-                RetailFlow struggled with an overwhelming volume of customer inquiries — order tracking, return policies, and FAQs were handled manually, taking up hours of staff time daily. The team was stretched thin, and customers experienced delayed responses.
+                DarmaDoma struggled with an overwhelming volume of customer inquiries — property information, viewing schedules, availability questions, and general FAQs were handled manually, taking up hours of staff time daily. The team was stretched thin, and potential clients experienced delayed responses, leading to lost opportunities.
               </p>
             </section>
 
@@ -87,20 +87,20 @@ export const CaseStudyAutomatedCustomerSupport: React.FC = () => {
                 Our Solution
               </h2>
               <p className="text-slate-700 leading-relaxed text-lg mb-6">
-                CnT AI deployed a 24/7 custom chatbot that integrated with RetailFlow's help desk and CMS. It was trained to:
+                CnT AI deployed a 24/7 custom chatbot that integrated with DarmaDoma's CRM and property database. It was trained to:
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <div className="w-3 h-3 bg-sky-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                  <span className="text-slate-700 text-lg">Handle 80% of common queries instantly</span>
+                  <span className="text-slate-700 text-lg">Handle 80% of common property inquiries instantly</span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-3 h-3 bg-sky-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                  <span className="text-slate-700 text-lg">Trigger tickets for complex requests</span>
+                  <span className="text-slate-700 text-lg">Schedule property viewings automatically</span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-3 h-3 bg-sky-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                  <span className="text-slate-700 text-lg">Capture lead data from abandoned carts</span>
+                  <span className="text-slate-700 text-lg">Capture and route qualified leads to agents</span>
                 </li>
               </ul>
             </section>

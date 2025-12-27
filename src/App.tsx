@@ -7,6 +7,7 @@ import { CaseStudyAutomatedCustomerSupport } from './pages/CaseStudyAutomatedCus
 import { CaseStudyLeadQualificationBooking } from './pages/CaseStudyLeadQualificationBooking';
 import { CaseStudyClientOnboardingAutomation } from './pages/CaseStudyClientOnboardingAutomation';
 import { CaseStudyUserActivationFlows } from './pages/CaseStudyUserActivationFlows';
+import { CaseStudyTeamTaskManagement } from './pages/CaseStudyTeamTaskManagement';
 import { AIChatbots } from './pages/AIChatbots';
 import { ConversionWebsites } from './pages/ConversionWebsites';
 import { LeadFunnelAutomation } from './pages/LeadFunnelAutomation';
@@ -49,6 +50,8 @@ function App() {
       <div className="candy-cane">🍭</div>
       <div className="christmas-ornament">🎄</div>
       <div className="christmas-ornament">🎄</div>
+      <div className="christmas-ornament" style={{ top: '40%', left: '5%', fontSize: '1.8rem' }}>🎁</div>
+      <div className="christmas-ornament" style={{ top: '70%', right: '8%', fontSize: '1.6rem' }}>⭐</div>
 
       <Routes>
         {/* English routes */}
@@ -59,6 +62,7 @@ function App() {
         <Route path="/case-study-lead-qualification-booking" element={<CaseStudyLeadQualificationBooking />} />
         <Route path="/case-study-client-onboarding-automation" element={<CaseStudyClientOnboardingAutomation />} />
         <Route path="/case-study-user-activation-flows" element={<CaseStudyUserActivationFlows />} />
+        <Route path="/case-study-team-task-management" element={<CaseStudyTeamTaskManagement />} />
         <Route path="/ai-chatbots" element={<AIChatbots />} />
         <Route path="/conversion-websites" element={<ConversionWebsites />} />
         <Route path="/lead-funnel-automation" element={<LeadFunnelAutomation />} />

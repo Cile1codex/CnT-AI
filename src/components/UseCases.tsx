@@ -31,7 +31,7 @@ export const UseCases: React.FC = () => {
   const useCases = [
     {
       icon: Store,
-      industry: 'Real Estate Agency',
+      industry: 'Real Estate Agency - DarmaDoma',
       title: 'Automated Customer Support',
       challenge: 'Manual responses, slow lead handling, lost deals.',
       solution: '24/7 chatbot + CRM routing. 70% less manual workload. 2x conversion rate from inbound traffic.',
@@ -61,13 +61,13 @@ export const UseCases: React.FC = () => {
     },
     {
       icon: Laptop,
-      industry: 'Software-as-a-Service Companies',
-      title: 'User Activation Flows',
-      challenge: 'Low user activation. High churn. Support overload.',
-      solution: 'Personalized onboarding. Email nurture sequences. 60% higher activation. 40% churn reduction.',
-      results: ['60% higher activation', '40% churn reduction', 'Scalable growth'],
-      color: 'from-orange-500 to-red-600',
-      caseStudyPath: '/case-study-user-activation-flows',
+      industry: 'Real Estate Agency - DarmaDoma',
+      title: 'Team Task Management System',
+      challenge: 'Disorganized team. CEO couldn\'t track tasks. Employees missed deadlines. Communication chaos.',
+      solution: 'Custom task management platform with role-based accounts. Email notifications. Status tracking. Notes system. Saved countless hours and headaches.',
+      results: ['Full task visibility for CEO', 'Automated email notifications', 'Increased productivity & profit'],
+      color: 'from-blue-500 to-cyan-600',
+      caseStudyPath: '/case-study-team-task-management',
     },
   ];
 
