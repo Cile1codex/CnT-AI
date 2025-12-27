@@ -15,6 +15,7 @@ import { EmailAutomation } from './pages/EmailAutomation';
 import { BackendIntegration } from './pages/BackendIntegration';
 import { ReviewBoost } from './pages/ReviewBoost';
 import { CustomerReactivation } from './pages/CustomerReactivation';
+import { ChristmasLights } from './components/ChristmasLights';
 
 // Macedonian pages
 import { MacedonianHomePage } from './pages/mk/HomePage';
@@ -32,8 +33,11 @@ import { MacedonianCaseStudyUserActivationFlows } from './pages/mk/CaseStudyUser
 
 function App() {
   return (
-    <div className="min-h-screen bg-blue-50 w-full overflow-x-hidden">
-      {/* Holiday Snowflakes */}
+    <div className="min-h-screen w-full overflow-x-hidden" style={{ background: 'linear-gradient(to bottom, #0f2027, #1a2530, #0f2027)' }}>
+      {/* Realistic Christmas String Lights */}
+      <ChristmasLights />
+
+      {/* Gentle Snowfall */}
       <div className="snowflake">❄</div>
       <div className="snowflake">❄</div>
       <div className="snowflake">❄</div>

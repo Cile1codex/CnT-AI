@@ -17,8 +17,8 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen animated-gradient relative overflow-hidden">
-      {/* Floating Particles */}
+    <section id="home" className="min-h-screen christmas-gradient relative overflow-hidden pt-16">
+      {/* Floating Particles - Christmas themed */}
       <div className="floating-particle"></div>
       <div className="floating-particle"></div>
       <div className="floating-particle"></div>
@@ -26,11 +26,11 @@ export const Hero: React.FC = () => {
       <div className="floating-particle"></div>
       <div className="floating-particle"></div>
 
-      {/* Animated background elements */}
+      {/* Warm Christmas ambient background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse" style={{ background: 'radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%)' }}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse" style={{ background: 'radial-gradient(circle, rgba(193,18,31,0.12) 0%, transparent 70%)', animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl animate-pulse" style={{ background: 'radial-gradient(circle, rgba(74,157,95,0.1) 0%, transparent 70%)', animationDelay: '0.5s' }}></div>
       </div>
 
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-20 pb-16">
@@ -42,9 +42,9 @@ export const Hero: React.FC = () => {
               </div>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-in-up text-glow" style={{ fontSize: '48px' }}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-in-up" style={{ fontSize: '48px', textShadow: '0 0 30px rgba(255, 215, 0, 0.3)' }}>
               You're Wasting Time.
-              <span className="block bg-gradient-to-r from-sky-400 via-emerald-400 to-sky-300 bg-clip-text text-transparent text-glow-emerald">
+              <span className="block bg-gradient-to-r from-amber-300 via-red-300 to-emerald-300 bg-clip-text text-transparent" style={{ textShadow: '0 0 40px rgba(255, 215, 0, 0.4)' }}>
                 We're Here to End That.
               </span>
             </h1>
@@ -54,10 +54,10 @@ export const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-in-up" style={{ animationDelay: '0.4s' }}>
-              <Button size="lg" onClick={() => scrollToSection('contact')} icon={ArrowRight} className="premium-button">
+              <Button size="lg" onClick={() => scrollToSection('contact')} icon={ArrowRight} className="christmas-button">
                 Book Your Free Consultation
               </Button>
-              <Button variant="outline" size="lg" onClick={() => scrollToSection('services')} className="hover-glow">
+              <Button variant="outline" size="lg" onClick={() => scrollToSection('services')} className="hover-glow" style={{ borderColor: 'rgba(255, 215, 0, 0.5)', color: '#FFD700' }}>
                 See What We Automate
               </Button>
             </div>
@@ -79,8 +79,8 @@ export const Hero: React.FC = () => {
               <p className="text-gray-400 text-sm">From chatbots to backend processes, your systems never sleep</p>
             </div>
             
-            <div className="premium-card-dark rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover-scale will-change-transform">
-              <TrendingUp className="h-12 w-12 text-purple-400 mb-4 mx-auto" />
+            <div className="premium-card-dark rounded-2xl p-6 hover:border-amber-500/50 transition-all duration-300 hover-scale will-change-transform">
+              <TrendingUp className="h-12 w-12 text-amber-400 mb-4 mx-auto" />
               <h3 className="text-white font-semibold text-lg mb-2">Quick Deployment. Fast ROI.</h3>
               <p className="text-gray-400 text-sm">Our clients start seeing results within days</p>
             </div>
