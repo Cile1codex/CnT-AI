@@ -407,7 +407,9 @@ section {
 }
 
 .premium-button:hover {
-  box-shadow: 0 6px 25px rgba(14, 165, 233, 0.6);
+  box-shadow: 0 6px 25px rgba(14, 165, 233, 0.6),
+              0 0 20px rgba(239, 68, 68, 0.2),
+              0 0 30px rgba(16, 185, 129, 0.2);
   transform: translateY(-2px);
 }
 
@@ -596,54 +598,71 @@ section {
   }
 }
 
-/* Christmas Decorations */
-.candy-cane {
-  position: fixed;
-  font-size: 2rem;
-  pointer-events: none;
-  z-index: 9998;
-  opacity: 0.6;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
-.candy-cane:nth-child(1) {
-  top: 10%;
-  right: 5%;
-  transform: rotate(45deg);
-}
-
-.candy-cane:nth-child(2) {
-  top: 60%;
-  left: 3%;
-  transform: rotate(-30deg);
-}
-
-.christmas-ornament {
-  position: fixed;
-  font-size: 1.5rem;
-  pointer-events: none;
-  z-index: 9998;
-  opacity: 0.5;
-  animation: ornamentSwing 3s ease-in-out infinite;
-}
-
-@keyframes ornamentSwing {
+/* Christmas Decorations - Contextual Elements */
+@keyframes christmasLights {
   0%, 100% {
-    transform: rotate(-5deg);
+    box-shadow: 0 0 5px rgba(239, 68, 68, 0.5), 0 0 10px rgba(16, 185, 129, 0.5);
   }
-  50% {
-    transform: rotate(5deg);
+  33% {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.8), 0 0 5px rgba(16, 185, 129, 0.3);
+  }
+  66% {
+    box-shadow: 0 0 5px rgba(239, 68, 68, 0.3), 0 0 10px rgba(16, 185, 129, 0.8);
   }
 }
 
-.christmas-ornament:nth-child(1) {
-  top: 5%;
-  left: 10%;
+/* Add Christmas lights effect to cards */
+.premium-card-dark::after,
+.premium-card::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(90deg,
+    #ef4444 0%, #ef4444 10%, transparent 10%, transparent 15%,
+    #10b981 15%, #10b981 25%, transparent 25%, transparent 30%,
+    #f59e0b 30%, #f59e0b 40%, transparent 40%, transparent 45%,
+    #3b82f6 45%, #3b82f6 55%, transparent 55%, transparent 60%,
+    #ef4444 60%, #ef4444 70%, transparent 70%, transparent 75%,
+    #10b981 75%, #10b981 85%, transparent 85%, transparent 90%,
+    #f59e0b 90%, #f59e0b 100%
+  );
+  border-radius: 2px;
+  opacity: 0.4;
+  pointer-events: none;
 }
 
-.christmas-ornament:nth-child(2) {
-  top: 5%;
-  right: 10%;
+/* Christmas ornament decorations on card corners */
+.premium-card-dark:hover::after,
+.premium-card:hover::after {
+  animation: christmasLights 2s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+/* Optional: Add small decorative stars to section headings */
+h2:has(+ p) {
+  position: relative;
+}
+
+/* Subtle festive accent on important sections */
+section#use-cases h2::before,
+section#services h2::before {
+  content: '⭐';
+  position: absolute;
+  left: -1.5em;
+  opacity: 0.3;
+  font-size: 0.7em;
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  section#use-cases h2::before,
+  section#services h2::before {
+    display: none;
+  }
 }
 
 .santa-hat {
@@ -708,10 +727,6 @@ section {
 }
 
 @media (max-width: 768px) {
-  .candy-cane, .christmas-ornament {
-    display: none;
-  }
-
   .santa-hat {
     font-size: 1.5rem;
     top: -10px;
@@ -720,5 +735,12 @@ section {
 
   .santa-hat-png {
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  }
+
+  /* Simplify Christmas lights on mobile */
+  .premium-card-dark::after,
+  .premium-card::after {
+    width: 90%;
+    height: 3px;
   }
 }

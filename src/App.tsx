@@ -45,14 +45,6 @@ function App() {
       <div className="snowflake">❄</div>
       <div className="snowflake">❄</div>
 
-      {/* Christmas Decorations */}
-      <div className="candy-cane">🍭</div>
-      <div className="candy-cane">🍭</div>
-      <div className="christmas-ornament">🎄</div>
-      <div className="christmas-ornament">🎄</div>
-      <div className="christmas-ornament" style={{ top: '40%', left: '5%', fontSize: '1.8rem' }}>🎁</div>
-      <div className="christmas-ornament" style={{ top: '70%', right: '8%', fontSize: '1.6rem' }}>⭐</div>
-
       <Routes>
         {/* English routes */}
         <Route path="/" element={<HomePage />} />
