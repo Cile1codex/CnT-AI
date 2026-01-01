@@ -30,6 +30,7 @@ import { MacedonianCaseStudyAutomatedCustomerSupport } from './pages/mk/CaseStud
 import { MacedonianCaseStudyLeadQualificationBooking } from './pages/mk/CaseStudyLeadQualificationBooking';
 import { MacedonianCaseStudyClientOnboardingAutomation } from './pages/mk/CaseStudyClientOnboardingAutomation';
 import { MacedonianCaseStudyUserActivationFlows } from './pages/mk/CaseStudyUserActivationFlows';
+import { MacedonianCaseStudyTeamTaskManagement } from './pages/mk/CaseStudyTeamTaskManagement';
 
 function App() {
   return (
@@ -83,6 +84,7 @@ function App() {
         <Route path="/mk/case-study-lead-qualification-booking" element={<MacedonianCaseStudyLeadQualificationBooking />} />
         <Route path="/mk/case-study-client-onboarding-automation" element={<MacedonianCaseStudyClientOnboardingAutomation />} />
         <Route path="/mk/case-study-user-activation-flows" element={<MacedonianCaseStudyUserActivationFlows />} />
+        <Route path="/mk/case-study-team-task-management" element={<MacedonianCaseStudyTeamTaskManagement />} />
       </Routes>
     </div>
   );

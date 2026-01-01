@@ -27,7 +27,7 @@ export const ChristmasLights: React.FC = () => {
   return (
     <>
       {/* Top string of lights */}
-      <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none h-12">
+      <div className="fixed top-0 left-0 right-0 z-40 pointer-events-none h-12">
         <svg className="w-full h-full" style={{ filter: 'drop-shadow(0 0 8px rgba(255, 215, 0, 0.6))' }}>
           {/* Wire/string */}
           <path

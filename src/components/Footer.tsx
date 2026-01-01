@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
             Transforming businesses through intelligent automation solutions.
           </p>
           <div className="flex justify-center items-center space-x-6 text-sm text-gray-500 flex-wrap">
-            <span>© 2025 CnT AI. All rights reserved.</span>
+            <span>© 2026 CnT AI. All rights reserved.</span>
             <span className="hidden sm:inline">•</span>
             <Link 
               to="/privacy-policy" 

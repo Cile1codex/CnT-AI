@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
             Трансформираме бизниси преку интелигентни решенија за автоматизација.
           </p>
           <div className="flex justify-center items-center space-x-6 text-sm text-gray-500 flex-wrap">
-            <span>© 2025 CnT AI. Сите права задржани.</span>
+            <span>© 2026 CnT AI. Сите права задржани.</span>
             <span className="hidden sm:inline">•</span>
             <Link 
               to="/mk/privacy-policy" 
